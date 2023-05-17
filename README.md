@@ -20,14 +20,14 @@ Rodando esta pensado para todas aquellas personas que quieran vivir una experien
 
 ## Integrantes
 
-Deporte, Jonatan -    
-Duran, Juan -      
-Frias, Virginia: Soy Virgnia Frias y hace aproximadamente 1 año incursiono en el mundo de la programacion web, estoy hoy en Digital House para formalizar mi aprendizaje y poder tener mas organizacion y seguimiento en el mismo, en un futuro aspiro a dedicarme a esto. Ademas tengo otros intereses como la música, escucharla, componer y lo que mas amo que es tocar el piano. Me gustan los gatos y tambien me gusta mucho cocinar.    
+Deporte, Jonatan: ¡Hola! Mi nombre es Jonatan Deporte y actualmente estoy estudiando en Digital House el curso de Desarrollador Fullstack.Además de mi formación en Digital House, también he estado trabajando en proyectos personales para fortalecer mis habilidades y ampliar mi experiencia en el campo del desarrollo web. Además, soy fanatico del ciclismo y practico este deporte hace varios años.  
+Duran, Juan -  
+Frias, Virginia: Soy Virgnia Frias y hace aproximadamente 1 año incursiono en el mundo de la programacion web, estoy hoy en Digital House para formalizar mi aprendizaje y poder tener mas organizacion y seguimiento en el mismo, en un futuro aspiro a dedicarme a esto. Ademas tengo otros intereses como la música, escucharla, componer y lo que mas amo que es tocar el piano. Me gustan los gatos y tambien me gusta mucho cocinar.  
 Gomez, Andres -  
 Gomien, Tomás -  
 Malpartida, Mayra -  
-Puentes, Paula - Estudiante   
-Valero, Leidy -  
+Puentes, Paula - Estudiante  
+Valero, Leidy -
 
 ## Link del tablero
 
