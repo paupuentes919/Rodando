@@ -12,6 +12,12 @@ Rodando esta pensado para todas aquellas personas que quieran vivir una experien
 
 ## Sitios referentes a Rodando
 
+- https://www.bikingbogota.com/
+- https://www.kayak.com.co/Renta-economica-de-autos-Medellin.30430.cars.ksp?gclid=CjwKCAjwx_eiBhBGEiwA15gLNzfaSQwVC_q6JWRoPdCyFLIE2Ew3BRHXbXA4-F5Se2A4rkEAj7eFYRoC9lcQAvD_BwE
+- https://www.clubargentinodekart.com.ar/
+- https://baecobici.com.ar/#/es/inicio
+- https://www.mercadolibre.com.ar/
+
 ## Integrantes
 
 Deporte, Jonatan -
