@@ -27,7 +27,8 @@ Gomez, Andres -
 Gomien, Tomás -  
 Malpartida, Mayra -  
 Puentes, Paula - Estudiante  
-Valero, Leidy -
+Valero, Leidy - Soy Leidy Valero, vivo en la ciudad de Bogotá, Colombia. Tengo 27 años, soy ingeniera industrial graduada en el 2019, actualmente incursionando en el mundo de la programación en Digital House.
+Soy fan de los deportes, como futbol y tenis. Me gusta escuchar música, sobretodo reggaeton, entre mis artistas favoritos están: Bad bunny, Daddy Yankee y Feid.
 
 ## Link del tablero
 
