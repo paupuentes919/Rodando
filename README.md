@@ -20,13 +20,13 @@ Rodando esta pensado para todas aquellas personas que quieran vivir una experien
 
 ## Integrantes
 
-Deporte, Jonatan -  
-Duran, Juan -    
-Frias, Virginia: Soy Virgnia Frias y hace aproximadamente 1 año incursiono en el mundo de la programacion web, estoy hoy en Digital House para formalizar mi aprendizaje y poder tener mas organizacion y seguimiento en el mismo, en un futuro aspiro a dedicarme a esto. Ademas tengo otros intereses como la música, escucharla, componer y lo que mas amo que es tocar el piano. Me gustan los gatos y tambien me gusta mucho cocinar.  
+Deporte, Jonatan -    
+Duran, Juan -      
+Frias, Virginia: Soy Virgnia Frias y hace aproximadamente 1 año incursiono en el mundo de la programacion web, estoy hoy en Digital House para formalizar mi aprendizaje y poder tener mas organizacion y seguimiento en el mismo, en un futuro aspiro a dedicarme a esto. Ademas tengo otros intereses como la música, escucharla, componer y lo que mas amo que es tocar el piano. Me gustan los gatos y tambien me gusta mucho cocinar.    
 Gomez, Andres -  
 Gomien, Tomás -  
 Malpartida, Mayra -  
-Puentes, Paula -  
+Puentes, Paula - Estudiante   
 Valero, Leidy -  
 
 ## Link del tablero
