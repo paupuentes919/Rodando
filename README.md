@@ -31,4 +31,4 @@ Valero, Leidy -
 
 ## Link del tablero
 
-https://trello.com/w/proyectointegradordh5
+https://rodando-2023.atlassian.net/jira/software/projects/ROD/boards/1
