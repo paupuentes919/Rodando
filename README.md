@@ -27,7 +27,8 @@ Gomez, Andres -
 Gomien, Tomás:  Que tal! Mi nombre es Tomas Gomien tengo 23 años y de momento estoy cursando el tercer año de Ingenieria en Sistemas en la UTN. Me encanta hacer deporte, jugar al futbol, al tenis y hacer calistenia, soy hicha de boca y me gustaria conocer la bombonera. Tuve experiencia programando en la facultad pero no sabia si era lo mio, ahora estoy disfrutando mucho del curso y lo que  estoy aprendiendo, mi objetivo principal es poder trabajar como programador o techlead para una empresa extranjera desde cualquier parte del mundo, manejando mis horarios y siempre adquiriendo nuevos conocimientos para cumplir con mis objetivos.    
 Malpartida, Mayra -  
 Puentes, Paula - Estudiante  
-Valero, Leidy -
+Valero, Leidy - Soy Leidy Valero, vivo en la ciudad de Bogotá, Colombia. Tengo 27 años, soy ingeniera industrial graduada en el 2019, actualmente incursionando en el mundo de la programación en Digital House.
+Soy fan de los deportes, como futbol y tenis. Me gusta escuchar música, sobretodo reggaeton, entre mis artistas favoritos están: Bad bunny, Daddy Yankee y Feid.
 
 ## Link del tablero
 
