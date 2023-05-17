@@ -1,25 +1,28 @@
 # Rodando
-Trabajo Integrador de Digital House 
 
-## Rodando 
-Bienvenido a Rodando, la empresa de alquiler de bicicletas y monopatines que te ofrece una forma divertida, sostenible y saludable de moverte por la ciudad. En Rodando, estamos comprometidos con la movilidad urbana sostenible y creemos que andar en bicicleta o monopatín es una excelente manera de disfrutar de la ciudad mientras cuidamos el medio ambiente.
+Trabajo Integrador de Digital House
+
+## Rodando
+
+Bienvenido a Rodando, la empresa de alquiler de bicicletas y monopatines que te ofrece una forma divertida, sostenible y saludable de moverte por la ciudad. En Rodando, estamos comprometidos con la movilidad urbana sostenible y creemos que andar en bicicleta o monopatín es una excelente manera de disfrutar de la ciudad mientras cuidamos el medio ambiente. Nuestra empresa esta orientada a que vivas una experiencia divertida, segura y con multiples beneficios para tu salud y el medio ambiente. Contamos con amplia experiencia en el rubro y tenemos personal capacitado que te puede asesorar en cada situacion particular que ud desee utilizar nuestro servicio.
 
 ## Publico objetivo
-Ofrecemos un medio de transporte saludable para todas aquellas personas que quieran recorrer la ciudad de manera innovadora, activa y ecofriendly. 
+
+Rodando esta pensado para todas aquellas personas que quieran vivir una experiencia distinta, divertida y ecologica. Esta orientado para un publico en general; tanto niños como adultos pueden disfrutar de nuestro servicio de alquiler de bicicletas y monopatines. Ya sea para aprender a andar por primera vez, hasta poder realizar excursiones o simplemente movilizarse a cualquier lugar, Rodando tiene contemplado cada una de esas situaciones y puede recomendarte el mejor rordado para cada ocasion y gusto.
 
 ## Sitios referentes a Rodando
 
 ## Integrantes
-Deporte, Jonatan - 
+
+Deporte, Jonatan -
 Duran, Juan -
-Frías, Virginia -
+Frias, Virginia: Soy Virgnia Frias y hace aproximadamente 1 año incursiono en el mundo de la programacion web, estoy hoy en Digital House para formalizar mi aprendizaje y poder tener mas organizacion y seguimiento en el mismo, en un futuro aspiro a dedicarme a esto. Ademas tengo otros intereses como la música, escucharla, componer y lo que mas amo que es tocar el piano. Me gustan los gatos y tambien me gusta mucho cocinar.
 Gomez, Andres -
 Gomien, Tomás -
 Malpartida, Mayra -
-Puentes, Paula - 
-Valero, Leidy - 
+Puentes, Paula -
+Valero, Leidy -
 
 ## Link del tablero
+
 https://trello.com/w/proyectointegradordh5
-
-
