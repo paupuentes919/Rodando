@@ -1,3 +1,22 @@
-.verde{
-    color: green;
+/* ---- NAVBAR ---- */
+.header__nav {
+	background-color: #030b58;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.header__nav--menu {
+	text-decoration: none;
+	list-style: none;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* -----  ------ */
+
+.verde {
+	color: green;
 }
