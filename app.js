@@ -11,7 +11,7 @@ app.use("/nmb", express.static(path.join(__dirname, "/node_modules/bootstrap/dis
 app.use("/scripts", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 
 app.get("/", function (req, res) {
-	res.sendFile(path.join(__dirname, "/views/home.html"));
+	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
 app.listen(3010, function (req, res) {
