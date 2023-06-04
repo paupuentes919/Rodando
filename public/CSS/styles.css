@@ -15,6 +15,104 @@
 	justify-content: space-between;
 }
 
+/*-------------------------------------------------DETALLE CARRITO-------------------------------------------------------*/
+#main__background--carrito {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bicicletas-ciudad.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 650px;
+	padding: 3rem;
+}
+
+.div__h2--detalle-carrito {
+	display: flex;
+	justify-content: center;
+	color: #111211;
+	padding-bottom: 2rem;
+}
+
+.div--container--precio-total {
+	display: flex;
+	justify-content: flex-end;
+	color: #111211;
+}
+
+.div--precio-numero {
+	display: flex;
+	background-color: white;
+	border-radius: 6px;
+    padding: 2rem;
+}
+
+.div-total-numero {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	border-bottom: 1px solid black;
+}
+
+.h6--precio-numero {
+	margin-right: 2rem;
+	margin-top: 0.3rem;
+}
+
+.btn__container--realizar-pago {
+	border-bottom: 1px solid black;
+}
+
+.btn--realizar-pago {
+	background-color: #020736;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 0.7rem;
+	margin: 1rem 0;
+}
+
+@media (max-width: 715px) {
+	.div--container--precio-total {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 550px) {
+	.div--precio-numero {
+		display: grid;
+	}
+
+	.div-total-numero {
+		border-bottom: 0;
+	}
+
+	.h6--precio-numero {
+		margin-top: 0;
+	}
+
+	.btn__container--realizar-pago {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 420px) {
+	#main__background--carrito {
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 380px) {
+	.div--precio-numero {
+		padding: 1rem;
+	}
+
+	.h4--precio-total {
+		font-size: small;
+	}
+
+	.h6--precio-numero {
+		font-size: small;
+	}
+}
 /* -----  ------ */
 
 .verde {
