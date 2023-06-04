@@ -21,7 +21,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 650px;
-	padding: 3rem;
+	padding: 2rem 6rem;
 }
 
 .div__h2--detalle-carrito {
@@ -42,6 +42,7 @@
 	background-color: white;
 	border-radius: 6px;
     padding: 2rem;
+	margin-bottom: 2rem;
 }
 
 .div-total-numero {
@@ -69,7 +70,66 @@
 	margin: 1rem 0;
 }
 
+.div--products-details-container {
+	margin-top: 2rem;
+	margin-left: 10rem;
+}
+
+.div-img-products {
+	margin: 0 5rem;
+	background-color: azure;
+	border-radius: 6px;
+}
+
+.div-container-products {
+    align-items: center;
+    display: grid;
+	margin-right: 5rem;
+}
+
+.p-titulo-tipo-rodado {
+	font-weight: bold;
+}
+
+.div-horas-cantidad {
+	display: flex;
+}
+
+.p-horas-cantidad {
+	font-weight: bold;
+}
+
+.div-numero {
+	display: flex;
+	align-items: center;
+}
+
+.p-numero {
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding-right: 3rem;
+}
+
+.div-btn-products {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-left: 3.4rem;
+}
+
+.horas {
+	margin-right: 3rem;
+}
+
+.cantidad {
+	margin-right: 1.5rem;
+}
+
 @media (max-width: 715px) {
+	#main__background--carrito {
+		padding: 2rem 3.4rem;
+	}
+
 	.div--container--precio-total {
 		justify-content: center;
 	}
@@ -94,7 +154,7 @@
 	}
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
 	#main__background--carrito {
 		padding: 1.5rem;
 	}
