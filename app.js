@@ -13,7 +13,15 @@ app.use("/scripts", express.static(path.join(__dirname, "node_modules/bootstrap/
 app.get("/", function (req, res) {
 	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
-
+app.get("/views/registro.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/ingresar.html"));
+});
+app.get("/views/registro.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/registro.html"));
+});
+app.get("/views/carrito.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/carrito.html"));
+});
 app.listen(3010, function (req, res) {
 	console.log("Servidor en puerto 3010 corriendo");
 });
