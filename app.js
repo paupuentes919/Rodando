@@ -6,24 +6,26 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(
-    "/nmb",
-    express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css"))
-);
+app.use("/nmb", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css")));
 
-app.use(
-    "/scripts",
-    express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
-);
+app.use("/scripts", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
+	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
 app.get("/carrito", function (req, res) {
-    res.sendFile(path.join(__dirname, "/views/carrito.html"));
+	res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
-
+app.get("/views/registro.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/ingresar.html"));
+});
+app.get("/views/registro.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/registro.html"));
+});
+app.get("/views/carrito.html", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/carrito.html"));
+});
 app.listen(3010, function (req, res) {
-    console.log("Servidor en puerto 3010 corriendo");
+	console.log("Servidor en puerto 3010 corriendo");
 });
