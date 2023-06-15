@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./nmb/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">    <link href="./nmb/bootstrap.min.css" rel="stylesheet" />
     <script defer src="/scripts/bootstrap.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
     <title>Rodando</title>
@@ -28,31 +31,74 @@
           </div>
         </div>
       </div>
-      <div class="div--precio-numero">
-        <div class="div-img-products">
-            <img src="img/bicicleta-1.png"/>
-        </div>
-        <div class="div-container-products">
-            <div>
-                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
-            </div>
-            <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad horas">Horas</p>
-                <p>Numeros hs</p>
-            </div>
-            <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad cantidad">Cantidad</p>
-                <p>Numeros cant</p>
-            </div>
-        </div>
-        <div class="div-numero">
-            <p class="p-numero">$ NUMERO</p>
-        </div>
-        <div class="div-btn-products">
-            <button class="btn--realizar-pago">Eliminar</button>
-            <button class="btn--realizar-pago">Modificar reserva</button>
-        </div>
+
+      <section class="section-productos">
+
+        <div class="div--precio-numero">
+          <div class="div-img-products">
+              <img src="img/bicicleta-1.png"/>
+          </div>
+          <div class="div-container-products">
+              <div>
+                  <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
+              </div>
+              <div class="div-horas-cantidad">
+                  <p class="p-horas-cantidad horas">Horas</p>
+                  <p>Numeros hs</p>
+              </div>
+              <div class="div-horas-cantidad">
+                  <p class="p-horas-cantidad cantidad">Cantidad</p>
+                  <p>Numeros cant</p>
+              </div>
+          </div>
+          <div class="div-numero">
+              <p class="p-numero">$ NUMERO</p>
+          </div>
+          <div class="div-btn-products">
+              <button class="btn--realizar-pago">Eliminar</button>
+              <button class="btn--realizar-pago">Modificar reserva</button>
+          </div>
       </div>
+
+      <article class="producto">
+        <div class="producto-datos ">
+          <div>
+            <img src="img/bicicleta-1.png">
+          </div>
+
+          <div class="producto-datos-inputs">
+            <h3>Titulo: Rodado super bici roja con cambios y accesorios</h3>
+            <div class="producto-datos-inputs-contratado">
+              <div class="contenedor-contratado">
+                <div class="contratado">
+                  <label> Horas contratadas:</label>
+                  <div>
+                    <p> 16 Hs</p>
+                  </div>
+                </div>
+                <div class="contratado">
+                  <label>Vehiculos contratados:</label>
+                    <div>
+                      <p> 2 </p>
+                    </div>
+                </div>
+              </div>  
+        
+              <div class="producto-datos-inputs-precio">
+                <label >$ 1.850</label>
+              </div>
+            </div>     
+            
+          </div>        
+        </div>
+
+        <div class="producto-botones">
+         <button> eliminar </button>
+         <button><a href="paginaDeReserva">Modificar reserva</a></button>
+        </div>     
+      </article>
+
+    </section>
     </main>
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
     <footer>Tailwind</footer>
