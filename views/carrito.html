@@ -14,7 +14,35 @@
   </head>
   <body>
     <!--------------------------------------------------HEADER----------------------------------------------------------->
-    <header>Tailwind</header>
+    <header class="header">
+			<div class="header__navbar">
+				<div class="header__logo">
+					<a class="logo-link" href="/">
+						<img src="/img/logo.png" alt="Bootstrap" width="280" height="50" />
+					</a>
+				</div>
+				<div class="menu-container">
+					<input type="checkbox" id="menu-toggle" />
+					<label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"> </i></label>
+					<nav class="menu">
+						<ul class="header__nav--menu">
+							<li class="header__nav--item">
+								<a class="link-nav" href="/">Home</a>
+							</li>
+							<li class="header__nav--item">
+								<a class="link-nav" href="#">Ingresa</a>
+							</li>
+							<li class="header__nav--item">
+								<a class="link-nav" href="#">Registrate</a>
+							</li>
+							<li class="header__nav--item me-5">
+								<a class="link-nav active" href="/carrito">Carrito</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
     <!---------------------------------------------------MAIN------------------------------------------------------------>
     <main id="main__background--carrito">
       <div>
@@ -60,42 +88,38 @@
           </div>
       </div>
 
-      <article class="producto">
-        <div class="producto-datos ">
-          <div>
-            <img src="img/bicicleta-1.png">
+      <article class="contenedor-producto">
+        
+        <div class="producto">
+          <div class="producto-imagen">
+            <img src="img/bicicleta-2.png">
           </div>
-
-          <div class="producto-datos-inputs">
-            <h3>Titulo: Rodado super bici roja con cambios y accesorios</h3>
-            <div class="producto-datos-inputs-contratado">
-              <div class="contenedor-contratado">
+          <div class="producto-datos">
+            <h3>Bicicleta plegable Brompton Model - C</h3>
+            <div class="producto-datos-inputs">
+              <div class="producto-datos-inputs-contratados">
                 <div class="contratado">
                   <label> Horas contratadas:</label>
-                  <div>
-                    <p> 16 Hs</p>
-                  </div>
+                  <p> 16 Hs</p>
                 </div>
                 <div class="contratado">
                   <label>Vehiculos contratados:</label>
-                    <div>
-                      <p> 2 </p>
-                    </div>
+                  <p> 2 </p>  
                 </div>
               </div>  
-        
-              <div class="producto-datos-inputs-precio">
-                <label >$ 1.850</label>
+              <div class="producto-datos-inputs-seleccion">
+                <div class="precio">
+                  <label >$ 1.850</label>
+                </div>
+                <div class="botones">
+                  <button> Eliminar </button>
+                  <button><a href="paginaDeReserva">Modificar reserva</a></button>
+                </div>
               </div>
-            </div>     
-            
+            </div>    
           </div>        
         </div>
-
-        <div class="producto-botones">
-         <button> eliminar </button>
-         <button><a href="paginaDeReserva">Modificar reserva</a></button>
-        </div>     
+         
       </article>
 
     </section>
