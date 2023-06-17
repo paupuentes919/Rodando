@@ -128,77 +128,100 @@ img {
 	flex-direction:column ;
 }
 
-.producto{                  
+.contenedor-producto{                  
 	background-color: white;
-	padding: 2% 5%;
+	padding: 2%;
 	border-radius: 5px;
-	font-family: 'Roboto', sans-serif;
+}
+
+.producto{
+	display: flex;
+	justify-content: space-around;
+}
+
+.producto-imagen{
+	width: 22%;
 }
 
 .producto-datos{
-	display: flex;
-	flex-wrap: wrap;
+	width: 70%;
+}
+
+.producto-datos h3{
+	text-transform: capitalize;
+	font-weight: 600;
 }
 
 .producto-datos-inputs{
-	width: 62%;
-}
-
-.producto-datos-inputs h3{
-	position: relative;
-	left: 96px;
-}
-
-.producto-datos-inputs-contratado{
-	margin: 0 5% 0;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+	margin-top: 20px;
 }
 
-
-.producto-datos-inputs-precio{
-	font-size: 32px;
-	align-self: flex-end;
-	position: relative;
-    bottom: 20px;
-}
-
-.producto-datos-inputs-precio label{
-	font-size: 32px;	
-}
-
-.producto-botones button{
-	color: white;
-	background-color: #020736;
-	border-radius: 5px;
-	width: 48%;
-}
-
-.producto-botones a{
-	text-decoration: none;
-	color: white;
-}
-
-.contenedor-contratado{
+.producto-datos-inputs-contratados{
 	width: 50%;
 }
 
 .contratado{
 	display: flex;
-	height: 80px;
-    justify-content: space-evenly;
 	align-items: center;
+	font-weight: 600;
 }
 
 .contratado label{
-	font-size: 20px;
-	padding: 5%;
+	font-size: 110%;
+	padding: 5%;	
 }
 
 .contratado p{
-	font-size: 20px;
+	font-size: 100%;
 	margin: 0;
+	text-align: start;
 }
+
+.producto-datos-inputs-seleccion{
+	width: 50%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.precio{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.precio label{
+	font-size: 32px;	
+}
+
+.botones{
+	display: flex;
+    justify-content: flex-end;
+}
+
+.botones button{
+	color: white;
+	background-color: #020736;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 5%;
+	width:40%;
+	transition: all 400ms;
+}
+
+.botones button:hover {
+	transform: scale(1.02);
+    opacity: 70%;
+}
+
+.botones a{
+	text-decoration: none;
+	color: white;
+}
+
+
+
 /*-----------------------------------------------Nuevas clases Tomi -------------------------------------*/
 
 
@@ -207,6 +230,7 @@ img {
 	justify-content: center;
 	color: #111211;
 	padding-bottom: 2rem;
+	margin: 2% 0;
 }
 
 .div--container--precio-total {
