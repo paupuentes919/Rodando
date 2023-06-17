@@ -436,6 +436,9 @@ img {
     @media (min-width: 1200px) {
         text-align: right;
     }
+    @media (orientation: portrait) {
+        text-align: center;
+    }
 }
 
 /* ---- FOOTER ---- */
@@ -487,6 +490,11 @@ img {
     @media (min-width: 768px) {
         text-align: left;
     }
+}
+
+.footer-location iframe {
+    width: 350px;
+    height: 300px;
 }
 
 .footer-icon {
