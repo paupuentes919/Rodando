@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">    <link href="./nmb/bootstrap.min.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/4e1b67b613.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./nmb/bootstrap.min.css" rel="stylesheet" />
     <script defer src="/scripts/bootstrap.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
     <title>Rodando</title>
@@ -15,40 +26,42 @@
   <body>
     <!--------------------------------------------------HEADER----------------------------------------------------------->
     <header class="header">
-			<div class="header__navbar">
-				<div class="header__logo">
-					<a class="logo-link" href="/">
-						<img src="/img/logo.png" alt="Bootstrap" width="280" height="50" />
-					</a>
-				</div>
-				<div class="menu-container">
-					<input type="checkbox" id="menu-toggle" />
-					<label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"> </i></label>
-					<nav class="menu">
-						<ul class="header__nav--menu">
-							<li class="header__nav--item">
-								<a class="link-nav" href="/">Home</a>
-							</li>
-							<li class="header__nav--item">
-								<a class="link-nav" href="#">Ingresa</a>
-							</li>
-							<li class="header__nav--item">
-								<a class="link-nav" href="#">Registrate</a>
-							</li>
-							<li class="header__nav--item me-5">
-								<a class="link-nav active" href="/carrito">Carrito</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
+      <div class="header__navbar">
+        <div class="header__logo">
+          <a class="logo-link" href="/">
+            <img src="/img/logo.png" alt="Bootstrap" width="280" height="50" />
+          </a>
+        </div>
+        <div class="menu-container">
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon"
+            ><i class="fa-solid fa-bars"> </i
+          ></label>
+          <nav class="menu">
+            <ul class="header__nav--menu">
+              <li class="header__nav--item">
+                <a class="link-nav" href="/">Home</a>
+              </li>
+              <li class="header__nav--item">
+                <a class="link-nav" href="#">Mi cuenta</a>
+              </li>
+              <li class="header__nav--item me-5">
+                <a class="link-nav active" href="/carrito"
+                  ><i class="fa-solid fa-cart-shopping"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
     <!---------------------------------------------------MAIN------------------------------------------------------------>
+    <!-----------------------------------SECTION PRECIO TOTAL-------------------------------->
     <main id="main__background--carrito">
       <div>
         <h2 class="div__h2--detalle-carrito">DETALLE DE CARRITO</h2>
         <div class="div--container--precio-total">
-          <div class="div--precio-numero">
+          <div class="div--precio-numero-total precio-numero-container">
             <div class="div-total-numero">
               <h4 class="h4--precio-total">Precio Total</h4>
               <h6 class="h6--precio-numero">$ NUMERO</h6>
@@ -59,70 +72,111 @@
           </div>
         </div>
       </div>
-
+      <!-----------------------------------SECTION RODADOS ALQUILADOS-------------------------------->
       <section class="section-productos">
-
+        <!-------------------RODADO 1-------------------------->
         <div class="div--precio-numero">
-          <div class="div-img-products">
-              <img src="img/bicicleta-1.png"/>
-          </div>
-          <div class="div-container-products">
+          <div class="display-flex">
+            <div class="div-img-products">
+              <img class="img-width-height" src="img/bicicleta-1.png" />
+            </div>
+            <div class="div-container-products">
               <div>
-                  <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
+                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
               </div>
               <div class="div-horas-cantidad">
-                  <p class="p-horas-cantidad horas">Horas</p>
-                  <p>Numeros hs</p>
+                <p class="p-horas-cantidad horas">Horas contratadas</p>
+                <p class="p-margin p-width">Numeros hs</p>
               </div>
               <div class="div-horas-cantidad">
-                  <p class="p-horas-cantidad cantidad">Cantidad</p>
-                  <p>Numeros cant</p>
+                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
+                <p class="p-margin p-width">Numeros cant</p>
               </div>
+            </div>
           </div>
-          <div class="div-numero">
-              <p class="p-numero">$ NUMERO</p>
+          <div class="producto-datos-inputs-seleccion">
+            <div class="precio">
+              <label>$ NUMERO</label>
+            </div>
+            <div class="botones">
+              <button><i class="fa-solid fa-trash-can"></i></button>
+              <button>
+                <a href="paginaDeReserva"
+                  ><i class="fa-solid fa-pen-to-square"></i
+                ></a>
+              </button>
+            </div>
           </div>
-          <div class="div-btn-products">
-              <button class="btn--realizar-pago">Eliminar</button>
-              <button class="btn--realizar-pago">Modificar reserva</button>
-          </div>
-      </div>
-
-      <article class="contenedor-producto">
-        
-        <div class="producto">
-          <div class="producto-imagen">
-            <img src="img/bicicleta-2.png">
-          </div>
-          <div class="producto-datos">
-            <h3>Bicicleta plegable Brompton Model - C</h3>
-            <div class="producto-datos-inputs">
-              <div class="producto-datos-inputs-contratados">
-                <div class="contratado">
-                  <label> Horas contratadas:</label>
-                  <p> 16 Hs</p>
-                </div>
-                <div class="contratado">
-                  <label>Vehiculos contratados:</label>
-                  <p> 2 </p>  
-                </div>
-              </div>  
-              <div class="producto-datos-inputs-seleccion">
-                <div class="precio">
-                  <label >$ 1.850</label>
-                </div>
-                <div class="botones">
-                  <button> Eliminar </button>
-                  <button><a href="paginaDeReserva">Modificar reserva</a></button>
-                </div>
-              </div>
-            </div>    
-          </div>        
         </div>
-         
-      </article>
-
-    </section>
+        <!-------------------RODADO 2-------------------------->
+        <div class="div--precio-numero">
+          <div class="display-flex">
+            <div class="div-img-products">
+              <img class="img-width-height" src="img/monopatin-1.png" />
+            </div>
+            <div class="div-container-products">
+              <div>
+                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
+              </div>
+              <div class="div-horas-cantidad">
+                <p class="p-horas-cantidad horas">Horas contratadas</p>
+                <p class="p-margin p-width">Numeros hs</p>
+              </div>
+              <div class="div-horas-cantidad">
+                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
+                <p class="p-margin p-width">Numeros cant</p>
+              </div>
+            </div>
+          </div>
+          <div class="producto-datos-inputs-seleccion">
+            <div class="precio">
+              <label>$ NUMERO</label>
+            </div>
+            <div class="botones">
+              <button><i class="fa-solid fa-trash-can"></i></button>
+              <button>
+                <a href="paginaDeReserva"
+                  ><i class="fa-solid fa-pen-to-square"></i
+                ></a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-------------------RODADO 3-------------------------->
+        <div class="div--precio-numero">
+          <div class="display-flex">
+            <div class="div-img-products">
+              <img class="img-width-height" src="img/bicicleta-1.png" />
+            </div>
+            <div class="div-container-products">
+              <div>
+                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
+              </div>
+              <div class="div-horas-cantidad">
+                <p class="p-horas-cantidad horas">Horas contratadas</p>
+                <p class="p-margin p-width">Numeros hs</p>
+              </div>
+              <div class="div-horas-cantidad">
+                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
+                <p class="p-margin p-width">Numeros cant</p>
+              </div>
+            </div>
+          </div>
+          <div class="producto-datos-inputs-seleccion">
+            <div class="precio">
+              <label>$ NUMERO</label>
+            </div>
+            <div class="botones">
+              <button><i class="fa-solid fa-trash-can"></i></button>
+              <button>
+                <a href="paginaDeReserva"
+                  ><i class="fa-solid fa-pen-to-square"></i
+                ></a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
     <footer>Tailwind</footer>

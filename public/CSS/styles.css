@@ -59,6 +59,10 @@ img {
     font-size: large;
 }
 
+.cart-color {
+    color: #fff;
+}
+
 /* ----- PRODUCTOS ------ */
 
 .principal {
@@ -121,11 +125,20 @@ img {
     padding: 2rem 6rem;
 }
 
+.p-width {
+    width: max-content;
+}
+
 /*------------------------------------------------Nuevas clases Tomi -------------------------------------*/
 
 .section-productos {
     display: flex;
     flex-direction: column;
+}
+
+.display-flex {
+    display: flex;
+    width: max-content;
 }
 
 .contenedor-producto {
@@ -180,7 +193,7 @@ img {
 }
 
 .producto-datos-inputs-seleccion {
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -192,7 +205,7 @@ img {
 }
 
 .precio label {
-    font-size: 32px;
+    font-size: 25px;
 }
 
 .botones {
@@ -206,19 +219,22 @@ img {
     border-radius: 5px;
     padding: 10px;
     margin-left: 5%;
-    width: 40%;
+    width: 100px;
     transition: all 400ms;
 }
 
-.botones button:hover {
+.botones button:hover, .botones button:hover a   {
     transform: scale(1.02);
-    opacity: 70%;
+    background-color: #000;
+    color: #e13633;
+    transition: 300ms;
 }
 
-.botones a {
+.botones button a {
     text-decoration: none;
     color: white;
 }
+
 
 /*-----------------------------------------------Nuevas clases Tomi -------------------------------------*/
 
@@ -236,7 +252,7 @@ img {
     color: #111211;
 }
 
-.div--precio-numero {
+.div--precio-numero, .div--precio-numero-total {
     display: flex;
     background-color: white;
     border-radius: 6px;
@@ -248,7 +264,7 @@ img {
     display: flex;
     align-items: center;
     gap: 2rem;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #e13633;;
 }
 
 .h6--precio-numero {
@@ -257,7 +273,7 @@ img {
 }
 
 .btn__container--realizar-pago {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #e13633;;
 }
 
 .btn--realizar-pago {
@@ -269,6 +285,12 @@ img {
     margin: 1rem 0;
 }
 
+.btn--realizar-pago:hover {
+    color: #e13633;
+    transition: 300ms;
+    background-color: #000000;
+}
+
 .div--products-details-container {
     margin-top: 2rem;
     margin-left: 10rem;
@@ -276,8 +298,14 @@ img {
 
 .div-img-products {
     margin: 0 5rem;
-    background-color: azure;
+    background-color: rgba(225,54,52,0.2);
     border-radius: 6px;
+}
+
+.img-width-height {
+    width: 300px;
+    height: 200px;
+    padding: 10px;
 }
 
 .div-container-products {
@@ -316,15 +344,141 @@ img {
     margin-left: 3.4rem;
 }
 
-.horas {
-    margin-right: 3rem;
-}
-
-.cantidad {
-    margin-right: 1.5rem;
+.horas, .cantidad {
+    width: 200px;
 }
 
 /************* MEDIA QUERY MAX-WIDTH*********************/
+
+@media (max-width: 1200px) {
+    .img-width-height {
+        width: 200px;
+        height: 100px;
+        position: relative;
+        top: 10px;
+    }
+
+    .div-img-products {
+        margin: 0 3rem;
+    }
+
+    .precio label{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .div-img-products {
+        margin: 1rem 1rem;
+        max-width: 100%;
+    }
+
+    .img-width-height {
+        min-width: 100px;
+        max-width: 100%;
+        height: 80px;
+        top: 5px;
+    }
+}
+
+@media (max-width: 950px) {
+    .producto-datos-inputs-seleccion {
+        margin-left: -3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .div--precio-numero {
+        padding: 1rem;
+    }
+
+    .botones button {
+        width: 70px;
+        padding: 3px;
+    }
+
+    .precio label{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 880px) {
+    .div--precio-numero {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .producto-datos-inputs-seleccion {
+        margin-left: 0;
+        flex-direction: row;
+        position: inherit;
+        left: 240px;
+    }
+
+    .precio label {
+        font-size: 15px;
+        width: max-content;
+        margin: auto;
+    }
+
+    .botones {
+        position: inherit;
+        left: 118px;
+    }
+}
+
+@media (max-width: 800px) {
+    .display-flex {
+        width: min-content;
+    }
+
+    .producto-datos-inputs-seleccion {
+        left: 38px;
+    }
+
+    .botones {
+        left: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+    .display-flex {
+        width: auto;
+    }
+
+    .botones {
+        left: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .botones {
+        left: 50px;
+    }
+}
+
+@media (max-width: 560px) {
+    .div-img-products {
+        margin: 3rem 1rem;
+        max-width: 100%;
+    }
+
+    .img-width-height {
+        top: 25px;
+    }
+
+    .div-horas-cantidad {
+        display: block;
+    }
+
+    .producto-datos-inputs-seleccion {
+        left: 60px;
+    }
+
+    .botones {
+        left: 35px;
+    }
+}
 
 @media (max-width: 768px) {
     .menu {
@@ -374,10 +528,14 @@ img {
     .div--container--precio-total {
         justify-content: center;
     }
+
+    .div__h2--detalle-carrito {
+        display: none;
+    }
 }
 
 @media (max-width: 550px) {
-    .div--precio-numero {
+    .div--precio-numero-total {
         display: grid;
     }
 
@@ -402,7 +560,7 @@ img {
 }
 
 @media (max-width: 380px) {
-    .div--precio-numero {
+    .div--precio-numero-total {
         padding: 1rem;
     }
 
