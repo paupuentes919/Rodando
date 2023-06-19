@@ -225,8 +225,7 @@ img {
 
 .botones button:hover, .botones button:hover a   {
     transform: scale(1.02);
-    background-color: #000;
-    color: #e13633;
+    opacity: 80%;
     transition: 300ms;
 }
 
@@ -286,9 +285,9 @@ img {
 }
 
 .btn--realizar-pago:hover {
-    color: #e13633;
-    transition: 300ms;
-    background-color: #000000;
+    transition: 400ms;
+    opacity: 80%;
+    transform: scale(1.02);
 }
 
 .div--products-details-container {
@@ -298,8 +297,8 @@ img {
 
 .div-img-products {
     margin: 0 5rem;
-    background-color: rgba(225,54,52,0.2);
     border-radius: 6px;
+    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
 }
 
 .img-width-height {
