@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/4e1b67b613.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous"
+        />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css"
+        />
+        <link rel="stylesheet" href="CSS/styles.css" />
+        <link rel="stylesheet" href="CSS/styledetalle.css"> 
+
+        <title>Rodando</title>
+    <link rel="icon" href="images/logo.jpg">
+    </head>
+<body>
+    <header class="header">
+        <div class="header__navbar">
+            <div class="header__logo">
+                <a class="logo-link" href="/">
+                    <img
+                        src="/img/logo.png"
+                        alt="Bootstrap"
+                        width="280"
+                        height="50"
+                    />
+                </a>
+            </div>
+            <div class="menu-container">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon"
+                    ><i class="fa-solid fa-bars"> </i
+                ></label>
+                <nav class="menu">
+                    <ul class="header__nav--menu">
+                        <li class="header__nav--item">
+                            <a class="link-nav" href="/">Home</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="link-nav" href="#">Ingresa</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="link-nav" href="#">Registrate</a>
+                        </li>
+                        <li class="header__nav--item me-5">
+                            <a class="link-nav" href="/carrito"><i class="fa-solid fa-cart-shopping cart-color"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <div class="face front">
+                <img src="images/bicicletabasica.jpg">
+            </div>
+            <div class="face back">
+               <h3><strong>Descripción</strong></h3>
+               <p style="color: #7b807a;">  - Cuadro en acero talla S o M</p>
+               <p style="color: #7b807a;">  - Tenedor en acero</p>
+               <p style="color: #7b807a;">  - Llanta de 26 pulgadas</p>
+               <p style="color: #7b807a;">  - Frenos V-brake</p>
+               <p style="color: #7b807a;">  - 6 cambios</p>
+               <p style="color: #7b807a;">  - Pedales planos</p>
+               <p class="aclaracion">*La imagen publicada es de referencia y sus características pueden llegar a variar de acuerdo con la flota disponible.</p>
+            </div>
+        </div>
+        <div class="container-info_product">
+            <div class="container-title-product">
+                <h2><strong>MTB Básica</strong></h2>
+            </div>
+            <div class="container-price">
+                <h3><strong>Costo hora</strong></h3>
+                <span>  <i class="fa-solid fa-dollar-sign"></i>  USD 4 </span>   
+            </div>
+            <div class="container-details">
+                <div class="form-group">
+                    <label for="colour">Color</label>
+                    <select name="coloUr" id="colour">
+                        <option disabled selected value="">Escoge una Opción</option>
+                        <option value="roja">Roja</option>
+                        <option value="amarilla">Amarilla</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-add-cart">
+                <div class="container-quantity">
+                    <h4>Horas</h4>
+                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity"/>
+                    <div class="btn-increm-decrem">
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Añadir al Carrito
+                </button>
+            </div>
+            <div class="container-description">
+                <div class="title-description">
+                    <h3><strong>Requisitos</strong></h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description">
+                    <p>Documento de identificación:</p>
+                    <p>- Dejar DNI</p>
+                    <p>- Licencia de conducir</p>
+                    <p>- Cédula de extranjería o pasaporte</p>
+                    <span>Dejar una fianza o valor reembolsable de USD 20  por bicicleta.</span>
+                    <span>Aplican T&C</span>
+                </div>
+            </div>
+            <div class="container-additional-info">
+                <div class="title-additional-info">
+                    <h3><strong>Información General</strong></h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-additional-info">
+                    <p style="color: #909390;" >Horario de atención:</p>
+                    <p style="color: #909390;" >- Lunes a Sábados 8am a 7pm.</p>
+                    <span style="color: #909390;" >Alquiler únicamente con reserva.</span>
+                </div>
+            </div>
+            <div class="container-include">
+                <div class="title-include">
+                    <h3><strong>Incluye:</strong></h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-include">
+                    <p style="color: #909390;" > - Casco ajustable.</p>
+                    <p style="color: #909390;" > - Candado tipo guaya de clave.</p>
+                    <p style="color: #909390;" > - Kit de Reparaciones.</p>
+                </div>
+            </div>
+        </div>      
+    </main>
+    <section class="container-related-products">
+        <h2><strong>Productos relacionados</strong></h2>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/bici2.jpg" alt="producto-1">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Alquiler MTB Suspensión Delantera</h3>
+                    </div>
+                    <div class="price">USD 5$</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/scooter-blanca.jpg" alt="producto-2">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Alquiler Scooter</h3>
+                    </div>
+                    <div class="price">USD 3$</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/bici3.jpg" alt="producto-3" >
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Alquiler Bicicleta de Ruta</h3>
+                    </div>
+                    <div class="price">USD 6$</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="color: #020736E0;">
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <img src="images/image 75.jpg" alt="logo">
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f" style="color: #020736E0;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter" style="color: #020736E0"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" style="color: #020736E0;"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube" style="color: #020736E0;"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">Compañía</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#">Acerca de Nosotros</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Sobre Nosotros</li>
+                    <li><a href="#">Correo:rodando@gmail.com</a></li>
+                    <li><a href="#">Contacto:+54-xxx-xxx</a></li>
+                    <li><a href="#">WhatsApp:+54-xxx-xxx</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Account</li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Mi perfil</a></li>
+                    <li><a href="#">Mis viajes</a></li>
+                    <li><a href="#">Registrarse</a></li>
+                </ul>
+                <ul class="box input-box">
+                    <li class="link_name">Suscripción</li>
+                    <li><input type="text" placeholder="Ingresa tu Email"></li>
+                    <li><input type="button" value="Suscribirse"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="bottom-text">
+                <span class="copyright-text">Copyright &#169; 2023 All rights reserved.</span>
+                <span class="policy-terms">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                </span>
+            </div>
+        </div>
+    </footer>  
+    
+</body>
+</html>
