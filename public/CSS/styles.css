@@ -599,6 +599,39 @@ img {
     }
 }
 
+/* ----- REGISTRO -----*/
+
+.titulo {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.parrafotitulo {
+    text-align: center;
+}
+
+.barra-superior {
+    background-color: #020736;
+}
+
+/*main*/
+
+
+.row {
+    background-color: #020736;
+    color: white;
+}
+
+.avisoformu {
+    color: white;
+}
+
+.yacuenta {
+    text-align: center;
+}
+
+
+
 /* ---- FOOTER ---- */
 
 .footer {
