@@ -616,7 +616,13 @@ img {
 /*main*/
 
 
-.row {
+.main-back-img {
+    background-image: url("/images/test2.jpg");
+    background-size: cover;
+
+}
+
+.row-form {
     background-color: #020736;
     color: white;
 }
@@ -628,8 +634,6 @@ img {
 .yacuenta {
     text-align: center;
 }
-
-
 
 /* ---- FOOTER ---- */
 
