@@ -570,6 +570,17 @@ img {
     .h6--precio-numero {
         font-size: small;
     }
+
+    .display-flex{
+        flex-direction: column;
+    }
+
+    .img-width-height {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        top:0;
+    }
 }
 /* -----  ------ */
 
