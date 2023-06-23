@@ -1,0 +1,366 @@
+
+
+#main__background--carrito {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(../img/bicicletas-ciudad.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 650px;
+	padding: 2rem 6rem;
+}
+
+.p-width {
+	width: max-content;
+}
+
+/*------------------------------------------------Nuevas clases Tomi -------------------------------------*/
+
+.section-productos {
+	display: flex;
+	flex-direction: column;
+}
+
+.display-flex {
+	display: flex;
+	width: max-content;
+}
+
+.contenedor-producto {
+	background-color: white;
+	padding: 2%;
+	border-radius: 5px;
+}
+
+.producto {
+	display: flex;
+	justify-content: space-around;
+}
+
+.producto-imagen {
+	width: 22%;
+}
+
+.producto-datos {
+	width: 70%;
+}
+
+.producto-datos h3 {
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+.producto-datos-inputs {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 20px;
+}
+
+.producto-datos-inputs-contratados {
+	width: 50%;
+}
+
+.contratado {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+}
+
+.contratado label {
+	font-size: 110%;
+	padding: 5%;
+}
+
+.contratado p {
+	font-size: 100%;
+	margin: 0;
+	text-align: start;
+}
+
+.producto-datos-inputs-seleccion {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.precio {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.precio label {
+	font-size: 25px;
+}
+
+.botones {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.botones button {
+	color: white;
+	background-color: #020736;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 5%;
+	width: 100px;
+	transition: all 400ms;
+}
+
+.botones button:hover,
+.botones button:hover a {
+	transform: scale(1.02);
+	opacity: 80%;
+	transition: 300ms;
+}
+
+.botones button a {
+	text-decoration: none;
+	color: white;
+}
+
+/*-----------------------------------------------Nuevas clases Tomi -------------------------------------*/
+
+.div__h2--detalle-carrito {
+	display: flex;
+	justify-content: center;
+	color: #111211;
+	padding-bottom: 2rem;
+	margin: 2% 0;
+}
+
+.div--container--precio-total {
+	display: flex;
+	justify-content: flex-end;
+	color: #111211;
+}
+
+.div--precio-numero,
+.div--precio-numero-total {
+	display: flex;
+	background-color: white;
+	border-radius: 6px;
+	padding: 2rem;
+	margin-bottom: 2rem;
+}
+
+.div-total-numero {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	border-bottom: 2px solid #e13633;
+}
+
+.h6--precio-numero {
+	margin-right: 2rem;
+	margin-top: 0.3rem;
+}
+
+.btn__container--realizar-pago {
+	border-bottom: 2px solid #e13633;
+}
+
+.btn--realizar-pago {
+	background-color: #020736;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 0.7rem;
+	margin: 1rem 0;
+}
+
+.btn--realizar-pago:hover {
+	transition: 400ms;
+	opacity: 80%;
+	transform: scale(1.02);
+}
+
+.div--products-details-container {
+	margin-top: 2rem;
+	margin-left: 10rem;
+}
+
+.div-img-products {
+	margin: 0 5rem;
+	border-radius: 6px;
+	box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.img-width-height {
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+}
+
+.div-container-products {
+	align-items: center;
+	display: grid;
+	margin-right: 5rem;
+}
+
+.p-titulo-tipo-rodado {
+	font-weight: bold;
+}
+
+.div-horas-cantidad {
+	display: flex;
+}
+
+.p-horas-cantidad {
+	font-weight: bold;
+}
+
+.div-numero {
+	display: flex;
+	align-items: center;
+}
+
+.p-numero {
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding-right: 3rem;
+}
+
+.div-btn-products {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-left: 3.4rem;
+}
+
+.horas,
+.cantidad {
+	width: 200px;
+}
+
+/************* MEDIA QUERY MAX-WIDTH*********************/
+
+@media (max-width: 1200px) {
+	.img-width-height {
+		width: 200px;
+		height: 100px;
+		position: relative;
+		top: 10px;
+	}
+
+	.div-img-products {
+		margin: 0 3rem;
+	}
+
+	.precio label {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1050px) {
+	.div-img-products {
+		margin: 1rem 1rem;
+		max-width: 100%;
+	}
+
+	.img-width-height {
+		min-width: 100px;
+		max-width: 100%;
+		height: 80px;
+		top: 5px;
+	}
+}
+
+@media (max-width: 950px) {
+	.producto-datos-inputs-seleccion {
+		margin-left: -3rem;
+	}
+}
+
+@media (max-width: 900px) {
+	.div--precio-numero {
+		padding: 1rem;
+	}
+
+	.botones button {
+		width: 70px;
+		padding: 3px;
+	}
+
+	.precio label {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 880px) {
+	.div--precio-numero {
+		flex-direction: column;
+		position: relative;
+	}
+
+	.producto-datos-inputs-seleccion {
+		margin-left: 0;
+		flex-direction: row;
+		position: inherit;
+		left: 240px;
+	}
+
+	.precio label {
+		font-size: 15px;
+		width: max-content;
+		margin: auto;
+	}
+
+	.botones {
+		position: inherit;
+		left: 118px;
+	}
+}
+
+@media (max-width: 800px) {
+	.display-flex {
+		width: min-content;
+	}
+
+	.producto-datos-inputs-seleccion {
+		left: 38px;
+	}
+
+	.botones {
+		left: 35px;
+	}
+}
+
+@media (max-width: 700px) {
+	.display-flex {
+		width: auto;
+	}
+
+	.botones {
+		left: 80px;
+	}
+}
+
+@media (max-width: 600px) {
+	.botones {
+		left: 50px;
+	}
+}
+
+@media (max-width: 560px) {
+	.div-img-products {
+		margin: 3rem 1rem;
+		max-width: 100%;
+	}
+
+	.img-width-height {
+		top: 25px;
+	}
+
+	.div-horas-cantidad {
+		display: block;
+	}
+
+	.producto-datos-inputs-seleccion {
+		left: 60px;
+	}
+
+	.botones {
+		left: 35px;
+	}
+}
