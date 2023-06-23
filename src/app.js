@@ -7,6 +7,8 @@ const path = require('path');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(
@@ -24,7 +26,6 @@ app.use('/',mainRoutes);
 app.use('/productos',productRoutes);
 
 app.use('/usuarios',userRoutes);
-
 
 app.listen(3010, function (req, res) {
     console.log("Servidor en puerto 3010 corriendo");

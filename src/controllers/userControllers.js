@@ -3,11 +3,11 @@ const path = require('path');
 const controlador = {
 
     login: function(req,res){
-        res.sendFile(path.join(__dirname, "../views/login.html"))
+        res.render("login");
     },
 
     register: function(req,res){
-        res.sendFile(path.join(__dirname, "../views/registro.html"))
+        res.render("registro");
     }
 }
 
