@@ -306,16 +306,6 @@ img {
 	}
 }
 
-footer::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 80px;
-	height: 1px;
-	width: 100%;
-	background: #ffffff;
-}
-
 footer .content {
 	background-color: #1f264c;
 	margin: 0px;
@@ -326,6 +316,7 @@ footer .content .top {
 	justify-content: space-between;
 	margin-bottom: 15px;
 	padding: 10px;
+	border-bottom: 1px solid white;
 }
 footer .content .top span {
 	font-size: 35px;
