@@ -2,71 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
-            src="https://kit.fontawesome.com/4e1b67b613.js"
-            crossorigin="anonymous"
-        ></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-            crossorigin="anonymous"
-        />
-        <script
-            defer
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"
-        ></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css"
-        />
-        <link rel="stylesheet" href="/CSS/styles.css" />
-
-        <title>Rodando</title>
+    <%- include('./partials/head') %>
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__navbar">
-            <div class="header__logo">
-                <a class="logo-link" href="/">
-                    <img
-                        src="/img/logo.png"
-                        alt="Bootstrap"
-                        width="280"
-                        height="50"
-                    />
-                </a>
-            </div>
-            <div class="menu-container">
-                <input type="checkbox" id="menu-toggle" />
-                <label for="menu-toggle" class="menu-icon"
-                    ><i class="fa-solid fa-bars"> </i
-                ></label>
-                <nav class="menu">
-                    <ul class="header__nav--menu">
-                        <li class="header__nav--item">
-                            <a class="link-nav" href="/">Home</a>
-                        </li>
-                        <li class="header__nav--item">
-                            <a class="link-nav" href="/login">Ingresa</a>
-                        </li>
-                        <li class="header__nav--item">
-                            <a class="link-nav active" href="/registro">Registrate</a>
-                        </li>
-                        <li class="header__nav--item me-5">
-                            <a class="link-nav" href="/carrito"><i class="fa-solid fa-cart-shopping cart-color"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
     <main class="main-back-img">
         <br>
         <br>
@@ -136,57 +76,7 @@
         <br>
         </form>
     </main class="main-back-img" >
-    <footer style="color: #020736E0;">
-        <div class="content">
-            <div class="top">
-                <div class="logo-details">
-                    <img src="images/image 75.jpg" alt="logo">
-                </div>
-                <div class="media-icons">
-                    <a href="#"><i class="fa-brands fa-facebook-f" style="color: #020736E0;"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter" style="color: #020736E0"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram" style="color: #020736E0;"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube" style="color: #020736E0;"></i></a>
-                </div>
-            </div>
-            <div class="link-boxes">
-                <ul class="box">
-                    <li class="link_name">Compañía</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                    <li><a href="#">Acerca de Nosotros</a></li>
-                    <li><a href="#">Trabaja con nosotros</a></li>
-                </ul>
-                <ul class="box">
-                    <li class="link_name">Sobre Nosotros</li>
-                    <li><a href="#">Correo:rodando@gmail.com</a></li>
-                    <li><a href="#">Contacto:+54-xxx-xxx</a></li>
-                    <li><a href="#">WhatsApp:+54-xxx-xxx</a></li>
-                </ul>
-                <ul class="box">
-                    <li class="link_name">Account</li>
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Mi perfil</a></li>
-                    <li><a href="#">Mis viajes</a></li>
-                    <li><a href="#">Registrarse</a></li>
-                </ul>
-                <ul class="box input-box">
-                    <li class="link_name">Suscripción</li>
-                    <li><input type="text" placeholder="Ingresa tu Email"></li>
-                    <li><input type="button" value="Suscribirse"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="bottom-details">
-            <div class="bottom-text">
-                <span class="copyright-text">Copyright &#169; 2023 All rights reserved.</span>
-                <span class="policy-terms">
-                    <a href="#">Políticas de privacidad</a>
-                    <a href="#">Términos y condiciones</a>
-                </span>
-            </div>
-        </div>
-    </footer> 
+    <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
 
 </body>

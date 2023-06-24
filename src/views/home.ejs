@@ -1,63 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://kit.fontawesome.com/4e1b67b613.js" crossorigin="anonymous"></script>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-			crossorigin="anonymous" />
-		<script
-			defer
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-			crossorigin="anonymous"></script>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" />
-		<link rel="stylesheet" href="/CSS/styles.css" />
-
-		<title>Rodando</title>
+		<%- include('./partials/head') %>
 	</head>
 	<body class="d-flex flex-column">
-		<header class="header">
-			<div class="header__navbar">
-				<div class="header__logo">
-					<a class="logo-link" href="/">
-						<img
-							src="/img/logo.png"
-							alt="Bootstrap"
-							width="280"
-							height="50" />
-					</a>
-				</div>
-				<div class="menu-container">
-					<input type="checkbox" id="menu-toggle" />
-					<label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"> </i></label>
-					<nav class="menu">
-						<ul class="header__nav--menu">
-							<li class="header__nav--item">
-								<a class="link-nav active" href="/">Home</a>
-							</li>
-							<li class="header__nav--item">
-								<a class="link-nav" href="/login">Ingresa</a>
-							</li>
-							<li class="header__nav--item">
-								<a class="link-nav" href="/registro">Registrate</a>
-							</li>
-							<li class="header__nav--item me-5">
-								<a class="link-nav" href="/carrito"
-									><i class="fa-solid fa-cart-shopping cart-color"></i
-								></a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
+		<%- include('./partials/header') %>
 		<main class="flex-grow-1">
 			<div class="principal">
 				<section
