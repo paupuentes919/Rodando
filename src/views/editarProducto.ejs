@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/CSS/styles-productos-forms.css" />
+    </head>
+
+    <body>
+        <div class="vh-100 d-flex align-items-center products-form__container">
+            <main class="container">
+                <h1 class="text-center mb-4">Editar Producto</h1>
+                <form action="/productos" method="post" class="form">
+                    <div class="row mt-4">
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="title"
+                                >Titulo</label
+                            >
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="title"
+                                name="title"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="price"
+                                >Costo por hora</label
+                            >
+                            <input
+                                class="form-control"
+                                type="number"
+                                id="price"
+                                name="price"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md">
+                            <label for="color" class="form-label fw-semibold"
+                                >Color</label
+                            >
+                            <select
+                                name="color"
+                                id="color"
+                                class="form-control"
+                            >
+                                <option value="red">Rojo</option>
+                                <option value="blue">Azul</option>
+                                <option value="green">Verde</option>
+                                <option value="black">Negro</option>
+                                <option value="yellow">Amarillo</option>
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="img"
+                                >Imagen</label
+                            >
+                            <input
+                                class="form-control"
+                                type="file"
+                                id="img"
+                                name="img"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <label class="form-label fw-semibold" for="desc"
+                                >Descripcion</label
+                            >
+                            <textarea
+                                class="form-control"
+                                id="desc"
+                                name="desc"
+                                rows="6"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center gap-4">
+                        <button class="btn send-btn mt-4 px-5 py-3">
+                            <h5>Actualizar</h5>
+                        </button>
+                        <button class="btn cancel-btn mt-4 px-5 py-3">
+                            <h5>Cancelar</h5>
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </body>
+</html>

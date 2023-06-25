@@ -1,0 +1,28 @@
+/* FORMULARIOS */
+
+.products-form__container {
+    background: #020736;
+    color: #fff;
+}
+
+.send-btn {
+    background: #207c09;
+}
+
+.send-btn:hover {
+    background: #16470a;
+}
+
+.cancel-btn {
+    background: #e13633;
+}
+
+.cancel-btn:hover {
+    background: #a32826;
+}
+
+.send-btn h5,
+.cancel-btn h5 {
+    color: #fff;
+    margin: 0;
+}
