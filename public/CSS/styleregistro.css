@@ -14,7 +14,7 @@
 /*main*/
 
 .main-back-img {
-	background-image: url("/images/test2.jpg");
+	background-image: url("https://rodando.alwaysdata.net/test2.jpg");
 	background-size: cover;
 }
 
