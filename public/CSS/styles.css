@@ -248,41 +248,6 @@ img {
 	}
 }
 
-/* ----- REGISTRO -----*/
-
-.titulo {
-	text-align: center;
-	text-decoration: underline;
-}
-
-.parrafotitulo {
-	text-align: center;
-}
-
-.barra-superior {
-	background-color: #020736;
-}
-
-/*main*/
-
-.main-back-img {
-	background-image: url("/images/test2.jpg");
-	background-size: cover;
-}
-
-.row-form {
-	background-color: #020736;
-	color: white;
-}
-
-.avisoformu {
-	color: white;
-}
-
-.yacuenta {
-	text-align: center;
-}
-
 /* ---- FOOTER ---- */
 
 .footer {
