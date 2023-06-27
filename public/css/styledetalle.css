@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #chek {
@@ -126,6 +125,10 @@ main {
 .container-quantity h3 {
 	font-size: 15px;
 }
+.container-quantity-counter{ 
+	display: flex; 
+	background-color: rgb(241, 241, 241);
+}
 .input-quantity {
 	background-color: rgb(241, 241, 241);
 	border: none;
@@ -159,9 +162,8 @@ main {
 .btn-increm-decrem {
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	top: 22px;
-	right: 7px;
+	justify-content: center;
+	padding: 0 3px;
 }
 .fa-chevron-up:hover {
 	color: #df3c4d;
