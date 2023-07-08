@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "titulo": "Scooter big fox 1.0",
+    "tipo": "Monopatin eléctrico",
+    "color": "Negro",
+    "rodado": "20R",
+    "precio": 2000,
+    "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit. Exercitationem consectetur nostrum sunt eligendi eos quia aut sint mollitia voluptatum eveniet necessitatibus consequatur in animi nobis, pariatur voluptatem voluptas illo odit temporibus vitae veritatis repellendus!",
+    "imagen": "https://rodando.alwaysdata.net/monopatin-1.png- HABLAR CON JONY PARA QUE LA SUBA"
+  },
+  {
+    "id": 2,
+    "titulo": "Scooter big fox 2.0",
+    "tipo": "Monopatin eléctrico",
+    "color": "Negro",
+    "rodado": "15R",
+    "precio": 1800,
+    "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit. Exercitationem consectetur nostrum sunt eligendi eos quia aut sint mollitia voluptatum eveniet necessitatibus consequatur in animi nobis, pariatur voluptatem voluptas illo odit temporibus vitae veritatis repellendus!",
+    "imagen": "https://rodando.alwaysdata.net/monopatin-1.png- HABLAR CON JONY PARA QUE LA SUBA"
+  },
+  {
+    "id": 3,
+    "titulo": "Scooter big fox 3.0",
+    "tipo": "Monopatin eléctrico",
+    "color": "Negro",
+    "rodado": "10R",
+    "precio": 1600,
+    "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit. Exercitationem consectetur nostrum sunt eligendi eos quia aut sint mollitia voluptatum eveniet necessitatibus consequatur in animi nobis, pariatur voluptatem voluptas illo odit temporibus vitae veritatis repellendus!",
+    "imagen": "https://rodando.alwaysdata.net/monopatin-3.png- HABLAR CON JONY PARA QUE LA SUBA"
+  }
+]
