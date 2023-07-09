@@ -1,10 +1,9 @@
-const path = require('path');
+const path = require("path");
 
 const controlador = {
-
-    home: function(req,res){
-        res.render("home");
-    }
-}
+  home: function (req, res) {
+    res.render("home");
+  },
+};
 
 module.exports = controlador;
