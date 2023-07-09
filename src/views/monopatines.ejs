@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-		<%- include('./partials/head') %>
-    <link rel="stylesheet" href="/CSS/stylecarrito.css" />
-</head>
+    <%- include('./partials/head') %>
+  </head>
   <body>
     <!--------------------------------------------------HEADER----------------------------------------------------------->
-		<%- include('./partials/header') %>
+    <%- include('./partials/header') %>
+    <link rel="stylesheet" href="/CSS/stylesbicicletas.css" />
     <!---------------------------------------------------MAIN------------------------------------------------------------>
-    <main>
-
+    <main id="bicicletas-img">
+      <div class="container container-card">
+        <div class="row row-cols-4 gap-card">
+          <% mono.forEach(monopatin => { %>
+          <div class="card col">
+            <img
+              src="<%= monopatin.imagen %>"
+              class="card-img-top"
+              alt="monopatin"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= monopatin.titulo %></h5>
+              <p class="card-text"><%= monopatin.descripcion %></p>
+              <a
+                href="../productos/detalle/<%= monopatin.id %>"
+                class="btn btn-primary"
+                >Ver detalle</a
+              >
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
     </main>
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
   </body>
 </html>

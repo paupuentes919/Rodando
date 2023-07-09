@@ -9,7 +9,7 @@
         <div class="vh-100 d-flex align-items-center products-form__container">
             <main class="container">
                 <h1 class="text-center mb-4">Crear Producto</h1>
-                <form action="/productos" method="post" class="form">
+                <form action="/productos/crear" method="post" class="form" enctype="multipart/form-data">
                     <div class="row mt-4">
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="title"
@@ -20,6 +20,30 @@
                                 type="text"
                                 id="title"
                                 name="title"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label for="vehiculo" class="form-label fw-semibold"
+                                >Vehiculo</label
+                            >
+                            <select
+                                name="vehiculo"
+                                id="vehiculo"
+                                class="form-control"
+                            >
+                                <option value="bicicleta">Bicicleta</option>
+                                <option value="monopatin">Monopatin</option>
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="rodado"
+                                >Rodado</label
+                            >
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="rodado"
+                                name="rodado"
                             />
                         </div>
                         <div class="col-md">
@@ -44,22 +68,38 @@
                                 id="color"
                                 class="form-control"
                             >
-                                <option value="red">Rojo</option>
-                                <option value="blue">Azul</option>
-                                <option value="green">Verde</option>
-                                <option value="black">Negro</option>
-                                <option value="yellow">Amarillo</option>
+                                <option value="Rojo">Rojo</option>
+                                <option value="Azul">Azul</option>
+                                <option value="Verde">Verde</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Amarillo">Amarillo</option>
                             </select>
                         </div>
                         <div class="col-md">
-                            <label class="form-label fw-semibold" for="img"
+                            <label for="tipo" class="form-label fw-semibold"
+                                >Tipo</label
+                            >
+                            <select
+                                name="tipo"
+                                id="tipo"
+                                class="form-control"
+                            >
+                                <option value="bicicleta urbana">Bicicleta urbana</option>
+                                <option value="bicicleta de montaña">Bicicleta de montaña</option>
+                                <option value="bicicleta eléctrica">Bicicleta eléctrica</option>
+                                <option value="monopatin eléctrico">Monopatin eléctrico</option>
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="imagen"
                                 >Imagen</label
                             >
                             <input
                                 class="form-control"
                                 type="file"
-                                id="img"
-                                name="img"
+                                id="imagen"
+                                name="imagen"
                             />
                         </div>
                     </div>

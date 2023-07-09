@@ -1,0 +1,101 @@
+[
+ {
+  "id": 1,
+  "vehiculo": "Bicicleta",
+  "titulo": "Raleigh strada 1.0",
+  "tipo": "Bicicleta urbana",
+  "color": "Azul",
+  "rodado": "700CC",
+  "precio": 1000,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-1.png"
+ },
+ {
+  "id": 2,
+  "vehiculo": "Bicicleta",
+  "titulo": "Raleigh strada 2.0",
+  "tipo": "Bicicleta urbana",
+  "color": "Negro",
+  "rodado": "700CC",
+  "precio": 1000,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-2.png - HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 3,
+  "vehiculo": "Bicicleta",
+  "titulo": "Venzo skyline 1.0",
+  "tipo": "Bicicleta de montaña",
+  "color": "Verde",
+  "rodado": "27R",
+  "precio": 2000,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-3.png - HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 4,
+  "vehiculo": "Bicicleta",
+  "titulo": "Venzo skyline 2.0",
+  "tipo": "Bicicleta de montaña",
+  "color": "Rojo",
+  "rodado": "29R",
+  "precio": 2200,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-4.png - HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 5,
+  "vehiculo": "Bicicleta",
+  "titulo": "Fire bird 1.0",
+  "tipo": "Bicicleta eléctrica",
+  "color": "Negro",
+  "rodado": "27R",
+  "precio": 1500,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-5.png - HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 6,
+  "vehiculo": "Bicicleta",
+  "titulo": "Fire bird 2.0",
+  "tipo": "Bicicleta eléctrica",
+  "color": "Blanco",
+  "rodado": "29R",
+  "precio": 1500,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png - HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 7,
+  "vehiculo": "Monopatin",
+  "titulo": "Scooter big fox 1.0",
+  "tipo": "Monopatin eléctrico",
+  "color": "Negro",
+  "rodado": "20R",
+  "precio": 2000,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/monopatin-1.png"
+ },
+ {
+  "id": 8,
+  "vehiculo": "Monopatin",
+  "titulo": "Scooter big fox 2.0",
+  "tipo": "Monopatin eléctrico",
+  "color": "Negro",
+  "rodado": "15R",
+  "precio": 1800,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/monopatin-1.png- HABLAR CON JONY PARA QUE LA SUBA"
+ },
+ {
+  "id": 9,
+  "vehiculo": "Monopatin",
+  "titulo": "Scooter big fox 3.0",
+  "tipo": "Monopatin eléctrico",
+  "color": "Negro",
+  "rodado": "10R",
+  "precio": 1600,
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/monopatin-3.png- HABLAR CON JONY PARA QUE LA SUBA"
+ }
+]

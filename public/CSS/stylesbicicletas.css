@@ -1,0 +1,14 @@
+#bicicletas-img {
+    background-image: url("/img/fondo.png");
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+
+.container-card {
+    padding: 3rem 0;
+}
+
+.gap-card {
+    gap: 2rem;
+    justify-content: center;
+}

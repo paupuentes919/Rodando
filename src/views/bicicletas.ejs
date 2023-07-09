@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-		<%- include('./partials/head') %>
-    <link rel="stylesheet" href="/CSS/stylecarrito.css" />
+    <%- include('./partials/head') %>
   </head>
   <body>
     <!--------------------------------------------------HEADER----------------------------------------------------------->
-		<%- include('./partials/header') %>
+    <%- include('./partials/header') %>
+    <link rel="stylesheet" href="/CSS/stylesbicicletas.css" />
     <!---------------------------------------------------MAIN------------------------------------------------------------>
-    <main>
-        <div class="grid text-center">
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-            <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+    <main id="bicicletas-img">
+      <div class="container container-card">
+        <div class="row row-cols-4 gap-card">
+          <% bici.forEach(bicicleta => { %>
+          <div class="card col">
+            <img
+              src="<%= bicicleta.imagen %>"
+              class="card-img-top"
+              alt="bicicleta"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= bicicleta.titulo %></h5>
+              <p class="card-text"><%= bicicleta.descripcion %></p>
+              <a
+                href="../productos/detalle/<%= bicicleta.id %>"
+                class="btn btn-primary"
+                >Ver detalle</a
+              >
+            </div>
           </div>
+          <% }) %>
+        </div>
+      </div>
     </main>
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
   </body>
 </html>

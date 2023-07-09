@@ -10,36 +10,25 @@
     <main>
         <div class="card">
             <div class="face front">
-                <img src="https://rodando.alwaysdata.net/bicicletabasica.jpg">
+                <img src="<%= product.imagen %>">
             </div>
             <div class="face back">
                <h3><strong>Descripción</strong></h3>
-               <p style="color: #7b807a;">  - Cuadro en acero talla S o M</p>
-               <p style="color: #7b807a;">  - Tenedor en acero</p>
-               <p style="color: #7b807a;">  - Llanta de 26 pulgadas</p>
-               <p style="color: #7b807a;">  - Frenos V-brake</p>
-               <p style="color: #7b807a;">  - 6 cambios</p>
-               <p style="color: #7b807a;">  - Pedales planos</p>
+               <p style="color: #7b807a;">  - <%= product.titulo %></p>
+               <p style="color: #7b807a;">  - <%= product.tipo %></p>
+               <p style="color: #7b807a;">  - <%= product.descripcion %></p>
+               <p style="color: #7b807a;">  - <%= product.rodado %></p>
+               <p style="color: #7b807a;">  - <%= product.color %></p>
                <p class="aclaracion">*La imagen publicada es de referencia y sus características pueden llegar a variar de acuerdo con la flota disponible.</p>
             </div>
         </div>
         <div class="container-info_product">
             <div class="container-title-product">
-                <h2><strong>MTB Básica</strong></h2>
+                <h2><strong><%= product.titulo %></strong></h2>
             </div>
             <div class="container-price">
                 <h3><strong>Costo hora</strong></h3>
-                <span>  <i class="fa-solid fa-dollar-sign"></i>  USD 4 </span>   
-            </div>
-            <div class="container-details">
-                <div class="form-group">
-                    <label for="colour">Color</label>
-                    <select name="coloUr" id="colour">
-                        <option disabled selected value="">Escoge una Opción</option>
-                        <option value="roja">Roja</option>
-                        <option value="amarilla">Amarilla</option>
-                    </select>
-                </div>
+                <span>  <i class="fa-solid fa-dollar-sign"></i><%= product.precio %></span>   
             </div>
             <div class="container-add-cart">
                 <div class="container-quantity">
