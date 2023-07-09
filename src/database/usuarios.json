@@ -1,0 +1,12 @@
+[
+    {
+     "id": 1,
+     "nombre": "Juan",
+     "apellido": "Perez",
+     "mail": "juanperez@gmail.com",
+     "contraseña": "",
+     "contraseña2": "",
+     "telefono": 1145328940,
+     "direccion": "Calle Falsa 123"
+    }
+]

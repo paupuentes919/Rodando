@@ -1,8 +1,6 @@
-const productControllers = require("./../controllers/productControllers");
-
 const express = require("express");
-
 const router = express.Router();
+const productControllers = require("./../controllers/productControllers");
 
 router.get("/carrito", productControllers.carrito);
 
