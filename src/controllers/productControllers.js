@@ -80,6 +80,21 @@ const pcontrolador = {
 
   },
 
+  borrar: function (req, res) {
+    idParaBorrar = req.params.id;
+    nuevosProductos = productos.filter((e)=>{
+      return e.id != idParaBorrar;
+    });
+
+    console.log(idParaBorrar)
+    console.log(nuevosProductos)
+
+    fs.writeFileSync(productosPath,JSON.stringify(nuevosProductos, null, " "));
+
+    res.redirect('/');
+
+  },
+
   carrito: function (req, res) {
     res.render("carrito");
   },

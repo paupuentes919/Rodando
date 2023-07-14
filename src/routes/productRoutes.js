@@ -38,6 +38,7 @@ router.put("/editar/:id", productControllers.actualizar);
 
 /* Form delete */
 
+router.delete("/borrar/:id", productControllers.borrar);
 
 /* Carrito */
 router.get("/carrito", productControllers.carrito);

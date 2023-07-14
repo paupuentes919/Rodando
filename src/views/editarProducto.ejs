@@ -106,11 +106,13 @@
                         <button  class="btn send-btn mt-4 px-5 py-3">
                             <h5>Actualizar</h5>
                         </button>
+                    </form>
+                        <form action="/productos/borrar/<%= prod.id %>?_method=DELETE" method="POST">
                         <button class="btn cancel-btn mt-4 px-5 py-3">
-                            <h5>Cancelar</h5>
+                            <h5>Eliminar</h5>
                         </button>
+                        </form>
                     </div>
-                </form>
             </main>
         </div>
     </body>
