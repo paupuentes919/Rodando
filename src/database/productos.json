@@ -17,9 +17,9 @@
   "tipo": "Bicicleta urbana",
   "color": "Negro",
   "rodado": "700CC",
-  "precio": 1000,
+  "precio": "2500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-2.png - HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "imagen"
  },
  {
   "id": 3,
@@ -37,22 +37,22 @@
   "vehiculo": "Bicicleta",
   "titulo": "Venzo skyline 2.0",
   "tipo": "Bicicleta de montaña",
-  "color": "Rojo",
+  "color": "Azul",
   "rodado": "29R",
-  "precio": 2200,
+  "precio": "2500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-4.png - HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "imagen"
  },
  {
   "id": 5,
   "vehiculo": "Bicicleta",
   "titulo": "Fire bird 1.0",
   "tipo": "Bicicleta eléctrica",
-  "color": "Negro",
+  "color": "Verde",
   "rodado": "27R",
-  "precio": 1500,
+  "precio": "1500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-5.png - HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "imagen"
  },
  {
   "id": 6,

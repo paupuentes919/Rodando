@@ -28,16 +28,16 @@ const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 
-/* implementacion de routes */
-app.use("/", mainRoutes);
-app.use("/productos", productRoutes);
-app.use("/usuarios", userRoutes);
-
 /* form config */
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 /* Configurar metodos put delete patch */
 app.use(methodOverride('_method'));
+
+/* implementacion de routes */
+app.use("/", mainRoutes);
+app.use("/productos", productRoutes);
+app.use("/usuarios", userRoutes);
 
 /* puerto */
 app.listen(3010, function (req, res) {

@@ -32,7 +32,8 @@ router.get("/crear", productControllers.crearVista);
 router.post("/crear", upload.single('imagen'), productControllers.crearItemEnJSON);
 
 /* Form update */
-router.get("/editar", productControllers.editar);
+router.get("/editar/:id", productControllers.editar);
+router.put("/editar/:id", productControllers.actualizar);
 
 
 /* Form delete */

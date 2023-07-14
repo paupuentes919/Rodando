@@ -25,9 +25,11 @@ const pcontrolador = {
       res.render("detalle", { product });
     }
   },
+
   crearVista: function (req, res) {
     res.render("crearProducto");
   },
+
   crearItemEnJSON: function (req, res) {
     /* creo una variable para generar el nuevo producto del req.body */
     let nuevoProducto = {
@@ -52,9 +54,32 @@ const pcontrolador = {
     fs.writeFileSync(productosPath, productosJSON);
     res.redirect("/");
   },
+
   editar: function (req, res) {
-    res.render("editarProducto");
+    let prod = productos.find((item) => item.id == req.params.id);
+    res.render("editarProducto",{ prod });
   },
+
+  actualizar: function (req, res) {
+   
+    idParaEditar = req.params.id;
+    
+      for(let p of productos){
+        if(idParaEditar == p.id){
+        p.titulo = req.body.title;
+        p.precio = req.body.price;
+        p.color = req.body.color;
+        p.descripcion = req.body.description;
+        p.imagen = "imagen";
+        }
+      };
+
+    fs.writeFileSync(productosPath,JSON.stringify(productos, null, " "));
+
+    res.redirect('/');
+
+  },
+
   carrito: function (req, res) {
     res.render("carrito");
   },
