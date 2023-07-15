@@ -9,7 +9,7 @@
         <div class="vh-100 d-flex align-items-center products-form__container">
             <main class="container">
                 <h1 class="text-center mb-4">Editar Producto</h1>
-                <form action="/productos/editar/<%= prod.id %>?_method=PUT" method="POST" class="form">
+                <form action="/productos/editar/<%= prod.id %>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
                     <div class="row mt-4">
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="title">Titulo</label>
@@ -19,6 +19,28 @@
                                 id="title"
                                 name="title"
                                 value="<%= prod.titulo %>"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
+                            <select name="vehiculo" id="vehiculo" class="form-control">
+                                <% if(prod.vehiculo == "Bicicleta") { %>
+                                <option value="Bicicleta" selected>Bicicleta</option>
+                                <option value="Monopatin">Monopatin</option>
+                                <% } else  { %>
+                                <option value="Bicicleta">Bicicleta</option>
+                                <option value="Monopatin" selected>Monopatin</option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="rodado">Rodado</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="rodado"
+                                name="rodado"
+                                value="<%= prod.rodado %>"
                             />
                         </div>
                         <div class="col-md">
@@ -79,6 +101,32 @@
                                     <option value="Amarillo">Amarillo</option>
                                     <option value="Blanco" selected>Blanco</option>
                                 <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label for="tipo" class="form-label fw-semibold">Tipo</label>
+                            <select name="tipo" id="tipo" class="form-control">
+                                <%  if (prod.tipo == "Bicicleta urbana")  { %>
+                                   <option value="Bicicleta urbana" selected>Bicicleta urbana</option>
+                                   <option value="Bicicleta de montaña">Bicicleta de montaña</option>
+                                   <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
+                                   <option value="Monopatin eléctrico">Monopatin eléctrico</option>
+                                <% } if (prod.tipo == "Bicicleta de montaña")  { %>
+                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
+                                    <option value="Bicicleta de montaña" selected>Bicicleta de montaña</option>
+                                    <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
+                                    <option value="Monopatin eléctrico">Monopatin eléctrico</option>
+                                <% } if (prod.tipo == "Bicicleta eléctrica")  { %>
+                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
+                                    <option value="Bicicleta de montaña">Bicicleta de montaña</option>
+                                    <option value="Bicicleta eléctrica" selected>Bicicleta eléctrica</option>
+                                    <option value="Monopatin eléctrico">Monopatin eléctrico</option>
+                                <% } if (prod.tipo == "Monopatin eléctrico")  { %>
+                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
+                                    <option value="Bicicleta de montaña">Bicicleta de montaña</option>
+                                    <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
+                                    <option value="Monopatin eléctrico" selected>Monopatin eléctrico</option>
+                                <% } %>        
                             </select>
                         </div>
                         <div class="col-md">

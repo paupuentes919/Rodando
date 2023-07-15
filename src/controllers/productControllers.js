@@ -67,10 +67,15 @@ const pcontrolador = {
       for(let p of productos){
         if(idParaEditar == p.id){
         p.titulo = req.body.title;
+        p.vehiculo = req.body.vehiculo;
+        p.rodado = req.body.rodado;
         p.precio = req.body.price;
         p.color = req.body.color;
         p.descripcion = req.body.description;
-        p.imagen = "imagen";
+          if(req.file){
+            fs.unlinkSync(productosPath,p.imagen);
+            p.imagen = req.file.filename;
+          }
         }
       };
 

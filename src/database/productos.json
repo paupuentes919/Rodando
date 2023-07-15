@@ -17,8 +17,8 @@
   "tipo": "Bicicleta urbana",
   "color": "Negro",
   "rodado": "700CC",
-  "precio": "2500",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "precio": "2800",
+  "descripcion": "Bicicleta aerodinámica, utilizada para rutas de tierra y montaña.",
   "imagen": "imagen"
  },
  {
@@ -53,17 +53,6 @@
   "precio": "1500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
   "imagen": "imagen"
- },
- {
-  "id": 6,
-  "vehiculo": "Bicicleta",
-  "titulo": "Fire bird 2.0",
-  "tipo": "Bicicleta eléctrica",
-  "color": "Blanco",
-  "rodado": "29R",
-  "precio": 1500,
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png - HABLAR CON JONY PARA QUE LA SUBA"
  },
  {
   "id": 7,

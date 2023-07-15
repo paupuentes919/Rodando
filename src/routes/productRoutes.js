@@ -33,7 +33,7 @@ router.post("/crear", upload.single('imagen'), productControllers.crearItemEnJSO
 
 /* Form update */
 router.get("/editar/:id", productControllers.editar);
-router.put("/editar/:id", productControllers.actualizar);
+router.put("/editar/:id",upload.single('imagen'), productControllers.actualizar);
 
 
 /* Form delete */
