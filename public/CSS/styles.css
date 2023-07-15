@@ -39,7 +39,8 @@ img {
   color: aliceblue;
   font-size: large;
   font-weight: 600;
-  padding: 0.3rem;
+  padding: 0rem;
+  margin: 0 0.3rem;
 }
 .link-nav:hover {
   color: #e13633;
@@ -62,6 +63,56 @@ img {
 .cart-color {
   color: #fff;
 }
+
+/*inicio icono usuario */
+
+.dropdown1-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown1-checkbox {
+  display: none;
+}
+
+.dropdown1-menu {
+  display: none;
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  list-style-type: none;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.dropdown1-item {
+  padding: 10px;
+}
+
+.dropdown1-item a {
+  color: rgb(214, 210, 210);
+  text-decoration: none;
+}
+.link-subMenu:hover {
+  color: #e13633;
+  border-bottom: #e13633;
+  transition: 300ms;
+}
+.dropdown1-checkbox:checked ~ .dropdown1-menu {
+  display: block;
+  margin-top: 0rem;
+  z-index: 10;
+  background-color: #020736;
+  border-radius: 5px;
+  top: 4rem;
+  right: 1rem;
+  width: 10rem;
+  padding: 1rem 0;
+  box-shadow: 2px 2px 10px rgb(61, 61, 62);
+}
+
+/* fin icono usuario */
 
 /* ----- PRODUCTOS ------ */
 
@@ -209,4 +260,72 @@ img {
 
 .text-justify {
   text-align: justify !important;
+}
+/************* MEDIA QUERY MAX-WIDTH*********************/
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    top: 0.3rem;
+    right: 1.4rem;
+    padding: 0.5rem;
+    background-color: #c72f2d;
+    color: aliceblue;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 6px;
+    z-index: 10;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    display: block;
+    z-index: 10;
+    margin-top: 2rem;
+    background-color: #020736;
+    border-radius: 5px;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    width: 11rem;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 10px rgb(61, 61, 62);
+  }
+  .header__nav--menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: auto;
+  }
+
+  .dropdown1-menu {
+    position: relative;
+    margin-top: 0rem;
+    z-index: 10;
+    background-color: none;
+    border-radius: 5px;
+    top: 0;
+    right: 1rem;
+    width: 100%;
+    padding: 0 0;
+    box-shadow: none;
+  }
+  .dropdown1-checkbox:checked ~ .dropdown1-menu {
+    display: block;
+    margin-top: 0rem;
+    z-index: 10;
+    background-color: none;
+    position: relative;
+    border-radius: 5px;
+    top: 0.3rem;
+    right: 0;
+    width: 100%;
+    padding: 0 0;
+    box-shadow: none;
+    border: none;
+  }
 }
