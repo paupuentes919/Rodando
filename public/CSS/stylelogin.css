@@ -1,87 +1,87 @@
 .body-login {
-	font-family: "Courier New", Courier, monospace;
-	justify-content: center;
-	align-items: center;
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .h1-login {
-	text-align: center;
-	font-weight: 700;
+  text-align: center;
+  font-weight: 700;
 }
 
 .form-login {
-	background-image: url("/images/bicigirl.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding: 40px 0;
-	border-radius: 10px;
+  background-image: url("/images/bicigirl.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 40px 0;
+  border-radius: 10px;
 }
 
 .div-login {
-	width: 40%;
-	height: 50%;
-	margin: auto;
-	background-image: url("/images/test2.jpg");
-	background-size: cover;
+  width: 40%;
+  height: 50%;
+  margin: auto;
+  background-image: url("/images/test2.jpg");
+  background-size: cover;
 }
 
 form .grupo-login {
-	position: relative;
-	margin: 45px;
+  position: relative;
+  margin: 45px;
 }
 
 .input-login {
-	background: none;
-	color: #c6c6c6;
-	font-size: 18px;
-	padding: 10px 10px 10px 5px;
-	display: block;
-	width: 100%;
-	border: none;
-	border-bottom: 1px solid black;
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 .input-login:focus {
-	outline: none;
-	color: #5e5e5e;
+  outline: none;
+  color: #5e5e5e;
 }
 
 .label-login {
-	color: var(--colorTextos);
-	font-size: 16px;
-	position: absolute;
-	left: 5px;
-	top: 10px;
-	transition: 0.5s ease all;
-	pointer-events: none;
+  color: var(--colorTextos);
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease all;
+  pointer-events: none;
 }
 
 .input-login:focus ~ .label-login,
 .input-login:valid ~ .label-login {
-	top: -14px;
-	font-size: 12px;
-	color: #2196f3;
+  top: -14px;
+  font-size: 12px;
+  color: #2196f3;
 }
 
 .btn-login {
-	font-family: "Courier New", Courier, monospace;
-	background: #1f264c;
-	border: none;
-	display: block;
-	width: 80%;
-	margin: 10px auto;
-	color: #fff;
-	height: 40px;
-	font-size: 20px;
-	cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  background: #1f264c;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
-	.form-login {
-		width: 100%;
-	}
+  .form-login {
+    width: 100%;
+  }
 }
