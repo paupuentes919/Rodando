@@ -1,32 +1,37 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .titulo-formulario {
-	text-align: center;
-	text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .parrafotitulo {
-	text-align: center;
+  text-align: center;
 }
 
 .barra-superior {
-	background-color: #020736;
+  background-color: #020736;
 }
 
 /*main*/
 
 .main-back-img {
-	background-image: url("https://rodando.alwaysdata.net/test2.jpg");
-	background-size: cover;
+  background-image: url("https://rodando.alwaysdata.net/test2.jpg");
+  background-size: cover;
 }
 
 .row-form {
-	background-color: #020736;
-	color: white;
+  background-color: #020736;
+  color: white;
 }
 
 .avisoformu {
-	color: white;
+  font-size: small;
+  color: white;
 }
 
 .yacuenta {
-	text-align: center;
+  text-align: center;
 }

@@ -168,6 +168,10 @@ img {
   background-repeat: repeat;
   background-attachment: fixed;
 }
+.about-us h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
 
 .about-us__left {
   background: #fffa;
