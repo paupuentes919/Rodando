@@ -19,6 +19,7 @@
 }
 main {
   display: flex;
+  flex-direction: column;
   gap: 80px;
   margin-bottom: 80px;
   padding: 50px 300px;
@@ -78,6 +79,9 @@ main {
 }
 .container-title-product h2 {
   font-size: 44px;
+}
+.intento {
+  width: 800px;
 }
 .container-price {
   padding-bottom: 20px;
