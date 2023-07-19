@@ -15,11 +15,11 @@
   "vehiculo": "Bicicleta",
   "titulo": "Raleigh strada 2.0",
   "tipo": "Bicicleta urbana",
-  "color": "Negro",
+  "color": "Verde",
   "rodado": "700CC",
   "precio": "2800",
   "descripcion": "Bicicleta aerodinámica, utilizada para rutas de tierra y montaña.",
-  "imagen": "imagen"
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-2.png"
  },
  {
   "id": 3,
@@ -30,30 +30,41 @@
   "rodado": "27R",
   "precio": 2000,
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-3.png - HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-3.png"
  },
  {
   "id": 4,
   "vehiculo": "Bicicleta",
   "titulo": "Venzo skyline 2.0",
   "tipo": "Bicicleta de montaña",
-  "color": "Azul",
+  "color": "Roja",
   "rodado": "29R",
   "precio": "2500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "imagen"
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-4.png"
  },
  {
   "id": 5,
   "vehiculo": "Bicicleta",
   "titulo": "Fire bird 1.0",
   "tipo": "Bicicleta eléctrica",
-  "color": "Verde",
+  "color": "Negra",
   "rodado": "27R",
   "precio": "1500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "imagen"
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-5.png"
  },
+ {
+    "id": 6,
+    "vehiculo": "Bicicleta",
+    "titulo": "Fire bird 2.0",
+    "tipo": "Bicicleta eléctrica",
+    "color": "Blanca",
+    "rodado": "27R",
+    "precio": "2500",
+    "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+    "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png"
+   },
  {
   "id": 7,
   "vehiculo": "Monopatin",
@@ -74,7 +85,7 @@
   "rodado": "15R",
   "precio": 1800,
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/monopatin-1.png- HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "https://rodando.alwaysdata.net/monopatin-2.png"
  },
  {
   "id": 9,
@@ -85,6 +96,6 @@
   "rodado": "10R",
   "precio": 1600,
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/monopatin-3.png- HABLAR CON JONY PARA QUE LA SUBA"
+  "imagen": "https://rodando.alwaysdata.net/monopatin-3.png"
  }
 ]
