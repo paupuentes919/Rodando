@@ -16,22 +16,22 @@
         <p class="parrafotitulo">¡Ingresa tus datos para que disfrutes de nuestros servicios!</p>
         <br>
         <div class="container">
-            <form class="row row-form g-4 mt-2">
+            <form class="row row-form g-4 mt-2" method="POST" action="/usuarios/registro">
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="Nombre"
+                    <label for="input-name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="input-name" name="nombre"
                         placeholder="Introduzca Nombre" required>
                 </div>
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="Apellido"
+                    <label for="input-apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="input-apellido" name="apellido"
                         placeholder="Introduzca Apellido" required>
                 </div>
                 <br>
                 <div class="mb-3 col-12">
                     <label for="exampleInputEmail1" class="form-label">Mail</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        name="Mail" placeholder="Introduzca Mail" required>
+                        name="mail" placeholder="Introduzca Mail" required>
                     <div class="avisoformu" id="emailHelp" class="form-text">Nunca compartiremos tu correo
                         electrónico
                         con nadie más.</div>
@@ -40,29 +40,33 @@
                 <div class="mb-3 col-6">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="exampleInputPassword1"
-                        aria-describedby="passwordhelp" name="Contraseña" placeholder="********" required>
+                        aria-describedby="passwordhelp" name="contraseña" placeholder="********" required>
                     <div class="avisoformu" id="passwordhelp" class="form-text">La contraseña debe contener minimo 6
                         caracteres.</div>
                 </div>
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="Confirmar contraseña"
+                    <label for="exampleInputPassword2" class="form-label">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" name="contraseña2"
                         placeholder="********" required>
                 </div>
                 <br>
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Teléfono</label>
-                    <input type="tel" class="form-control" id="exampleInputPassword1" name="Teléfono"
+                    <label for="input-telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="input-telefono" name="telefono"
                         placeholder="Introduzca Teléfono" required>
                 </div>
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="Dirección"
+                    <label for="input-direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="input-direccion" name="direccion"
                         placeholder="Introduzca Dirección de Residencia" required>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="image-user" class="form-label">Imagen de perfil</label>
+                    <input type="file" class="form-control" id="image-user" name="avatar" required>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                 </div>
         </div>
         <br>

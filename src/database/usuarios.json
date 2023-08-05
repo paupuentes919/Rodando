@@ -1,12 +1,12 @@
 [
-    {
-     "id": 1,
-     "nombre": "Juan",
-     "apellido": "Perez",
-     "mail": "juanperez@gmail.com",
-     "contraseña": "",
-     "contraseña2": "",
-     "telefono": 1145328940,
-     "direccion": "Calle Falsa 123"
-    }
+  {
+    "id": "d9287186-0bb8-4915-b804-1558a18c09d8",
+    "nombre": "paula",
+    "apellido": "puentes",
+    "mail": "pau@gmail.com",
+    "contraseña": "$2a$10$86tRHqKsDGep2ThxCVa5v.4ndHxSy8LfUrVyWtwdsYjDyyMyxd4k2",
+    "telefono": "46324822",
+    "direccion": "Calle falsa 123",
+    "avatar": "req.file.filename ARREGLARLO"
+  }
 ]
