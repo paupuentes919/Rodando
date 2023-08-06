@@ -13,7 +13,7 @@
 }
 
 .form-login {
-  background-image: url("/images/bicigirl.png");
+  background-image: url("https://rodando.alwaysdata.net/bicigirl.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -25,7 +25,7 @@
   width: 40%;
   height: 50%;
   margin: auto;
-  background-image: url("/images/test2.jpg");
+  background-image: url("https://rodando.alwaysdata.net/test2.jpg");
   background-size: cover;
 }
 
