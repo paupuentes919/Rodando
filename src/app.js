@@ -11,12 +11,12 @@ const methodOverride = require("method-override");
 app.use(express.static(path.join(__dirname, "../public")));
 /* bootstrap css y js */
 app.use(
-    "/nmb",
-    express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css"))
+  "/nmb",
+  express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css")),
 );
 app.use(
-    "/scripts",
-    express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
+  "/scripts",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")),
 );
 
 /* ejs view engine */
@@ -30,9 +30,9 @@ const userRoutes = require("./routes/userRoutes");
 
 /* form config */
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 /* Configurar metodos put delete patch */
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
 /* implementacion de routes */
 app.use("/", mainRoutes);
@@ -41,5 +41,5 @@ app.use("/usuarios", userRoutes);
 
 /* puerto */
 app.listen(3010, function (req, res) {
-    console.log("Servidor en puerto 3010 corriendo");
+  console.log("Servidor en puerto 3010 corriendo");
 });
