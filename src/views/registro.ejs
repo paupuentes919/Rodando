@@ -66,13 +66,13 @@
                 <div class="mb-3 col-6">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                     <input type="password" 
-                    class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>" 
+                    class="form-control <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" 
                     id="exampleInputPassword1"
-                    name="contraseña" 
+                    name="contrasena" 
                     placeholder="********">
-                        <% if (locals.errors && errors.contraseña) { %>
+                        <% if (locals.errors && errors.contrasena) { %>
                             <div class= 'text-danger'>
-                                <%= errors.contraseña.msg %>
+                                <%= errors.contrasena.msg %>
                             </div>
                             <% } %>
                     <!-- <div class="avisoformu" id="passwordhelp" class="form-text">La contraseña debe contener minimo 6
