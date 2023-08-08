@@ -60,6 +60,46 @@ const controlador = {
   login: function (req, res) {
     res.render("login");
   },
+
+  loginProcess: function (req, res) {
+    let userToLogin = User.encontrarUsuarioPorCampo("email", req.body.email);
+
+    if (userToLogin) {
+      let contrasenaOk = bcryptjs.compareSync(
+        req.body.contrasena,
+        userToLogin.contrasena,
+      );
+      if (contrasenaOk) {
+        delete userToLogin.contrasena;
+        req.session.userLogged = userToLogin;
+        return res.redirect("/usuarios/perfil");
+      }
+      return res.render("login", {
+        errors: {
+          contrasena: {
+            msg: "La contraseña es inválida",
+          },
+        },
+      });
+    }
+    return res.render("login", {
+      errors: {
+        email: {
+          msg: "Este email no se encuentra registrado",
+        },
+      },
+    });
+  },
+  profile: function (req, res) {
+    return res.render("perfilUsuario", {
+      user: req.session.userLogged,
+    });
+  },
+  logout: function (req, res) {
+    req.session.destroy();
+
+    return res.redirect("/");
+  },
 };
 
 module.exports = controlador;

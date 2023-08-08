@@ -31,7 +31,8 @@
 
 form .grupo-login {
   position: relative;
-  margin: 45px;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .input-login {
@@ -65,6 +66,12 @@ form .grupo-login {
   top: -14px;
   font-size: 12px;
   color: #2196f3;
+}
+
+.form-checkbox {
+  position: relative;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .btn-login {

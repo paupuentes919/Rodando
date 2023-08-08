@@ -1,9 +1,26 @@
 /* requiero express */
 const express = require("express");
 const app = express();
-
 /* requiero path */
 const path = require("path");
+
+/* requiriendo session */
+const session = require("express-session");
+app.use(
+  session({
+    secret: "It's a secret",
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
+/* requiriendo cookie parser*/
+const cookies = require("cookie-parser");
+
+/* requiriendo middleware userLoggedMiddleware */
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+
+app.use(userLoggedMiddleware);
+
 /* requiero methodOverride */
 const methodOverride = require("method-override");
 

@@ -19,5 +19,16 @@
   "telefono": "443789342",
   "direccion": "midireccion 1234",
   "avatar": "user-1691399368758.jpg"
+ },
+ {
+  "id": "9fa0aeca-9dd6-4418-9de4-404a2eef8421",
+  "nombre": "Virginia",
+  "apellido": "Frias",
+  "email": "soyvir@gmail.com",
+  "contrasena": "$2a$10$3.AmJzmkWY.rLhVd0BEapuYEKroFYN50RP.cW//SnrF46XTPbsTMC",
+  "contraseÃ±a2": "soyvir12345",
+  "telefono": "123456789",
+  "direccion": "midireccion 1234",
+  "avatar": "user-1691410766139.jpg"
  }
 ]
