@@ -1,11 +1,13 @@
 /* requiero express */
 const express = require("express");
+const session = require("express-session");
+const cookies = require("cookie-parser");
 const app = express();
 /* requiero path */
 const path = require("path");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 /* requiriendo session */
-const session = require("express-session");
 app.use(
   session({
     secret: "It's a secret",
@@ -14,11 +16,9 @@ app.use(
   }),
 );
 /* requiriendo cookie parser*/
-const cookies = require("cookie-parser");
+app.use(cookies());
 
 /* requiriendo middleware userLoggedMiddleware */
-const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
 app.use(userLoggedMiddleware);
 
 /* requiero methodOverride */

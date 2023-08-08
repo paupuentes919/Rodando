@@ -1,3 +1,5 @@
+//Middleware creado para hacer el logout//
+
 function authMiddleware(req, res, next) {
   if (!req.session.userLogged) {
     return res.redirect("/usuarios/login");
