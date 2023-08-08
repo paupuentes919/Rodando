@@ -3,7 +3,6 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 .container{
@@ -42,6 +41,9 @@ footer{
 .links ul li a:hover{
     color: #ffff;
     padding-left: 5px;
+}
+ul{
+   padding: 0; 
 }
 .social a {
     display: inline-block;
