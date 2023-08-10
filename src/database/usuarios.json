@@ -1,6 +1,6 @@
 [
  {
-  "id": "1",
+  "id": 1,
   "nombre": "paula",
   "apellido": "puentes",
   "email": "pau@gmail.com",
@@ -10,7 +10,7 @@
   "avatar": "req.file.filename ARREGLARLO"
  },
  {
-  "id": "d2d6a852-a8ed-443d-bf54-3e332837a457",
+  "id": 2,
   "nombre": "Virginia",
   "apellido": "Frias",
   "email": "holasoyvir@gmail.com",
@@ -21,7 +21,7 @@
   "avatar": "user-1691399368758.jpg"
  },
  {
-  "id": "9fa0aeca-9dd6-4418-9de4-404a2eef8421",
+  "id": 3,
   "nombre": "Virginia",
   "apellido": "Frias",
   "email": "soyvir@gmail.com",
@@ -30,5 +30,16 @@
   "telefono": "123456789",
   "direccion": "midireccion 1234",
   "avatar": "user-1691410766139.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Tomas",
+  "apellido": "Gomien",
+  "email": "tomygomien@gmail.com",
+  "contrasena": "$2a$10$Mw07E6RBsV4dc1sBGDkU7OGsVF4.V8cMChuDszP5.Hu.TWw9DuhQe",
+  "contraseÃ±a2": "Rodando2023",
+  "telefono": "1160354634",
+  "direccion": "Escobar",
+  "avatar": "user-1691703919855.jpg"
  }
 ]

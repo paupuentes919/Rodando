@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
 
 const User = {
   fileName: "src/database/usuarios.json",
@@ -23,18 +22,23 @@ const User = {
     return usuarioCampo;
   },
 
+  generarId: function(){
+    let todosLosUsuarios = this.traerUsuarios();
+    let ultimoUsuario = todosLosUsuarios.pop();
+    if(ultimoUsuario){  
+      return ultimoUsuario.id + 1;
+    }else{ return 1 }  
+  },
+
   //Creo usuario en la bd
   crearUsuarioEnBD: function (datosUsuario) {
     let todosLosUsuarios = this.traerUsuarios();
     let usuarioNuevo = {
-      id: uuidv4(), //uso de uuid para generar un id unico
+      id: this.generarId(), 
       ...datosUsuario,
     };
     todosLosUsuarios.push(usuarioNuevo);
-    fs.writeFileSync(
-      this.fileName,
-      JSON.stringify(todosLosUsuarios, null, " "),
-    );
+    fs.writeFileSync(this.fileName,JSON.stringify(todosLosUsuarios, null, " "));
     return usuarioNuevo;
   },
 

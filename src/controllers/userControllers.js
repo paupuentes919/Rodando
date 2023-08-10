@@ -96,7 +96,7 @@ const controlador = {
     });
   },
   profile: function (req, res) {
-    console.log(req.cookies.userEmail);
+    //console.log(req.cookies.userEmail);
     return res.render("perfilUsuario", {
       user: req.session.userLogged,
     });
