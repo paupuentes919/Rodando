@@ -1,42 +1,84 @@
 const path = require("path");
 const bcryptjs = require("bcryptjs");
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 const User = require("../models/User");
 const { validationResult } = require("express-validator");
 
+
+cloudinary.config({
+	cloud_name: 'dkguig17n',
+	api_key: '224877749259764',
+	api_secret: 'ul1tsDPqbMh9URQF2Ex5DRXcfOA',
+});
+
 const controlador = {
+  
   register: function (req, res) {
     return res.render("registro");
   },
-  processRegister: function (req, res) {
-    //Validaciones de express
-    const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-      res.render("registro", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-    //validacion de usuario registrado con mismo mail//
-    let usuarioEnBD = User.encontrarUsuarioPorCampo("email", req.body.email);
-    if (usuarioEnBD) {
-      return res.render("registro", {
-        errors: {
-          email: {
-            msg: "Esta direccion de mail ya esta registrada",
-          },
-        },
-        oldData: req.body,
-      });
-    }
-    //-----------------------------------------------------------------//
-    let userToCreate = {
-      ...req.body,
-      contrasena: bcryptjs.hashSync(req.body.contrasena, 10),
-      avatar: req.file.filename,
-    };
 
-    User.crearUsuarioEnBD(userToCreate);
-    return res.redirect("login");
+  processRegister: async function (req, res) {
+    
+    try {
+
+    //---------------------------Validaciones de express--------------------------------------//  
+        const resultValidation = validationResult(req);
+          if (resultValidation.errors.length > 0) {
+            return res.render("registro", {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            });
+          }
+    //---------------------------Validacion de usuario repetido-------------------------------// 
+        let usuarioEnBD = User.encontrarUsuarioPorCampo("email", req.body.email);
+          if (usuarioEnBD) {
+            return res.render("registro", {
+              errors: {
+                email: {msg: "Esta dirección de correo ya está registrada"},
+              },
+              oldData: req.body,
+            });
+          }
+  
+     //---------------------------Carga en Cloudinary----------------------------------------// 
+  
+        const imageBuffer = req.file.buffer;
+        const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
+  
+        const uploadPromise = new Promise((resolve, reject) => {
+          let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
+            if (error) {
+              console.error('Error during upload:', error);
+              reject(error);
+            } else {
+              console.log('Upload successful:', result);
+              resolve(result);
+            }
+          });
+  
+          streamifier.createReadStream(imageBuffer).pipe(stream);
+        });
+  
+        const uploadedImage = await uploadPromise;
+
+     //---------------------------Creacion de Usuario en BD-----------------------------------//
+
+        const userToCreate = {
+          ...req.body,
+          contrasena: bcryptjs.hashSync(req.body.contrasena, 10),
+          avatar: `user-${Date.now()}${path.extname(req.file.originalname)}`, 
+        };
+  
+        await User.crearUsuarioEnBD(userToCreate);
+        res.render("login");
+    
+     //-----------------------------------------------------------------//
+        
+    } catch (error) {
+      console.error('Error:', error);
+      }// Handle the error appropriately
+  },
 
     //-----------------------------------------------------------------//
     // let usuarioACrear = {
@@ -55,7 +97,6 @@ const controlador = {
     //   User.crearUsuarioEnBD(usuarioACrear);
     //   res.redirect("/login");
     // }
-  },
 
   login: function (req, res) {
     return res.render("login");

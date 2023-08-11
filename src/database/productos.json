@@ -35,9 +35,9 @@
  {
   "id": 4,
   "vehiculo": "Bicicleta",
-  "titulo": "Venzo skyline 2.0",
+  "titulo": "Venzo skyline 2.1",
   "tipo": "Bicicleta de montaña",
-  "color": "Roja",
+  "color": "Rojo",
   "rodado": "29R",
   "precio": "2500",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
@@ -55,16 +55,16 @@
   "imagen": "https://rodando.alwaysdata.net/bicicleta-5.png"
  },
  {
-    "id": 6,
-    "vehiculo": "Bicicleta",
-    "titulo": "Fire bird 2.0",
-    "tipo": "Bicicleta eléctrica",
-    "color": "Blanca",
-    "rodado": "27R",
-    "precio": "2500",
-    "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-    "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png"
-   },
+  "id": 6,
+  "vehiculo": "Bicicleta",
+  "titulo": "Fire bird 2.0",
+  "tipo": "Bicicleta eléctrica",
+  "color": "Blanca",
+  "rodado": "27R",
+  "precio": "2500",
+  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
+  "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png"
+ },
  {
   "id": 7,
   "vehiculo": "Monopatin",

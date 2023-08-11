@@ -18,28 +18,17 @@
   "contraseÃ±a2": "soyvir12345",
   "telefono": "443789342",
   "direccion": "midireccion 1234",
-  "avatar": "user-1691399368758.jpg"
+  "avatar": "user-1691786234564.jpg"
  },
  {
   "id": 3,
-  "nombre": "Virginia",
-  "apellido": "Frias",
-  "email": "soyvir@gmail.com",
-  "contrasena": "$2a$10$3.AmJzmkWY.rLhVd0BEapuYEKroFYN50RP.cW//SnrF46XTPbsTMC",
-  "contraseÃ±a2": "soyvir12345",
-  "telefono": "123456789",
-  "direccion": "midireccion 1234",
-  "avatar": "user-1691410766139.jpg"
- },
- {
-  "id": 4,
   "nombre": "Tomas",
   "apellido": "Gomien",
   "email": "tomygomien@gmail.com",
-  "contrasena": "$2a$10$Mw07E6RBsV4dc1sBGDkU7OGsVF4.V8cMChuDszP5.Hu.TWw9DuhQe",
+  "contrasena": "$2a$10$KVFhXWhgVTMk9MdjZrOifOI7/P.G4MH99TRRusaN2LXirnNJb.kMG",
   "contraseÃ±a2": "Rodando2023",
-  "telefono": "1160354634",
+  "telefono": "1144987654",
   "direccion": "Escobar",
-  "avatar": "user-1691703919855.jpg"
+  "avatar": "user-1691786053774.jpg"
  }
 ]

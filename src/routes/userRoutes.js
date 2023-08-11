@@ -1,15 +1,18 @@
 //EXPRESS//
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 
 //CONTROLADOR//
 const userControllers = require("./../controllers/userControllers");
 
 //MIDDLEWARE//
-const uploadFile = require("../middlewares/multerMiddleware");
 const validations = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+
+//MULTER CONFIG//
+const uploadFile = multer();
 
 //REGISTRO//
 //Formulario de registro
