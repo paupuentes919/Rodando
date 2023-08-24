@@ -20,8 +20,6 @@ const controlador = {
 
   processRegister: async function (req, res) {
     
-    try {
-
     //---------------------------Validaciones de express--------------------------------------//  
         const resultValidation = validationResult(req);
           if (resultValidation.errors.length > 0) {
@@ -71,13 +69,7 @@ const controlador = {
         };
   
         await User.crearUsuarioEnBD(userToCreate);
-        res.render("login");
-    
-     //-----------------------------------------------------------------//
-        
-    } catch (error) {
-      console.error('Error:', error);
-      }// Handle the error appropriately
+        res.render("login");          
   },
 
     //-----------------------------------------------------------------//

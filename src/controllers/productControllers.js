@@ -1,9 +1,16 @@
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
 const path = require("path");
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 const productosPath = path.join(__dirname, "../database/productos.json");
 /* leo un json y lo parseo */
 const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
+
+cloudinary.config({
+	cloud_name: 'dkguig17n',
+	api_key: '224877749259764',
+	api_secret: 'ul1tsDPqbMh9URQF2Ex5DRXcfOA',
+});
 
 const pcontrolador = {
   bicicletas: function (req, res) {
@@ -30,10 +37,34 @@ const pcontrolador = {
     res.render("crearProducto");
   },
 
-  crearItemEnJSON: function (req, res) {
+  crearItemEnJSON: async function (req, res) {
+
+//---------------------------Carga en Cloudinary----------------------------------------// 
+  
+    const imageBuffer = req.file.buffer;
+    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
+
+    const uploadPromise = new Promise((resolve, reject) => {
+      let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
+        if (error) {
+          console.error('Error during upload:', error);
+          reject(error);
+        } else {
+          console.log('Upload successful:', result);
+          resolve(result);
+        }
+      });
+
+    streamifier.createReadStream(imageBuffer).pipe(stream);
+    });
+
+    const uploadedImage = await uploadPromise;
+
+
+
     /* creo una variable para generar el nuevo producto del req.body */
     let nuevoProducto = {
-      id: uuidv4(), //uso de uuid para generar un id unico
+      id: productos[productos.length-1].id + 1,
       vehiculo: req.body.vehiculo,
       titulo: req.body.title,
       tipo: req.body.tipo,
@@ -42,12 +73,10 @@ const pcontrolador = {
       precio: req.body.price,
       descripcion: req.body.desc,
       /* if ternario para preguntar si viene imagen que la escriba, sino que se quede con la por default */
-      imagen: req.file
-        ? `/img/${req.file.filename}`
-        : "/img/default-product.jpg",
+      imagen: customFilename
     };
     /* agrego ese item al listado JSON*/
-    productos.push(nuevoProducto);
+    await productos.push(nuevoProducto);
 
     /* convierto a json nuevamente y escribo el archivo products.json */
     const productosJSON = JSON.stringify(productos, null, " ");

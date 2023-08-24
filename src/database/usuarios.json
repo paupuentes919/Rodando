@@ -30,5 +30,27 @@
   "telefono": "1144987654",
   "direccion": "Escobar",
   "avatar": "user-1691786053774.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Juan ",
+  "apellido": "Negro",
+  "email": "jnegro@gmail.com",
+  "contrasena": "$2a$10$GUQ6eO6BXwxKVmODqMxB0eqiUPngaPKsuLRDC2R.A.LrdwmtuOrRG",
+  "contraseÃ±a2": "",
+  "telefono": "1160354634",
+  "direccion": "Escobar",
+  "avatar": "user-1691871642210.png"
+ },
+ {
+  "id": 5,
+  "nombre": "Alfombra Mega Magica",
+  "apellido": "Mazza",
+  "email": "ttomasgomien@gmail.com",
+  "contrasena": "$2a$10$KJGuDBf6JTV7NSgUnv74eeHvxDOBtHdRBaCHpEPWZP0ruE24Ne66m",
+  "contraseÃ±a2": "1",
+  "telefono": "1160321142",
+  "direccion": "bolivar",
+  "avatar": "user-1692226785906.jpg"
  }
 ]

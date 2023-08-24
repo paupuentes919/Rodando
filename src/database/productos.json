@@ -8,94 +8,94 @@
   "rodado": "700CC",
   "precio": 1000,
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-1.png"
+  "imagen": "user-1692916152747.png"
  },
  {
   "id": 2,
   "vehiculo": "Bicicleta",
   "titulo": "Raleigh strada 2.0",
-  "tipo": "Bicicleta urbana",
+  "tipo": "bicicleta de montaña",
   "color": "Verde",
   "rodado": "700CC",
   "precio": "2800",
   "descripcion": "Bicicleta aerodinámica, utilizada para rutas de tierra y montaña.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-2.png"
+  "imagen": "user-1692916520520.png"
  },
  {
   "id": 3,
   "vehiculo": "Bicicleta",
   "titulo": "Venzo skyline 1.0",
-  "tipo": "Bicicleta de montaña",
-  "color": "Verde",
-  "rodado": "27R",
-  "precio": 2000,
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-3.png"
+  "tipo": "bicicleta de montaña",
+  "color": "Negro",
+  "rodado": "270CC",
+  "precio": "2600",
+  "descripcion": "Bicicleta creada para los amantes del mountain bike, con una suspension de ultima generacion y frenos a disco.",
+  "imagen": "user-1692916616185.png"
  },
  {
   "id": 4,
   "vehiculo": "Bicicleta",
   "titulo": "Venzo skyline 2.1",
-  "tipo": "Bicicleta de montaña",
+  "tipo": "bicicleta de montaña",
   "color": "Rojo",
-  "rodado": "29R",
-  "precio": "2500",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-4.png"
+  "rodado": "350CC",
+  "precio": "3600",
+  "descripcion": "De las mejores bicicletas disposición, frenos a disco suspensión doble y 10 cambios incorporados para un andar optimo.",
+  "imagen": "user-1692916736737.png"
  },
  {
   "id": 5,
   "vehiculo": "Bicicleta",
   "titulo": "Fire bird 1.0",
-  "tipo": "Bicicleta eléctrica",
-  "color": "Negra",
-  "rodado": "27R",
-  "precio": "1500",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-5.png"
+  "tipo": "bicicleta eléctrica",
+  "color": "Blanco",
+  "rodado": "250CC",
+  "precio": "1800",
+  "descripcion": "Bicicleta con motor incorporado.",
+  "imagen": "user-1692916917229.png"
  },
  {
   "id": 6,
   "vehiculo": "Bicicleta",
   "titulo": "Fire bird 2.0",
-  "tipo": "Bicicleta eléctrica",
-  "color": "Blanca",
-  "rodado": "27R",
+  "tipo": "bicicleta eléctrica",
+  "color": "Azul",
+  "rodado": "500c",
   "precio": "2500",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/bicicleta-6.png"
+  "descripcion": "La evolución de la Fire bird 1.0, con ajustes adicionales en sus frenos y un motor de 150 cilindradas extra.",
+  "imagen": "user-1692917381459.png"
  },
  {
   "id": 7,
   "vehiculo": "Monopatin",
   "titulo": "Scooter big fox 1.0",
-  "tipo": "Monopatin eléctrico",
+  "tipo": "monopatin eléctrico",
   "color": "Negro",
-  "rodado": "20R",
-  "precio": 2000,
-  "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/monopatin-1.png"
+  "rodado": "50c",
+  "precio": "1200",
+  "descripcion": "Monopatin super veloz",
+  "imagen": "user-1692919230150.png"
  },
  {
   "id": 8,
   "vehiculo": "Monopatin",
   "titulo": "Scooter big fox 2.0",
-  "tipo": "Monopatin eléctrico",
-  "color": "Negro",
-  "rodado": "15R",
-  "precio": 1800,
+  "tipo": "monopatin eléctrico",
+  "color": "Azul",
+  "rodado": "75CC",
+  "precio": "2000",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/monopatin-2.png"
+  "imagen": "user-1692919389509.png"
  },
  {
   "id": 9,
   "vehiculo": "Monopatin",
   "titulo": "Scooter big fox 3.0",
-  "tipo": "Monopatin eléctrico",
+  "tipo": "monopatin eléctrico",
   "color": "Negro",
-  "rodado": "10R",
-  "precio": 1600,
+  "rodado": "85CC",
+  "precio": "2250",
   "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a aliquam maiores totam necessitatibus quod voluptate voluptatum in impedit.",
-  "imagen": "https://rodando.alwaysdata.net/monopatin-3.png"
+  "imagen": "user-1692919426470.png"
  }
 ]
