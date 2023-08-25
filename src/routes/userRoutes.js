@@ -15,8 +15,8 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const uploadFile = multer();
 
 //REGISTRO//
-//Formulario de registro
-router.get("/registro", guestMiddleware, userControllers.register);
+//Formulario de registro de Usuarios
+router.get("/registro", userControllers.register);
 //Proceso de registro
 router.post(
   "/registro",

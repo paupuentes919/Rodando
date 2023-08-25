@@ -10,8 +10,8 @@
     <%- include('./partials/header') %>
     <main class="main-back-img">
     
-        <h1 class="titulo-formulario"><strong>Formulario de Registro</strong></h1>
-        <p class="parrafotitulo">¡Ingresa tus datos para que disfrutes de nuestros servicios!</p>
+        <h1 class="titulo-formulario"><strong>Registro de Usuarios</strong></h1>
+        <p class="parrafotitulo"> Dar de alta nuevo usuario al sistema </p>
         <br>
         <div class="container">
             <form class="row row-form g-4 mt-2" method="POST" action="/usuarios/registro" enctype="multipart/form-data">
@@ -63,7 +63,7 @@
                         con nadie más.</div> -->
                 </div>
                 <br>
-                <div class="mb-3 col-6">
+                <div class="mb-3 col-12">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                     <input type="password" 
                     class="form-control <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" 
@@ -77,19 +77,6 @@
                             <% } %>
                     <!-- <div class="avisoformu" id="passwordhelp" class="form-text">La contraseña debe contener minimo 6
                         caracteres.</div> -->
-                </div>
-                <div class="mb-3 col-6">
-                    <label for="exampleInputPassword2" class="form-label">Confirmar contraseña</label>
-                    <input type="password" 
-                    class="form-control <%= locals.errors && errors.contraseña2 ? 'is-invalid' : null %>" 
-                    id="exampleInputPassword2" 
-                    name="contraseña2"
-                    placeholder="********">
-                        <% if (locals.errors && errors.contraseña2) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.contraseña2.msg %>
-                            </div>
-                            <% } %>
                 </div>
                 <br>
                 <div class="mb-3 col-6">
@@ -132,12 +119,35 @@
                         </div>
                         <% } %>
                 </div>
+                <div class="mb-2 col-6">
+                    <label for="rol" class="form-label">Rol de Usuario</label>
+                    <br/>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-primary btn-radio">
+                        <input type="radio" name="rol" id="empleado" autocomplete="off" checked> Empleado
+                      </label>
+                      <label class="btn btn-primary btn-radio" >
+                        <input type="radio" name="rol" id="admin" autocomplete="off"> Admin
+                      </label>
+                    </div>
+                </div>
+                <div class="mb-3 col-12">
+                    <label for="sucursal" class="form-label">Sucursal</label>
+                        <select name="sucursal" id="sucursal" class="form-control">
+                                <option value="Rojo">Rojo</option>
+                                <option value="Azul">Azul</option>
+                                <option value="Verde">Verde</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Amarillo">Amarillo</option>
+                            </select>
+                </div>
         </div>
         <br>
         <br>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary btn-lg mx-auto d-block boton">Registrarme</button>
+        <button type="submit" class="btn btn-primary btn-lg mx-auto d-block boton">Registrar</button>
         <br>
         <div class="yacuenta">
             <p>¿Ya tienes cuenta? <a href="login">Iniciar sesión</a></p>

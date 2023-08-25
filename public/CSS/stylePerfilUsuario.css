@@ -1,0 +1,22 @@
+.small-container {
+    display: flex;
+    
+}
+.btn-login {
+    font-size: 22px;
+    background: #1f264c;
+    color: #fff;
+    height: 10%;
+    padding: 2%;
+    border-radius: 5px;
+    width:250px;
+    margin: 15%;
+    text-decoration: none;
+    text-align: center;
+  }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

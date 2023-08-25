@@ -32,3 +32,8 @@
 .yacuenta {
   text-align: center;
 }
+
+.btn-radio {
+  background-color: transparent; /* Quitar el fondo */
+  border: none; /* Quitar el borde */
+}
