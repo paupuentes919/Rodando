@@ -104,12 +104,16 @@ const controlador = {
       );
       if (contrasenaOk) {
         delete userToLogin.contrasena;
-        req.session.userLogged = userToLogin;
+        if(userToLogin.rol == 'admin'){
+          req.session.adminLogged = userToLogin;
+        } else {
+          req.session.userLogged = userToLogin;
+        }
 
         if (req.body.recordarUsuario) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 2 });
         }
-
+        console.log(req.session)
         return res.redirect("/usuarios/perfil");
       }
       return res.render("login", {
@@ -130,9 +134,15 @@ const controlador = {
   },
   profile: function (req, res) {
     //console.log(req.cookies.userEmail);
-    return res.render("perfilUsuario", {
-      user: req.session.userLogged,
-    });
+    if(req.session.adminLogged){
+      return res.render("perfilUsuario", {
+        user: req.session.adminLogged,
+      });
+    } else {
+      return res.render("perfilUsuario", {
+        user: req.session.userLogged,
+      });
+    }
   },
   logout: function (req, res) {
     res.clearCookie("userEmail");

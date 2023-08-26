@@ -7,6 +7,7 @@ const app = express();
 const path = require("path");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
+
 /* requiriendo session */
 app.use(
   session({
@@ -20,6 +21,7 @@ app.use(cookies());
 
 /* requiriendo middleware userLoggedMiddleware */
 app.use(userLoggedMiddleware);
+
 
 /* requiero methodOverride */
 const methodOverride = require("method-override");

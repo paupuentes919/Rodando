@@ -1,8 +1,8 @@
-//Middleware creado para hacer el logout//
+//Middleware creado para no poder acceder al login una vez logueado//
 
 function authMiddleware(req, res, next) {
-  if (!req.session.userLogged) {
-    return res.redirect("/usuarios/login");
+  if (((req.session.userLogged) || (req.session.adminLogged))) {
+    return res.redirect("/usuarios/perfil");
   }
   next();
 }

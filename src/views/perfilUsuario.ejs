@@ -8,8 +8,7 @@
   <body class="d-flex flex-column">
     <%- include('./partials/header') %>
     <div class="container" style="margin-top: 48px">
-      <div class="row">
-          <div class="small-container">
+      <div class="row">  
             <div class="col-md-3">
               <h2>Bienvenido/a <%= user.nombre %>!</h2>
               <img src= "https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= user.avatar %>.jpg" alt="avatar-default" />
@@ -17,11 +16,6 @@
               <br />
               <div class="alert alert-success"><%= user.email %></div>
             </div>
-            <div class="column">
-              <a href="../usuarios/registro" class="btn-login">Nueva Sucursal</a>
-              <a href="../usuarios/registro" class="btn-login">Nuevo Usuario</a>
-            </div>
-          </div>
       </div>
     </div>
     <%- include('./partials/footer2') %>

@@ -7,6 +7,7 @@
   "contraseña": "$2a$10$86tRHqKsDGep2ThxCVa5v.4ndHxSy8LfUrVyWtwdsYjDyyMyxd4k2",
   "telefono": "46324822",
   "direccion": "Calle falsa 123",
+  "rol": "admin",
   "avatar": "req.file.filename ARREGLARLO"
  },
  {
@@ -18,6 +19,7 @@
   "contraseÃ±a2": "soyvir12345",
   "telefono": "443789342",
   "direccion": "midireccion 1234",
+  "rol": "admin",
   "avatar": "user-1691786234564.jpg"
  },
  {
@@ -29,6 +31,7 @@
   "contraseÃ±a2": "Rodando2023",
   "telefono": "1144987654",
   "direccion": "Escobar",
+  "rol": "admin",
   "avatar": "user-1691871640677.png"
  },
  {
@@ -40,6 +43,7 @@
   "contraseÃ±a2": "",
   "telefono": "1160354634",
   "direccion": "Escobar",
+  "rol": "empleado",
   "avatar": "user-1691871642210.png"
  },
  {
@@ -52,5 +56,17 @@
   "telefono": "1160321142",
   "direccion": "bolivar",
   "avatar": "user-1692226785906.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Tomas",
+  "apellido": "Mazza",
+  "email": "tmazza@gmail.com",
+  "contrasena": "$2a$10$gY3nWsD8j34srMl80LR/2.qEGhxqnAXMevMBrfQHvaUTvYemwPWLe",
+  "telefono": "11547689",
+  "direccion": "bolivia",
+  "rol": "empleado",
+  "sucursal": "Rojo",
+  "avatar": "user-1693003850877.jpg"
  }
 ]

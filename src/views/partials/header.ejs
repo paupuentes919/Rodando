@@ -19,16 +19,13 @@
         <% if(!locals.isLogged){ %>
             <a class="link-nav" href="../usuarios/login">Ingresa</a>
           </li>
-          <li class="header__nav--item">
-            <a class="link-nav" href="../usuarios/registro">Registrate</a>
-          </li>
         <% } %>
           <li class="header__nav--item">
             <a class="link-nav" href="../productos/carrito"
               ><i class="fa-solid fa-cart-shopping cart-color"></i
             ></a>
           </li>
-
+          <% if(locals.isLogged){ %>
           <li class="header__nav--item">
             <label for="dropdown1-toggle" class="link-nav dropdown1-label">
               <i class="fa-solid fa-user dropdown1-icon"></i>
@@ -39,12 +36,15 @@
               id="dropdown1-toggle"
               class="dropdown1-checkbox"
             />
-            <ul class="dropdown1-menu">
+            <ul class="dropdown1-menu">     
               <li class="dropdown1-item">
-                <a class="link-subMenu" href="../productos/crear"
-                  >Crear producto</a
-                >
+                <a class="link-subMenu" href="../productos/crear">Crear producto</a>
               </li>
+              <% if(locals.adminLogged){ %>
+              <li class="dropdown1-item">
+                <a class="link-subMenu" href="../usuarios/registro">Crear Usuario</a>
+              </li>
+              <% } %>
               </li>
               <li class="dropdown1-item">
                 <a class="link-subMenu" href="../usuarios/perfil">Mi perfil</a>
@@ -52,6 +52,7 @@
               <li class="dropdown1-item">
                 <a class="link-subMenu" href="../usuarios/logout">Log Out</a>
               </li>
+              <% } %>  
             </ul>
           </li>
         </ul>

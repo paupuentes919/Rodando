@@ -11,11 +11,13 @@ function userLoggedMiddleware(req, res, next) {
     req.session.userLogged = userFromCookie;
   }
   //ESTE TROZO DE CODIGO COMENTADO ES PARA HACER LA COMPROBACION DEL USUARIO EN SESION Y MOSTARR PARTES DEL NAV-BAR
-  if (req.session.userLogged) {
+  if (req.session.adminLogged)  {
+    res.locals.isLogged = true;
+    res.locals.adminLogged = req.session.adminLogged;
+  } if (req.session.userLogged)  {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;
   }
-
   next();
 }
 

@@ -1,10 +1,10 @@
-//Middleware creado para NO permitir que un usuario logueado pueda acceder al login o al registro//
+//Middleware creado para que solo los Admin del sistema puedan crear nuevos Usuarios//
 
-function gestMiddleware(req, res, next) {
-  if (req.session.userLogged) {
-    return res.redirect("/usuarios/perfil");
+function guestMiddleware(req, res, next) {
+  if (!req.session.adminLogged) {
+    return res.redirect("/");
   }
   next();
 }
 
-module.exports = gestMiddleware;
+module.exports = guestMiddleware;
