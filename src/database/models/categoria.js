@@ -15,4 +15,9 @@ function categoriaData(sequelize, Datatypes) {
   return categoria;
 }
 
+categoria.hasMany(rodado, {
+  as: "rodado",
+  foreignKey: "categoria_id",
+});
+
 module.exports = categoriaData;

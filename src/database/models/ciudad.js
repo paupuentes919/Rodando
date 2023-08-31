@@ -13,4 +13,8 @@ function ciudadData(sequelize, Datatypes) {
   return ciudad;
 }
 
+ciudad.hasMany(sucursal, {
+  as: "sucursal",
+  foreignKey: "ciudad_id",
+});
 module.exports = ciudadData;

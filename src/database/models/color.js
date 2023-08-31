@@ -13,4 +13,9 @@ function colorData(sequelize, Datatypes) {
   return color;
 }
 
+color.hasMany(rodado, {
+  as: "rodado",
+  foreignKey: "color_id",
+});
+
 module.exports = colorData;
