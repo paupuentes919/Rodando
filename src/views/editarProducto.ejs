@@ -9,7 +9,7 @@
         <div class="vh-100 d-flex align-items-center products-form__container">
             <main class="container">
                 <h1 class="text-center mb-4">Editar Producto</h1>
-                <form action="/productos/editar/<%= prod.id %>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
+                <form action="/productos/editar/<%= rodado.id %>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
                     <div class="row mt-4">
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="title">Titulo</label>
@@ -18,18 +18,18 @@
                                 type="text"
                                 id="title"
                                 name="title"
-                                value="<%= prod.titulo %>"
+                                value="<%= rodado.titulo %>"
                             />
                         </div>
                         <div class="col-md">
                             <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
                             <select name="vehiculo" id="vehiculo" class="form-control">
-                                <% if(prod.vehiculo == "Bicicleta") { %>
-                                <option value="Bicicleta" selected>Bicicleta</option>
-                                <option value="Monopatin">Monopatin</option>
+                                <% if(rodado.categoria.nombre == "bicicleta") { %>
+                                <option value="bicicleta" selected>bicicleta</option>
+                                <option value="monopatin">monopatin</option>
                                 <% } else  { %>
-                                <option value="Bicicleta">Bicicleta</option>
-                                <option value="Monopatin" selected>Monopatin</option>
+                                <option value="bicicleta">bicicleta</option>
+                                <option value="monopatin" selected>monopatin</option>
                                 <% } %>
                             </select>
                         </div>
@@ -50,60 +50,20 @@
                                 type="number"
                                 id="price"
                                 name="price"
-                                value="<%= prod.precio %>"
+                                value="<%= rodado.precio %>"
                             />
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-md">
                             <label for="color" class="form-label fw-semibold">Color</label>
-                            <select name="color"id="color"class="form-control">
-                              <% if(prod.color == "Rojo") { %>  
-                                <option value="Rojo" selected>Rojo</option>  
-                                <option value="Azul">Azul</option>
-                                <option value="Verde">Verde</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Amarillo">Amarillo</option>
-                                <option value="Blanco">Blanco</option>
-                              <% } if (prod.color == "Azul")  { %>
-                                <option value="Rojo">Rojo</option>  
-                                <option value="Azul" selected>Azul</option>
-                                <option value="Verde">Verde</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Amarillo">Amarillo</option>
-                                <option value="Blanco">Blanco</option>
-                              <% } if (prod.color == "Verde")  { %>
-                                <option value="Rojo">Rojo</option>  
-                                <option value="Azul">Azul</option>
-                                <option value="Verde" selected>Verde</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Amarillo">Amarillo</option>
-                                <option value="Blanco">Blanco</option>
-                              <% } if (prod.color == "Negro")  { %>
-                                <option value="Rojo">Rojo</option>  
-                                <option value="Azul">Azul</option>
-                                <option value="Verde">Verde</option>
-                                <option value="Negro" selected>Negro</option>
-                                <option value="Amarillo">Amarillo</option>
-                                <option value="Blanco">Blanco</option>
-                              <% } if (prod.color == "Amarillo")  { %>
-                                <option value="Rojo">Rojo</option>  
-                                <option value="Azul">Azul</option>
-                                <option value="Verde">Verde</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Amarillo" selected>Amarillo</option>
-                                <option value="Blanco">Blanco</option>
-                              <% } if (prod.color == "Blanco")  { %>
-                                    <option value="Rojo">Rojo</option>  
-                                    <option value="Azul">Azul</option>
-                                    <option value="Verde">Verde</option>
-                                    <option value="Negro">Negro</option>
-                                    <option value="Amarillo">Amarillo</option>
-                                    <option value="Blanco" selected>Blanco</option>
-                                <% } %>
+                            <select name="color" id="color" class="form-control" >
+                                <% for(let i=0; i< color.length; i++) { %>
+                                    <option value="<% color[i].id %>"><%= color[i].nombre %></option>
+                                    <% } %>
                             </select>
-                        </div>
-                        <div class="col-md">
+                         </div>
+                        <!--<div class="col-md">
                             <label for="tipo" class="form-label fw-semibold">Tipo</label>
                             <select name="tipo" id="tipo" class="form-control">
                                 <%  if (prod.tipo == "Bicicleta urbana")  { %>
@@ -128,7 +88,7 @@
                                     <option value="Monopatin eléctrico" selected>Monopatin eléctrico</option>
                                 <% } %>        
                             </select>
-                        </div>
+                        </div> -->
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="img">Imagen</label>
                             <input
@@ -147,7 +107,7 @@
                                 id="description"
                                 name="description"
                                 rows="6"
-                            ><%= prod.descripcion %></textarea>
+                            ><%= rodado.descripcion %></textarea>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center gap-4">
@@ -155,7 +115,7 @@
                             <h5>Actualizar</h5>
                         </button>
                     </form>
-                        <form action="/productos/borrar/<%= prod.id %>?_method=DELETE" method="POST">
+                        <form action="/productos/borrar/<%= rodado.id %>?_method=DELETE" method="POST">
                         <button class="btn cancel-btn mt-4 px-5 py-3">
                             <h5>Eliminar</h5>
                         </button>

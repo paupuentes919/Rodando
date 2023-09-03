@@ -1,20 +1,34 @@
 function ciudadData(sequelize, Datatypes) {
-  alias = "ciudad";
-  cols = {
+  
+  let alias = "ciudad";
+  
+  let cols = {
     id: {
       type: Datatypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nombre: { type: Datatypes.STRING(200) },
+    nombre: { 
+      type: Datatypes.STRING(200) 
+    },
   };
-  config = { timestamps: false };
+  
+  let config = { 
+    tableName: 'ciudad',
+    timestamps: false,    
+  };
+  
   const ciudad = sequelize.define(alias, cols, config);
+  
+  ciudad.associate = function(models){
+    ciudad.hasMany(models.sucursal, {
+      as: "sucursal",
+      foreignKey: "ciudad_id",
+    })
+  } 
+  
   return ciudad;
+
 }
 
-ciudad.hasMany(sucursal, {
-  as: "sucursal",
-  foreignKey: "ciudad_id",
-});
 module.exports = ciudadData;

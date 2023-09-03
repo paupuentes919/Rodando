@@ -1,21 +1,35 @@
 function colorData(sequelize, Datatypes) {
-  alias = "color";
-  cols = {
+  
+  let alias = "color";
+  
+  let  cols = {
     id: {
       type: Datatypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    color: { type: Datatypes.STRING(50) },
+    nombre: { 
+      type: Datatypes.STRING(50),
+      NULL: false 
+    }    
   };
-  config = { timestamps: false };
+  
+  let config = { 
+    tableName: 'colores',
+    timestamps: false,    
+  };
+  
   const color = sequelize.define(alias, cols, config);
+  
+  color.associate = function(models){
+    color.hasMany(models.rodado, {
+      as: "rodado",
+      foreignKey: "color_id",
+    });
+  }
+
   return color;
 }
 
-color.hasMany(rodado, {
-  as: "rodado",
-  foreignKey: "color_id",
-});
 
 module.exports = colorData;

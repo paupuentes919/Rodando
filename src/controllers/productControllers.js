@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
+const db = require ('../database/models');
 const productosPath = path.join(__dirname, "../database/productos.json");
 /* leo un json y lo parseo */
 const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
@@ -13,31 +14,51 @@ cloudinary.config({
 });
 
 const pcontrolador = {
-  bicicletas: function (req, res) {
-    /* busco todas las bicicletas en la base de datos */
-    const bici = productos.filter((bike) => bike.vehiculo === "Bicicleta");
-    res.render("bicicletas", { bici });
+  
+  bicicletas: function(req, res){
+  /* busco todas las bicicletas en la base de datos */
+    db.rodado.findAll({
+      where:{
+        categoria_id: '1'
+      }
+    }).then(function(bici){
+      res.render("bicicletas", { bici });
+    })
   },
+  
   monopatines: function (req, res) {
-    /* busco todos los monopatines en la base de datos */
-    const mono = productos.filter(
-      (scooter) => scooter.vehiculo === "Monopatin"
-    );
-    res.render("monopatines", { mono });
+  /* busco todos los monopatines en la base de datos */
+    db.rodado.findAll({
+      where:{
+        categoria_id: '2'
+      }
+    }).then(function(mono){
+      res.render("monopatines", { mono });
+    })
   },
+
   detalle: function (req, res) {
-    /* busco un producto en funcion de su ID */
-    const product = productos.find((item) => item.id == req.params.id);
-    if (product) {
-      res.render("detalle", { product });
-    }
+  /* busco un producto en funcion de su ID */
+    db.rodado.findByPk(req.params.id , {
+      include: [{association: 'categoria'}, {association: 'color'}]
+    })
+        .then(function(product){
+          if (product) {
+          res.render("detalle", { product });
+          }
+          else { res.redirect('/') }
+        })     
   },
-
+    
   crearVista: function (req, res) {
-    res.render("crearProducto");
+    Promise.all([db.categoria.findAll(), db.color.findAll(),db.usuario.findAll()])
+    .then(function ([categoria, color, usuario]) {
+      // Pasa ambas consultas a la vista
+      res.render("crearProducto", { categoria, color, usuario });
+    }) 
   },
 
-  crearItemEnJSON: async function (req, res) {
+  crearItemEnBD: async function (req, res) {
 
 //---------------------------Carga en Cloudinary----------------------------------------// 
   
@@ -63,6 +84,24 @@ const pcontrolador = {
 
 
     /* creo una variable para generar el nuevo producto del req.body */
+
+
+    db.rodado.create({
+      nombre: req.body.title,
+      precio_hora: req.body.price,
+      descripcion: req.body.desc,
+      rodado: req.body.rodado,
+      fecha_creacion: '2023-09-03',
+      fecha_eliminacion: '2023-09-03',
+      imagen: customFilename,
+      usuario_id: req.body.usuario ,
+      categoria_id: req.body.vehiculo,
+      color_id: req.body.color,
+    })
+    
+    res.redirect("/");
+  },  
+/*
     let nuevoProducto = {
       id: productos[productos.length-1].id + 1,
       vehiculo: req.body.vehiculo,
@@ -72,21 +111,25 @@ const pcontrolador = {
       rodado: req.body.rodado,
       precio: req.body.price,
       descripcion: req.body.desc,
-      /* if ternario para preguntar si viene imagen que la escriba, sino que se quede con la por default */
+      /* if ternario para preguntar si viene imagen que la escriba, sino que se quede con la por default 
       imagen: customFilename
-    };
-    /* agrego ese item al listado JSON*/
+    }
+    /* agrego ese item al listado JSON
     await productos.push(nuevoProducto);
 
-    /* convierto a json nuevamente y escribo el archivo products.json */
+    /* convierto a json nuevamente y escribo el archivo products.json 
     const productosJSON = JSON.stringify(productos, null, " ");
     fs.writeFileSync(productosPath, productosJSON);
     res.redirect("/");
   },
-
+ */
   editar: function (req, res) {
-    let prod = productos.find((item) => item.id == req.params.id);
-    res.render("editarProducto",{ prod });
+
+    Promise.all([db.rodado.findByPk(req.params.id), db.categoria.findAll(), db.color.findAll(),db.usuario.findAll()])
+    .then(function ([rodado, categoria, color, usuario]) {
+      // Pasa ambas consultas a la vista
+      res.render("editarProducto", { rodado, categoria, color, usuario });
+    }) 
   },
 
   actualizar: function (req, res) {
@@ -115,15 +158,12 @@ const pcontrolador = {
   },
 
   borrar: function (req, res) {
-    idParaBorrar = req.params.id;
-    nuevosProductos = productos.filter((e)=>{
-      return e.id != idParaBorrar;
-    });
 
-    console.log(idParaBorrar)
-    console.log(nuevosProductos)
-
-    fs.writeFileSync(productosPath,JSON.stringify(nuevosProductos, null, " "));
+    db.rodado.destroy({
+        where: {
+          id: req.params.id
+        }
+    })
 
     res.redirect('/');
 

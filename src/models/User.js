@@ -1,9 +1,21 @@
+const db = require('../database/models');
 const fs = require("fs");
 
 const User = {
   fileName: "src/database/usuarios.json",
 
   //Traigo todos los usuarios
+
+  traerUsuariosBD: function(){
+
+    db.usuario.findAll({
+      include: [{association: 'sucursal'}]
+    })
+      .then(function(users){
+        console.log(users)
+      })
+  },
+
   traerUsuarios: function () {
     return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
   },
@@ -55,6 +67,7 @@ const User = {
     return usuariosNoBorrados;
   },
 };
-// console.log(User.borrarUsuarioDeBD(1));
+
+//User.traerUsuariosBD()
 
 module.exports = User;

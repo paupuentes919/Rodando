@@ -24,7 +24,7 @@ router.get("/detalle/:id", productControllers.detalle);
 /*---------------- Formulario -------------------- */
 /* Form create */
 router.get("/crear", guestUserMiddleware, productControllers.crearVista);
-router.post("/crear", upload.single('imagen'), productControllers.crearItemEnJSON);
+router.post("/crear", upload.single('imagen'), productControllers.crearItemEnBD);
 
 /* Form update */
 router.get("/editar/:id", guestUserMiddleware, productControllers.editar);
