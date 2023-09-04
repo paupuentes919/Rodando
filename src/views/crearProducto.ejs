@@ -24,7 +24,9 @@
                             <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
                             <select name="vehiculo" id="vehiculo" class="form-control">
                                 <% for(let i=0; i< categoria.length; i++) { %>
-                                <option value="<% categoria[i].id %>"><%= categoria[i].nombre %></option>
+                                    <option value="<% categoria[i].id %>">
+                                        <%= categoria[i].nombre %>
+                                    </option>
                                 <% } %>
                             </select>
                         </div>
@@ -56,7 +58,7 @@
                                     <% } %>
                             </select>
                         </div>
-                        <div class="col-md">
+                        <!-- <div class="col-md">
                             <label for="tipo" class="form-label fw-semibold"
                                 >Tipo</label
                             >
@@ -70,7 +72,7 @@
                                 <option value="bicicleta eléctrica">Bicicleta eléctrica</option>
                                 <option value="monopatin eléctrico">Monopatin eléctrico</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="imagen">Imagen</label>
                             <input

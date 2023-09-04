@@ -1,3 +1,4 @@
+var moment = require('moment');
 const fs = require("fs");
 const path = require("path");
 const cloudinary = require('cloudinary').v2;
@@ -85,14 +86,15 @@ const pcontrolador = {
 
     /* creo una variable para generar el nuevo producto del req.body */
 
-
+    console.log("vehiculoooooooooooooooooooooooooooo: ",req.body.vehiculo);
+    console.log("titulooooooooo: ",req.body.title);
     db.rodado.create({
       nombre: req.body.title,
       precio_hora: req.body.price,
       descripcion: req.body.desc,
       rodado: req.body.rodado,
-      fecha_creacion: '2023-09-03',
-      fecha_eliminacion: '2023-09-03',
+      fecha_creacion: moment().format(),
+      fecha_eliminacion: '',
       imagen: customFilename,
       usuario_id: req.body.usuario ,
       categoria_id: req.body.vehiculo,
