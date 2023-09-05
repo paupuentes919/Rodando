@@ -10,11 +10,11 @@
     <div class="container" style="margin-top: 48px">
       <div class="row">  
             <div class="col-md-3">
-              <h2>Bienvenido/a <%= user.nombre %>!</h2>
-              <img src= "https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= user.avatar %>.jpg" alt="avatar-default" />
+              <h2>Bienvenido/a <%= userPK.usuario.nombre %>!</h2>
+              <img src= "https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= userPK.usuario.avatar %>.jpg" alt="avatar-default" />
               <br />
               <br />
-              <div class="alert alert-success"><%= user.email %></div>
+              <div class="alert alert-success"><%= userPK.usuario.email %></div>
             </div>
       </div>
     </div>

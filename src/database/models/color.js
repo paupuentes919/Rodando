@@ -15,7 +15,7 @@ function colorData(sequelize, Datatypes) {
   };
   
   let config = { 
-    tableName: 'colores',
+    tableName: 'color',
     timestamps: false,    
   };
   
