@@ -18,19 +18,19 @@
                                 type="text"
                                 id="title"
                                 name="title"
-                                value="<%= rodado.titulo %>"
+                                value="<%= rodado.nombre %>"
                             />
                         </div>
                         <div class="col-md">
                             <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
                             <select name="vehiculo" id="vehiculo" class="form-control">
-                                <% if(rodado.categoria.nombre == "bicicleta") { %>
-                                <option value="bicicleta" selected>bicicleta</option>
-                                <option value="monopatin">monopatin</option>
-                                <% } else  { %>
-                                <option value="bicicleta">bicicleta</option>
-                                <option value="monopatin" selected>monopatin</option>
-                                <% } %>
+                                <% for(let i=0; i< categoria.length; i++) { %>
+                                    <% if(categoria[i].id == rodado.categoria_id) { %>
+                                        <option value="<%= categoria[i].id %>" selected><%= categoria[i].nombre %></option>
+                                    <% } else { %>
+                                        <option value="<%= categoria[i].id %>"><%= categoria[i].nombre %></option>
+                                    <% } %>
+                                <% } %>    
                             </select>
                         </div>
                         <div class="col-md">
@@ -40,7 +40,7 @@
                                 type="text"
                                 id="rodado"
                                 name="rodado"
-                                value="<%= prod.rodado %>"
+                                value="<%= rodado.rodado %>"
                             />
                         </div>
                         <div class="col-md">
@@ -50,7 +50,7 @@
                                 type="number"
                                 id="price"
                                 name="price"
-                                value="<%= rodado.precio %>"
+                                value="<%= rodado.precio_hora %>"
                             />
                         </div>
                     </div>
@@ -59,36 +59,14 @@
                             <label for="color" class="form-label fw-semibold">Color</label>
                             <select name="color" id="color" class="form-control" >
                                 <% for(let i=0; i< color.length; i++) { %>
-                                    <option value="<% color[i].id %>"><%= color[i].nombre %></option>
+                                    <% if(color[i].id == rodado.color_id) { %>
+                                        <option value="<%= color[i].id %>" selected><%= color[i].nombre %></option>
+                                    <% } else { %>
+                                        <option value="<%= color[i].id %>"><%= color[i].nombre %></option>
                                     <% } %>
-                            </select>
+                                <% } %>
+                            </select>  
                          </div>
-                        <!--<div class="col-md">
-                            <label for="tipo" class="form-label fw-semibold">Tipo</label>
-                            <select name="tipo" id="tipo" class="form-control">
-                                <%  if (prod.tipo == "Bicicleta urbana")  { %>
-                                   <option value="Bicicleta urbana" selected>Bicicleta urbana</option>
-                                   <option value="Bicicleta de montaña">Bicicleta de montaña</option>
-                                   <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
-                                   <option value="Monopatin eléctrico">Monopatin eléctrico</option>
-                                <% } if (prod.tipo == "Bicicleta de montaña")  { %>
-                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
-                                    <option value="Bicicleta de montaña" selected>Bicicleta de montaña</option>
-                                    <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
-                                    <option value="Monopatin eléctrico">Monopatin eléctrico</option>
-                                <% } if (prod.tipo == "Bicicleta eléctrica")  { %>
-                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
-                                    <option value="Bicicleta de montaña">Bicicleta de montaña</option>
-                                    <option value="Bicicleta eléctrica" selected>Bicicleta eléctrica</option>
-                                    <option value="Monopatin eléctrico">Monopatin eléctrico</option>
-                                <% } if (prod.tipo == "Monopatin eléctrico")  { %>
-                                    <option value="Bicicleta urbana">Bicicleta urbana</option>
-                                    <option value="Bicicleta de montaña">Bicicleta de montaña</option>
-                                    <option value="Bicicleta eléctrica">Bicicleta eléctrica</option>
-                                    <option value="Monopatin eléctrico" selected>Monopatin eléctrico</option>
-                                <% } %>        
-                            </select>
-                        </div> -->
                         <div class="col-md">
                             <label class="form-label fw-semibold" for="img">Imagen</label>
                             <input
@@ -98,25 +76,37 @@
                                 name="img"
                             />
                         </div>
+                        <div class="col-md">
+                            <label for="usuario" class="form-label fw-semibold">usuario</label>
+                            <select name="usuario" id="usuario" class="form-control" >
+                                <% for(let i=0; i< usuario.length; i++) { %>
+                                    <% if(usuario[i].id == rodado.usuario_id) { %>
+                                        <option value="<%= usuario[i].id %>" selected ><%= usuario[i].nombre %></option>
+                                    <% } else { %>
+                                        <option value="<%= usuario[i].id %>" ><%= usuario[i].nombre %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col">
                             <label class="form-label fw-semibold" for="desc">Descripcion</label>
                             <textarea
                                 class="form-control"
-                                id="description"
-                                name="description"
+                                id="desc"
+                                name="desc"
                                 rows="6"
                             ><%= rodado.descripcion %></textarea>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center gap-4">
-                        <button  class="btn send-btn mt-4 px-5 py-3">
+                        <button type='submit' class="btn send-btn mt-4 px-5 py-3">
                             <h5>Actualizar</h5>
                         </button>
                     </form>
                         <form action="/productos/borrar/<%= rodado.id %>?_method=DELETE" method="POST">
-                        <button class="btn cancel-btn mt-4 px-5 py-3">
+                        <button type='submit' class="btn cancel-btn mt-4 px-5 py-3">
                             <h5>Eliminar</h5>
                         </button>
                         </form>

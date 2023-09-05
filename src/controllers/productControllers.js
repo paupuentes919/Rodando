@@ -125,7 +125,14 @@ const pcontrolador = {
  */
   editar: function (req, res) {
 
-    Promise.all([db.rodado.findByPk(req.params.id), db.categoria.findAll(), db.color.findAll(),db.usuario.findAll()])
+    Promise.all([db.rodado.findByPk((req.params.id),
+      {
+        include: [{association: 'categoria'}, {association: 'color'}]
+      }), 
+      db.categoria.findAll(), 
+      db.color.findAll(),
+      db.usuario.findAll()
+    ])
     .then(function ([rodado, categoria, color, usuario]) {
       // Pasa ambas consultas a la vista
       res.render("editarProducto", { rodado, categoria, color, usuario });
@@ -134,6 +141,20 @@ const pcontrolador = {
 
   actualizar: function (req, res) {
    
+    db.rodado.update({
+      nombre: req.body.title,
+      precio_hora: req.body.price,
+      descripcion: req.body.desc,
+      rodado: req.body.rodado,
+      usuario_id: req.body.usuario ,
+      categoria_id: req.body.vehiculo,
+      color_id: req.body.color,
+    
+    },{
+      where: {id: req.params.id}
+    })
+
+  /* 
     idParaEditar = req.params.id;
     
       for(let p of productos){
@@ -152,8 +173,8 @@ const pcontrolador = {
       };
 
     fs.writeFileSync(productosPath,JSON.stringify(productos, null, " "));
-
-    res.redirect('/');
+  */    
+    res.redirect('../detalle/' + req.params.id);
 
   },
 
