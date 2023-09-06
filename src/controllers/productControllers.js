@@ -86,8 +86,7 @@ const pcontrolador = {
 
     /* creo una variable para generar el nuevo producto del req.body */
 
-    console.log("vehiculoooooooooooooooooooooooooooo: ",req.body.vehiculo);
-    console.log("titulooooooooo: ",req.body.title);
+  
     db.rodado.create({
       nombre: req.body.title,
       precio_hora: req.body.price,

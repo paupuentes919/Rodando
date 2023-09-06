@@ -12,6 +12,10 @@ function usuarioData(sequelize, Datatypes) {
       type: Datatypes.STRING(200),
       NULL: false 
     },
+    apellido: { 
+      type: Datatypes.STRING(200),
+      NULL: false 
+    },
     telefono: {
       type: Datatypes.STRING(20),
       NULL: false
@@ -43,6 +47,9 @@ function usuarioData(sequelize, Datatypes) {
           model:'sucursal',
           key:'id'
       }
+    },
+    imagen: {
+      type: Datatypes.STRING(50),
     }
   };
 

@@ -21,14 +21,12 @@
             <div class="card-body">
               <h5 class="card-title"><%= bicicleta.nombre %></h5>
               <p class="card-text"><%= bicicleta.descripcion %></p>
-              <a
-                href="../productos/detalle/<%= bicicleta.id %>"
-                class="btn btn-primary"
-                >Ver detalle</a>
-              <a
-                href="../productos/editar/<%= bicicleta.id %>"
-                class="btn btn-primary"
-                >Editar</a>
+            <div style="display: flex; justify-content: space-evenly;">
+              <a href="../productos/detalle/<%= bicicleta.id %>" class="btn btn-primary">Ver detalle</a>
+              <% if(locals.isLogged){ %> 
+              <a href="../productos/editar/<%= bicicleta.id %>" class="btn btn-primary">Editar</a>
+              <% } %> 
+            </div>
             </div>
           </div>
           <% }) %>

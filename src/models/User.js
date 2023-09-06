@@ -43,11 +43,11 @@ const User = {
       where:{
         email: campoFormulario
       },
-    }).then(function(usuarioCampo){
-      console.log("eeeeeeeeeeee", usuarioCampo);
-      return usuarioCampo;
+    }).then(function(user){
+        return user
     })
   },
+  
   encontrarUsuarioPorCampo: function (campo, campoFormulario) {
     let todosLosUsuarios = this.traerUsuarios();
     let usuarioCampo = todosLosUsuarios.find(

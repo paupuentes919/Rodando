@@ -1,6 +1,8 @@
+var moment = require('moment');
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const cloudinary = require('cloudinary').v2;
+const db = require ('../database/models');
 const streamifier = require('streamifier');
 const User = require("../models/User");
 const { validationResult } = require("express-validator");
@@ -29,15 +31,20 @@ const controlador = {
             });
           }
     //---------------------------Validacion de usuario repetido-------------------------------// 
-        let usuarioEnBD = encontrarUsuarioPorCampoBD("email", req.body.email);
+    db.usuario.findOne( {
+      where:{
+        email: req.body.email
+      },
+    }).then(function(usuarioEnBD){
           if (usuarioEnBD) {
-            return res.render("registro", {
-              errors: {
-                email: {msg: "Esta dirección de correo ya está registrada"},
-              },
-              oldData: req.body,
-            });
+              return res.render("registro", {
+                errors: {
+                  email: {msg: "Esta dirección de correo ya está registrada"},
+                },
+                oldData: req.body,
+              });
           }
+      })      
   
      //---------------------------Carga en Cloudinary----------------------------------------// 
   
@@ -62,6 +69,23 @@ const controlador = {
 
      //---------------------------Creacion de Usuario en BD-----------------------------------//
 
+     db.usuario.create({
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      email: req.body.email,
+      telefono: req.body.telefono,
+      clave: bcryptjs.hashSync(req.body.contrasena, 10),
+      rol: req.body.rol,
+      direccion: req.body.direccion ,
+      fecha_creacion: moment().format(),
+      fecha_eliminacion: '',
+      imagen: customFilename,
+      sucursal_id: null
+    })
+    
+    res.redirect("/usuarios/login");
+
+    /*
         const userToCreate = {
           ...req.body,
           contrasena: bcryptjs.hashSync(req.body.contrasena, 10),
@@ -70,68 +94,65 @@ const controlador = {
   
         await User.crearUsuarioEnBD(userToCreate);
         res.render("login");          
+  */
+        
   },
-
-    //-----------------------------------------------------------------//
-    // let usuarioACrear = {
-    //   nombre: req.body.nombre,
-    //   apellido: req.body.apellido,
-    //   email: req.body.email,
-    //   contraseña: bcryptjs.hashSync(req.body.contraseña, 10),
-    //   telefono: req.body.telefono,
-    //   direccion: req.body.direccion,
-    //   avatar: req.file.filename,
-    // };
-
-    // if (usuarioEnBD) {
-    //   res.send("Usuario ya registrado!");
-    // } else {
-    //   User.crearUsuarioEnBD(usuarioACrear);
-    //   res.redirect("/login");
-    // }
 
   login: function (req, res) {
     return res.render("login");
   },
 
   loginProcess: function (req, res) {
-    let userToLogin = User.encontrarUsuarioPorCampoBD(req.body.email);
-    console.log("userToLogin", userToLogin);
-    if (userToLogin) {
-      let contrasenaOk = bcryptjs.compareSync(
-        req.body.contrasena,
-        userToLogin.clave,
-      );
-      if (contrasenaOk) {
-        
-        if(userToLogin.rol == 'admin' || userToLogin.rol == 'superadmin'){
-          req.session.adminLogged = userToLogin;
-        } else {
-          req.session.userLogged = userToLogin;
-        }
 
-        if (req.body.recordarUsuario) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 2 });
-        }
-        console.log(req.session)
-        return res.redirect("/usuarios/perfil");
-      }
-      return res.render("login", {
-        errors: {
-          contrasena: {
-            msg: "La contraseña es inválida",
-          },
-        },
-      });
-    }
-    return res.render("login", {
-      errors: {
-        email: {
-          msg: "Este email no se encuentra registrado",
-        },
+// User.encontrarUsuarioPorCampoBD(req.body.email)
+
+    db.usuario.findOne( {
+      where:{
+        email: req.body.email
       },
-    });
-  },
+    }).then(function(userToLogin){
+      
+          if (userToLogin) {
+            let contrasenaOk = bcryptjs.compareSync(
+              req.body.contrasena,
+              userToLogin.clave,
+            );
+            
+            if (contrasenaOk) {
+              //Se activa la session segun haya entrado un superadmin o un admin
+              if(userToLogin.rol == 'superadmin'){
+                req.session.adminLogged = userToLogin;
+              } else {
+                req.session.userLogged = userToLogin;
+              }
+
+              //Se guarda la cookie en memoria del usuario logueado
+              //para que no tengas que volver a loguearte si cerras el navegador
+              if (req.body.recordarUsuario) {
+                res.cookie("user", userToLogin, { maxAge: 1000 * 60 * 2 });
+              }
+            //console.log(req.session)
+            return res.redirect("/usuarios/perfil");
+          }
+          
+          return res.render("login", {
+            errors: {
+              contrasena: {msg: "La contraseña es inválida"}
+            }
+          });
+        }
+        return res.render("login", {
+          errors: {
+            email: {
+              msg: "Este email no se encuentra registrado",
+            },
+          },
+        });
+      })
+
+    },
+
+    
   profile: function (req, res) {
     //console.log(req.cookies.userEmail);
     if(req.session.adminLogged){
@@ -144,6 +165,7 @@ const controlador = {
       });
     }
   },
+
   logout: function (req, res) {
     res.clearCookie("userEmail");
 

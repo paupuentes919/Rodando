@@ -108,16 +108,13 @@
                             <% } %>
                 </div>
                 <div class="mb-3 col-6">
-                    <label for="image-user" class="form-label">Imagen de perfil</label>
-                    <input type="file" 
-                    class="form-control" 
-                    id="image-user" 
-                    name="avatar">
-                    <% if (locals.errors && errors.avatar) { %>
-                        <div class= 'text-danger'>
-                            <%= errors.avatar.msg %>
-                        </div>
-                        <% } %>
+                    <label class="form-label fw-semibold" for="imagen">Imagen de Perfil</label>
+                            <input
+                                class="form-control"
+                                type="file"
+                                id="imagen"
+                                name="imagen"
+                            />
                 </div>
                 <div class="mb-2 col-6">
                     <label for="rol" class="form-label">Rol de Usuario</label>

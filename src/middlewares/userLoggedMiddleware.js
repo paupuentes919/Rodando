@@ -4,13 +4,14 @@ function userLoggedMiddleware(req, res, next) {
   res.locals.isLogged = false;
 
   //EN ESTE TROZO DE CODIGO STEAMOS LAS COOKIES PARA MANTENER LA SESION INICIADA//
-  let emailInCookie = req.cookies.userEmail;
-  //console.log("holaaaaaaaaaa", emailInCookie)
-  let userFromCookie = User.encontrarUsuarioPorCampo("email",emailInCookie);
-  //console.log("ayuuuuuuda", userFromCookie)
-
-  if (userFromCookie) {
-    req.session.userLogged = userFromCookie;
+  let userInCookie = req.cookies.user;
+  
+  if(userInCookie){
+    if(userInCookie.rol == 'superadmin'){
+      req.session.adminLogged = userInCookie;
+    } else {
+      req.session.userLogged = userInCookie;
+    }
   }
   //ESTE TROZO DE CODIGO COMENTADO ES PARA HACER LA COMPROBACION DEL USUARIO EN SESION Y MOSTARR PARTES DEL NAV-BAR
   if (req.session.adminLogged)  {
