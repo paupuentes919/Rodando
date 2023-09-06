@@ -4,7 +4,7 @@ const fs = require("fs");
 const User = {
   fileName: "src/database/usuarios.json",
 
-  //Traigo todos los usuarios
+  //Traigo todos los usuarios de la BD 
 
   traerUsuariosBD: function(){
 
@@ -20,11 +20,33 @@ const User = {
     return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
   },
 
-  //Encuentro usuario por PK y Campo
-  encontrarUsuarioPorPK: function (id) {
-    let todosLosUsuarios = this.traerUsuarios();
-    let usuarioPK = todosLosUsuarios.find((user) => user.id == id);
-    return usuarioPK;
+  //Encuentro usuario por PK y Campo de la BD
+  encontrarUsuarioPorPKBD: function () {
+    db.usuario.findByPk(req.params.id, {
+      include: [{association: 'sucursal'}]
+    })
+    .then(function(userPk){
+      if (userPk) {
+      res.render("perfilUsuario", { userPk});
+      }
+      else { res.redirect('/') }
+    })     
+  },
+  // encontrarUsuarioPorPK: function (id) {
+  //   let todosLosUsuarios = this.traerUsuarios();
+  //   let usuarioPK = todosLosUsuarios.find((user) => user.id == id);
+  //   return usuarioPK;
+  // },
+
+  encontrarUsuarioPorCampoBD: function (campoFormulario) {
+    db.usuario.findOne( {
+      where:{
+        email: campoFormulario
+      },
+    }).then(function(usuarioCampo){
+      console.log("eeeeeeeeeeee", usuarioCampo);
+      return usuarioCampo;
+    })
   },
   encontrarUsuarioPorCampo: function (campo, campoFormulario) {
     let todosLosUsuarios = this.traerUsuarios();
@@ -68,6 +90,9 @@ const User = {
   },
 };
 
-//User.traerUsuariosBD()
+
+// console.log(User.traerUsuariosBD());
+// console.log(User.encontrarUsuarioPorPKBD());
+//console.log(User.encontrarUsuarioPorCampoBD("tomygomien@gmail.com"));
 
 module.exports = User;

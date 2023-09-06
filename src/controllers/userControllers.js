@@ -29,7 +29,7 @@ const controlador = {
             });
           }
     //---------------------------Validacion de usuario repetido-------------------------------// 
-        let usuarioEnBD = User.encontrarUsuarioPorCampo("email", req.body.email);
+        let usuarioEnBD = encontrarUsuarioPorCampoBD("email", req.body.email);
           if (usuarioEnBD) {
             return res.render("registro", {
               errors: {
@@ -95,16 +95,16 @@ const controlador = {
   },
 
   loginProcess: function (req, res) {
-    let userToLogin = User.encontrarUsuarioPorCampo("email", req.body.email);
-
+    let userToLogin = User.encontrarUsuarioPorCampoBD(req.body.email);
+    console.log("userToLogin", userToLogin);
     if (userToLogin) {
       let contrasenaOk = bcryptjs.compareSync(
         req.body.contrasena,
-        userToLogin.contrasena,
+        userToLogin.clave,
       );
       if (contrasenaOk) {
-        delete userToLogin.contrasena;
-        if(userToLogin.rol == 'admin'){
+        
+        if(userToLogin.rol == 'admin' || userToLogin.rol == 'superadmin'){
           req.session.adminLogged = userToLogin;
         } else {
           req.session.userLogged = userToLogin;

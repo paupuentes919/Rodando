@@ -5,7 +5,9 @@ function userLoggedMiddleware(req, res, next) {
 
   //EN ESTE TROZO DE CODIGO STEAMOS LAS COOKIES PARA MANTENER LA SESION INICIADA//
   let emailInCookie = req.cookies.userEmail;
-  let userFromCookie = User.encontrarUsuarioPorCampo("email", emailInCookie);
+  //console.log("holaaaaaaaaaa", emailInCookie)
+  let userFromCookie = User.encontrarUsuarioPorCampo("email",emailInCookie);
+  //console.log("ayuuuuuuda", userFromCookie)
 
   if (userFromCookie) {
     req.session.userLogged = userFromCookie;
