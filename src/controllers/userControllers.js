@@ -4,7 +4,6 @@ const bcryptjs = require("bcryptjs");
 const cloudinary = require('cloudinary').v2;
 const db = require ('../database/models');
 const streamifier = require('streamifier');
-const User = require("../models/User");
 const { validationResult } = require("express-validator");
 
 
@@ -84,17 +83,6 @@ const controlador = {
     })
     
     res.redirect("/usuarios/login");
-
-    /*
-        const userToCreate = {
-          ...req.body,
-          contrasena: bcryptjs.hashSync(req.body.contrasena, 10),
-          avatar: `user-${Date.now()}${path.extname(req.file.originalname)}`, 
-        };
-  
-        await User.crearUsuarioEnBD(userToCreate);
-        res.render("login");          
-  */
         
   },
 

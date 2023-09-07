@@ -1,4 +1,3 @@
-const User = require("../models/User");
 //Middleware creado para mostrar partes de la nav-bar si es que el usuario esta logueado o no// //aqui tambien estan la config de las cookies
 function userLoggedMiddleware(req, res, next) {
   res.locals.isLogged = false;

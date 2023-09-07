@@ -4,9 +4,7 @@ const path = require("path");
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const db = require ('../database/models');
-const productosPath = path.join(__dirname, "../database/productos.json");
-/* leo un json y lo parseo */
-const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
+
 
 cloudinary.config({
 	cloud_name: 'dkguig17n',
@@ -81,11 +79,6 @@ const pcontrolador = {
     });
 
     const uploadedImage = await uploadPromise;
-
-
-
-    /* creo una variable para generar el nuevo producto del req.body */
-
   
     db.rodado.create({
       nombre: req.body.title,
@@ -102,28 +95,7 @@ const pcontrolador = {
     
     res.redirect("/");
   },  
-/*
-    let nuevoProducto = {
-      id: productos[productos.length-1].id + 1,
-      vehiculo: req.body.vehiculo,
-      titulo: req.body.title,
-      tipo: req.body.tipo,
-      color: req.body.color,
-      rodado: req.body.rodado,
-      precio: req.body.price,
-      descripcion: req.body.desc,
-      /* if ternario para preguntar si viene imagen que la escriba, sino que se quede con la por default 
-      imagen: customFilename
-    }
-    /* agrego ese item al listado JSON
-    await productos.push(nuevoProducto);
 
-    /* convierto a json nuevamente y escribo el archivo products.json 
-    const productosJSON = JSON.stringify(productos, null, " ");
-    fs.writeFileSync(productosPath, productosJSON);
-    res.redirect("/");
-  },
- */
   editar: function (req, res) {
 
     Promise.all([db.rodado.findByPk((req.params.id),
@@ -140,8 +112,30 @@ const pcontrolador = {
     }) 
   },
 
-  actualizar: function (req, res) {
+  actualizar:async function (req, res) {
    
+    //---------------------------Carga en Cloudinary----------------------------------------// 
+   if(req.file){
+
+    const imageBuffer = req.file.buffer;
+    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
+
+    const uploadPromise = new Promise((resolve, reject) => {
+      let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
+        if (error) {
+          console.error('Error during upload:', error);
+          reject(error);
+        } else {
+          console.log('Upload successful:', result);
+          resolve(result);
+        }
+      });
+
+    streamifier.createReadStream(imageBuffer).pipe(stream);
+    });
+
+    const uploadedImage = await uploadPromise;
+  
     db.rodado.update({
       nombre: req.body.title,
       precio_hora: req.body.price,
@@ -150,31 +144,26 @@ const pcontrolador = {
       usuario_id: req.body.usuario ,
       categoria_id: req.body.vehiculo,
       color_id: req.body.color,
+      imagen: customFilename,
     
     },{
       where: {id: req.params.id}
     })
+  
+  } else {
 
-  /* 
-    idParaEditar = req.params.id;
-    
-      for(let p of productos){
-        if(idParaEditar == p.id){
-        p.titulo = req.body.title;
-        p.vehiculo = req.body.vehiculo;
-        p.rodado = req.body.rodado;
-        p.precio = req.body.price;
-        p.color = req.body.color;
-        p.descripcion = req.body.description;
-          if(req.file){
-            fs.unlinkSync(productosPath,p.imagen);
-            p.imagen = req.file.filename;
-          }
-        }
-      };
-
-    fs.writeFileSync(productosPath,JSON.stringify(productos, null, " "));
-  */    
+    db.rodado.update({
+      nombre: req.body.title,
+      precio_hora: req.body.price,
+      descripcion: req.body.desc,
+      rodado: req.body.rodado,
+      usuario_id: req.body.usuario ,
+      categoria_id: req.body.vehiculo,
+      color_id: req.body.color,
+    },{
+      where: {id: req.params.id}
+    })
+  }   
     res.redirect('../detalle/' + req.params.id);
 
   },
