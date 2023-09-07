@@ -7,7 +7,6 @@ const app = express();
 const path = require("path");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
-
 /* requiriendo session */
 app.use(
   session({
@@ -22,6 +21,9 @@ app.use(cookies());
 /* requiriendo middleware userLoggedMiddleware */
 app.use(userLoggedMiddleware);
 
+/* form config */
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 /* requiero methodOverride */
 const methodOverride = require("method-override");
@@ -47,9 +49,6 @@ const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 
-/* form config */
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 /* Configurar metodos put delete patch */
 app.use(methodOverride("_method"));
 

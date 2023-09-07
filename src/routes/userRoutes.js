@@ -1,7 +1,7 @@
 //EXPRESS//
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const multer = require('multer');
+const multer = require("multer");
 
 //CONTROLADOR//
 const userControllers = require("./../controllers/userControllers");
@@ -17,13 +17,18 @@ const uploadFile = multer();
 
 //REGISTRO//
 //Formulario de registro de Usuarios
-router.get("/registro", guestMiddleware,  userControllers.register);
+router.get("/registro", guestMiddleware, userControllers.register);
 //Proceso de registro
-router.post("/registro", uploadFile.single("imagen"), validations, userControllers.processRegister,);
+router.post(
+  "/registro",
+  uploadFile.single("imagen"),
+  validations,
+  userControllers.processRegister,
+);
 
 //LOGIN//
 //Formulario de logIn
-router.get("/login" , authMiddleware, userControllers.login);
+router.get("/login", authMiddleware, userControllers.login);
 //Proceso de LogIn
 router.post("/login", userControllers.loginProcess);
 
@@ -32,5 +37,15 @@ router.post("/login", userControllers.loginProcess);
 router.get("/perfil", guestUserMiddleware, userControllers.profile);
 //logout de perfil
 router.get("/logout", userControllers.logout);
+
+//Ver todos los usuarios
+router.get("/", userControllers.vistaUsuarios);
+//Editar usuario
+router.put("/:id", userControllers.editarUsuario);
+
+router.get("/editar/:id", userControllers.vistaEditarUsuario);
+
+//Borrar usuario
+router.delete("/:id", userControllers.eliminarUsuario);
 
 module.exports = router;
