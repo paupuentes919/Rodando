@@ -1,0 +1,49 @@
+.grilla-usuarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+
+article {
+  background: #fff;
+  padding: 20px;
+}
+
+button {
+  border-radius: 7.5px;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: semibold;
+}
+
+button p {
+  margin-bottom: 0;
+}
+
+.article-fields {
+  flex-grow: 1;
+}
+
+.btn-delete {
+  background-color: #df3c4d;
+}
+
+.btn-edit {
+  background-color: orange;
+}
+
+.titulo-contenedor {
+  position: relative;
+}
+
+.enlace-crear {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+
+.btn-crear {
+  background: green;
+}
