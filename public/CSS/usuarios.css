@@ -26,12 +26,19 @@ button p {
   flex-grow: 1;
 }
 
+.btn-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .btn-delete {
   background-color: #df3c4d;
+  padding: 10px 30px;
 }
 
 .btn-edit {
   background-color: orange;
+  padding: 10px 30px;
 }
 
 .titulo-contenedor {
@@ -40,10 +47,22 @@ button p {
 
 .enlace-crear {
   position: absolute;
-  right: 20px;
+  right: 15%;
   bottom: 0;
 }
 
 .btn-crear {
   background: green;
+  padding: 15px 35px;
+}
+
+.user-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.user-title-box {
+  text-align: center;
+  margin-bottom: 20px;
 }
