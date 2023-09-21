@@ -1,38 +1,75 @@
 window.addEventListener("load", function () {
   //DETALLE
-  // Captura de los inputs y botones
+  // Captura del titulo, precio y boton
   let tituloRodado = document.querySelector("#titulo-rodado").innerText;
-  let precioUnitario = document.querySelector("#precio-unitario");
+  let precioUnitario = document.querySelector("#precio-unitario").innerText;
   let btnCarrito = document.querySelector("#btn-carrito");
-  let cantidadRodados = document.querySelector("#cantidad-rodados");
-  let cantidadHoras = document.querySelector("#cantidad-horas");
-  let datepicker = document.querySelector("#datepicker");
 
   let tituloRodadoCarrito = document.querySelector("#titulo-rodado-carrito");
 
-  let array = [];
-
- // Guardar en SessionStorage cuando se hace click en el btn del carrito
+  // Guardar en SessionStorage cuando se hace click en el btn del carrito
   btnCarrito.addEventListener("click", function () {
-    for(let i=0; i<tituloRodado.length;i++){
-        array.push(sessionStorage.setItem("tituloRodado", JSON.stringify(tituloRodado)));
-    }
-    
-    sessionStorage.setItem("precioUnitario", precioUnitario.innerText);
-    sessionStorage.setItem("cantidadRodados", cantidadRodados.value);
-    sessionStorage.setItem("cantidadHoras", cantidadHoras.value);
-    sessionStorage.setItem("datepicker", datepicker.value);
-    
-    // tituloRodadoCarrito = JSON.parse(sessionStorage.getItem("tituloRodado"));
-  });
+    //Captura de los inputs
+    let cantidadRodados = document.querySelector("#cantidad-rodados").value;
+    let cantidadHoras = document.querySelector("#cantidad-horas").value;
 
-//   console.log("ver",tituloRodado);
-  
- //CARRITO
- // Captura de los inputs y botones
- 
- 
-//  tituloRodadoCarrito.innerText = tituloRodado.innerText;
- 
- 
+    //titulo
+    let tituloRodadoOldData;
+    if (sessionStorage.getItem("tituloRodado") == null) {
+      sessionStorage.setItem("tituloRodado", []);
+      tituloRodadoOldData = [];
+    } else {
+      tituloRodadoOldData = JSON.parse(sessionStorage.getItem("tituloRodado"));
+    }
+    tituloRodadoOldData.push(tituloRodado);
+    sessionStorage.setItem("tituloRodado", JSON.stringify(tituloRodadoOldData));
+
+    //precio
+    let precioUnitarioOldData;
+    if (sessionStorage.getItem("precioUnitario") == null) {
+      sessionStorage.setItem("precioUnitario", []);
+      precioUnitarioOldData = [];
+    } else {
+      precioUnitarioOldData = JSON.parse(
+        sessionStorage.getItem("precioUnitario"),
+      );
+    }
+    precioUnitarioOldData.push(precioUnitario);
+    sessionStorage.setItem(
+      "precioUnitario",
+      JSON.stringify(precioUnitarioOldData),
+    );
+
+    //cantidad
+    let cantidadRodadosOldData;
+    if (sessionStorage.getItem("cantidadRodados") == null) {
+      sessionStorage.setItem("cantidadRodados", []);
+      cantidadRodadosOldData = [];
+    } else {
+      cantidadRodadosOldData = JSON.parse(
+        sessionStorage.getItem("cantidadRodados"),
+      );
+    }
+    cantidadRodadosOldData.push(cantidadRodados);
+    sessionStorage.setItem(
+      "cantidadRodados",
+      JSON.stringify(cantidadRodadosOldData),
+    );
+
+    //horas
+    let cantidadHorasOldData;
+    if (sessionStorage.getItem("cantidadHoras") == null) {
+      sessionStorage.setItem("cantidadHoras", []);
+      cantidadHorasOldData = [];
+    } else {
+      cantidadHorasOldData = JSON.parse(
+        sessionStorage.getItem("cantidadHoras"),
+      );
+    }
+    cantidadHorasOldData.push(cantidadHoras);
+    sessionStorage.setItem(
+      "cantidadHoras",
+      JSON.stringify(cantidadHorasOldData),
+    );
+  });
 });
