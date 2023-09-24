@@ -3,7 +3,6 @@
   <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/CSS/stylecarrito.css" />
-    <script type="text/javascript" src="/js/carrito.js"></script>
   </head>
   <body>
     <!--------------------------------------------------HEADER----------------------------------------------------------->
@@ -17,130 +16,22 @@
           <div class="div--precio-numero-total precio-numero-container">
             <div class="div-total-numero">
               <h4 class="h4--precio-total">Precio Total</h4>
-              <h6 class="h6--precio-numero">$ NUMERO</h6>
+              <h4 class="h6--precio-numero" id="precio-total">$</h4>
             </div>
             <div class="btn__container--realizar-pago">
               <button class="btn--realizar-pago">Comprar</button>
+              <button class="btn--realizar-pago" id="borrar-Carrito">
+                Borrar carrito
+              </button>
             </div>
           </div>
         </div>
       </div>
       <!-----------------------------------SECTION RODADOS ALQUILADOS-------------------------------->
-      <section class="section-productos">
-        <!-------------------RODADO 1-------------------------->
-        <div class="div--precio-numero">
-          <div class="display-flex">
-            <div class="div-img-products">
-              <img
-                class="img-width-height"
-                src="https://rodando.alwaysdata.net/bicicleta-1.png"
-              />
-            </div>
-            <div class="div-container-products">
-              <div>
-                <p class="p-titulo-tipo-rodado" id="titulo-rodado-carrito"></p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad horas">Horas contratadas</p>
-                <p class="p-margin p-width">Numeros hs</p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
-                <p class="p-margin p-width">Numeros cant</p>
-              </div>
-            </div>
-          </div>
-          <div class="producto-datos-inputs-seleccion">
-            <div class="precio">
-              <label>$ NUMERO</label>
-            </div>
-            <div class="botones">
-              <button><i class="fa-solid fa-trash-can"></i></button>
-              <button>
-                <a href="paginaDeReserva">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-------------------RODADO 2-------------------------->
-        <div class="div--precio-numero">
-          <div class="display-flex">
-            <div class="div-img-products">
-              <img
-                class="img-width-height"
-                src="https://rodando.alwaysdata.net/monopatin-1.png"
-              />
-            </div>
-            <div class="div-container-products">
-              <div>
-                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad horas">Horas contratadas</p>
-                <p class="p-margin p-width">Numeros hs</p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
-                <p class="p-margin p-width">Numeros cant</p>
-              </div>
-            </div>
-          </div>
-          <div class="producto-datos-inputs-seleccion">
-            <div class="precio">
-              <label>$ NUMERO</label>
-            </div>
-            <div class="botones">
-              <button><i class="fa-solid fa-trash-can"></i></button>
-              <button>
-                <a href="paginaDeReserva"
-                  ><i class="fa-solid fa-pen-to-square"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-------------------RODADO 3-------------------------->
-        <div class="div--precio-numero">
-          <div class="display-flex">
-            <div class="div-img-products">
-              <img
-                class="img-width-height"
-                src="https://rodando.alwaysdata.net/bicicleta-1.png"
-              />
-            </div>
-            <div class="div-container-products">
-              <div>
-                <p class="p-titulo-tipo-rodado">TITULO - TIPO DE RODADO</p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad horas">Horas contratadas</p>
-                <p class="p-margin p-width">Numeros hs</p>
-              </div>
-              <div class="div-horas-cantidad">
-                <p class="p-horas-cantidad cantidad">Vehículos contratados</p>
-                <p class="p-margin p-width">Numeros cant</p>
-              </div>
-            </div>
-          </div>
-          <div class="producto-datos-inputs-seleccion">
-            <div class="precio">
-              <label>$ NUMERO</label>
-            </div>
-            <div class="botones">
-              <button><i class="fa-solid fa-trash-can"></i></button>
-              <button>
-                <a href="paginaDeReserva"
-                  ><i class="fa-solid fa-pen-to-square"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="section-productos" id="div1"></section>
     </main>
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
     <%- include('./partials/footer2') %>
+    <script type="text/javascript" src="/js/carrito.js"></script>
   </body>
 </html>
