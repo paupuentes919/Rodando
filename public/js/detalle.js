@@ -8,13 +8,20 @@ window.addEventListener("load", function () {
   // let datepicker = document.getElementById("#datepicker");
 
   btnCarrito.addEventListener("click", function () {
-    let objCarrito = {
+    let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+    let maxId = 0;
+    if (carrito && carrito.length > 0) {
+      let ids = carrito.map((elem) => elem.id);
+      maxId = Math.max(...ids) + 1;
+    }
+    let nuevoItem = {
       tituloRodado: tituloRodado.innerText,
       cantidadRodado: cantidadRodados.value,
       precioUnitario: precioUnitario.innerText,
       cantidadHoras: cantidadHoras.value,
       precioTotal:
         precioUnitario.innerText * cantidadHoras.value * cantidadRodados.value,
+      id: maxId,
     };
 
     let carritoArray = [];
@@ -23,8 +30,7 @@ window.addEventListener("load", function () {
       carritoArray = JSON.parse(sessionStorage.getItem("carrito"));
     }
 
-    carritoArray.push(objCarrito);
-    console.log(objCarrito);
+    carritoArray.push(nuevoItem);
     sessionStorage.setItem("carrito", JSON.stringify(carritoArray));
   });
 });

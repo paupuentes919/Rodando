@@ -2,11 +2,22 @@
 let botonBorrarCarrito = document.getElementById("borrar-Carrito");
 let iconoCarrito = document.getElementById("iconoCarrito");
 // let botonBorrarItem = document.getElementById("borrar-Item");
-let carritoArray = JSON.parse(sessionStorage.getItem("carrito"));
 let precioTotalCarrito = document.getElementById("precio-total");
+let carritoArrayInicial = JSON.parse(sessionStorage.getItem("carrito"));
 let sumatoriaTotal = 0;
 
-carritoArray.forEach((obj) => {
+let borrarItem = function (id) {
+  let carritoArray = JSON.parse(sessionStorage.getItem("carrito"));
+  let carritoFiltrado = carritoArray.filter((elem) => {
+    return elem.id != id;
+  });
+  sessionStorage.setItem("carrito", JSON.stringify(carritoFiltrado));
+  if (!JSON.parse(sessionStorage.getItem("carrito")).length) {
+    sessionStorage.clear();
+  }
+  window.location.reload();
+};
+carritoArrayInicial.forEach((obj, i) => {
   let div = document.createElement("div");
   let section = document.getElementById("div1");
   sumatoriaTotal = sumatoriaTotal + obj.precioTotal;
@@ -37,7 +48,7 @@ carritoArray.forEach((obj) => {
     <label>$${obj.precioTotal}</label>
     </div>
     <div class="botones">
-    <button><i class="fa-solid fa-trash-can"></i></button>
+    <button onclick="borrarItem(${obj.id})"><i class="fa-solid fa-trash-can"></i></button>
     <button>
     <a href="paginaDeReserva">
     <i class="fa-solid fa-pen-to-square"></i>
@@ -55,4 +66,5 @@ precioTotalCarrito.innerHTML = sumatoriaTotal;
 
 botonBorrarCarrito.addEventListener("click", function () {
   sessionStorage.clear();
+  window.location.reload();
 });
