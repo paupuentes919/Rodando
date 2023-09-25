@@ -15,21 +15,25 @@ cloudinary.config({
 const pcontrolador = {
   
   bicicletas: function(req, res){
+
+    
   /* busco todas las bicicletas en la base de datos */
     db.rodado.findAll({
+      group: ['modelo_id'],
       where:{
-        categoria_id: '1'
+        categ: 'bicicleta'
       }
     }).then(function(bici){
       res.render("bicicletas", { bici });
     })
-  },
+    },
   
   monopatines: function (req, res) {
   /* busco todos los monopatines en la base de datos */
     db.rodado.findAll({
+      group: ['modelo_id'],
       where:{
-        categoria_id: '2'
+        categ: 'monopatin'
       }
     }).then(function(mono){
       res.render("monopatines", { mono });
@@ -39,7 +43,7 @@ const pcontrolador = {
   detalle: function (req, res) {
   /* busco un producto en funcion de su ID */
     db.rodado.findByPk(req.params.id , {
-      include: [{association: 'categoria'}, {association: 'color'}]
+      include: [{association: 'modelo'}, {association: 'color'}]
     })
         .then(function(product){
           if (product) {
@@ -50,14 +54,14 @@ const pcontrolador = {
   },
     
   crearVista: function (req, res) {
-    Promise.all([db.categoria.findAll(), db.color.findAll(),db.usuario.findAll()])
-    .then(function ([categoria, color, usuario]) {
+    Promise.all([ db.color.findAll(),db.usuario.findAll()])
+    .then(function ([ color, usuario]) {
       // Pasa ambas consultas a la vista
-      res.render("crearProducto", { categoria, color, usuario });
+      res.render("crearProducto", {  color, usuario });
     }) 
   },
 
-  crearItemEnBD: async function (req, res) {
+  crearItemEnBD: async function (req, res) { 
 
 //---------------------------Carga en Cloudinary----------------------------------------// 
   
@@ -79,20 +83,32 @@ const pcontrolador = {
     });
 
     const uploadedImage = await uploadPromise;
-  
-    db.rodado.create({
-      nombre: req.body.title,
-      precio_hora: req.body.price,
-      descripcion: req.body.desc,
-      rodado: req.body.rodado,
-      fecha_creacion: moment().format(),
-      fecha_eliminacion: '',
-      imagen: customFilename,
-      usuario_id: req.body.usuario ,
-      categoria_id: req.body.vehiculo,
-      color_id: req.body.color,
-    })
+
+    db.modelo.findAll({
+    }).then(function(modelo){
+      let newId = modelo[(modelo.length - 1)].id + 1
+      
+      db.modelo.create({
+        id: newId,
+        nombre: req.body.title,
+      })
     
+      db.rodado.create({
+        nombre: req.body.title,
+        precio_hora: req.body.price,
+        descripcion: req.body.desc,
+        rodado: req.body.rodado,
+        fecha_creacion: moment().format(),
+        fecha_eliminacion: '',
+        imagen: customFilename,
+        categ: req.body.vehiculo,
+        usuario_id: req.body.usuario ,
+        modelo_id: newId,
+        color_id: req.body.color,
+      })
+      
+    })
+  
     res.redirect("/");
   },  
 
@@ -100,15 +116,15 @@ const pcontrolador = {
 
     Promise.all([db.rodado.findByPk((req.params.id),
       {
-        include: [{association: 'categoria'}, {association: 'color'}]
+        include: [{association: 'modelo'}, {association: 'color'}]
       }), 
-      db.categoria.findAll(), 
+      db.modelo.findAll(), 
       db.color.findAll(),
       db.usuario.findAll()
     ])
-    .then(function ([rodado, categoria, color, usuario]) {
+    .then(function ([rodado, modelo, color, usuario]) {
       // Pasa ambas consultas a la vista
-      res.render("editarProducto", { rodado, categoria, color, usuario });
+      res.render("editarProducto", { rodado, modelo, color, usuario });
     }) 
   },
 
@@ -141,8 +157,9 @@ const pcontrolador = {
       precio_hora: req.body.price,
       descripcion: req.body.desc,
       rodado: req.body.rodado,
+      categ: req.body.vehiculo,
       usuario_id: req.body.usuario ,
-      categoria_id: req.body.vehiculo,
+      modelo_id: req.body.vehiculo,
       color_id: req.body.color,
       imagen: customFilename,
     
@@ -157,8 +174,9 @@ const pcontrolador = {
       precio_hora: req.body.price,
       descripcion: req.body.desc,
       rodado: req.body.rodado,
+      categ: req.body.vehiculo,
       usuario_id: req.body.usuario ,
-      categoria_id: req.body.vehiculo,
+      modelo_id: req.body.vehiculo,
       color_id: req.body.color,
     },{
       where: {id: req.params.id}

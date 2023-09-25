@@ -15,8 +15,9 @@ function rodadoData(sequelize, Datatypes) {
       fecha_creacion: { type: Datatypes.DATE },
       fecha_eliminacion: { type: Datatypes.DATE },
       imagen: { type: Datatypes.STRING(50) },
+      categ: { type: Datatypes.ENUM("bicicleta", "monopatin") },
       usuario_id: { type: Datatypes.INTEGER },
-      categoria_id: { type: Datatypes.INTEGER },
+      modelo_id: { type: Datatypes.INTEGER },
       color_id: { type: Datatypes.INTEGER },
     };
     
@@ -28,9 +29,9 @@ function rodadoData(sequelize, Datatypes) {
     const rodado = sequelize.define(alias, cols, config);
     
     rodado.associate = function(models){
-      rodado.belongsTo(models.categoria, {
-        as: "categoria",
-        foreignKey: "categoria_id",
+      rodado.belongsTo(models.modelo, {
+        as: "modelo",
+        foreignKey: "modelo_id",
       });
   
       rodado.belongsTo(models.color, {
