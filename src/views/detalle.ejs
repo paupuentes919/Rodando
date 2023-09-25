@@ -3,7 +3,6 @@
   <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/styledetalle.css" />
-    <script type="text/javascript" src="/js/carrito.js"></script>
   </head>
   <body>
     <%- include('./partials/header') %>
@@ -40,15 +39,15 @@
         </div>
 
         <div>
-            <!-- cantidad de rodados -->
-          <input type="number" min="1" max="8" id="cantidad-rodados"/>
+          <!-- cantidad de rodados -->
+          <input type="number" min="1" max="8" id="cantidad-rodados" />
           <!-- cantidad de horas-->
           <input type="number" min="1" max="12" id="cantidad-horas" />
-          <input type="text" id="datepicker" placeholder="Seleccione fecha"/>
+          <input type="text" id="datepicker" placeholder="Seleccione fecha" />
           <button id="btn-carrito" class="btn-add-to-cart">
             <i class="fa-solid fa-cart-plus"></i>
             Añadir al Carrito
-        </button>
+          </button>
         </div>
 
         <!-- <div class="container-add-cart">
@@ -163,6 +162,9 @@
     </section>
 
     <%- include('./partials/footer2') %>
+
+    <script type="text/javascript" src="/js/detalle.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script>
       var picker = new Pikaday({

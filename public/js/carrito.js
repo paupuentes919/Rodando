@@ -1,75 +1,58 @@
-window.addEventListener("load", function () {
-  //DETALLE
-  // Captura del titulo, precio y boton
-  let tituloRodado = document.querySelector("#titulo-rodado").innerText;
-  let precioUnitario = document.querySelector("#precio-unitario").innerText;
-  let btnCarrito = document.querySelector("#btn-carrito");
+// obtener en carrito (js 2)
+let botonBorrarCarrito = document.getElementById("borrar-Carrito");
+let iconoCarrito = document.getElementById("iconoCarrito");
+// let botonBorrarItem = document.getElementById("borrar-Item");
+let carritoArray = JSON.parse(sessionStorage.getItem("carrito"));
+let precioTotalCarrito = document.getElementById("precio-total");
+let sumatoriaTotal = 0;
 
-  let tituloRodadoCarrito = document.querySelector("#titulo-rodado-carrito");
+carritoArray.forEach((obj) => {
+  let div = document.createElement("div");
+  let section = document.getElementById("div1");
+  sumatoriaTotal = sumatoriaTotal + obj.precioTotal;
+  div.innerHTML = `<div class="div--precio-numero">
+  <div class="display-flex">
+  <div class="div-img-products">
+  <img
+  class="img-width-height"
+  src="https://rodando.alwaysdata.net/bicicleta-1.png"
+  />
+  </div>
+  <div class="div-container-products">
+  <div class="p-titulo-tipo-rodado">
+  <h2>${obj.tituloRodado}</h2>
+  </div>
+  <div class="div-horas-cantidad" >
+  <p class="p-horas-cantidad horas">Horas contratadas: </p>
+  <p>${obj.cantidadHoras}hs</p>
+  </div>
+  <div class="div-vehiculo-cantidad">
+  <p class="p-horas-cantidad cantidad">Vehículos contratados: </p>
+  <p> ${obj.cantidadRodado}</p>
+  </div>
+  </div>
+  </div>
+  <div class="producto-datos-inputs-seleccion">
+  <div class="precio">
+    <label>$${obj.precioTotal}</label>
+    </div>
+    <div class="botones">
+    <button><i class="fa-solid fa-trash-can"></i></button>
+    <button>
+    <a href="paginaDeReserva">
+    <i class="fa-solid fa-pen-to-square"></i>
+    </a>
+    </button>
+    </div>
+    </div>
+    </div>`;
+  section.appendChild(div);
+});
 
-  // Guardar en SessionStorage cuando se hace click en el btn del carrito
-  btnCarrito.addEventListener("click", function () {
-    //Captura de los inputs
-    let cantidadRodados = document.querySelector("#cantidad-rodados").value;
-    let cantidadHoras = document.querySelector("#cantidad-horas").value;
+precioTotalCarrito.innerHTML = sumatoriaTotal;
 
-    //titulo
-    let tituloRodadoOldData;
-    if (sessionStorage.getItem("tituloRodado") == null) {
-      sessionStorage.setItem("tituloRodado", []);
-      tituloRodadoOldData = [];
-    } else {
-      tituloRodadoOldData = JSON.parse(sessionStorage.getItem("tituloRodado"));
-    }
-    tituloRodadoOldData.push(tituloRodado);
-    sessionStorage.setItem("tituloRodado", JSON.stringify(tituloRodadoOldData));
+// Borrado de carrito completo
 
-    //precio
-    let precioUnitarioOldData;
-    if (sessionStorage.getItem("precioUnitario") == null) {
-      sessionStorage.setItem("precioUnitario", []);
-      precioUnitarioOldData = [];
-    } else {
-      precioUnitarioOldData = JSON.parse(
-        sessionStorage.getItem("precioUnitario"),
-      );
-    }
-    precioUnitarioOldData.push(precioUnitario);
-    sessionStorage.setItem(
-      "precioUnitario",
-      JSON.stringify(precioUnitarioOldData),
-    );
-
-    //cantidad
-    let cantidadRodadosOldData;
-    if (sessionStorage.getItem("cantidadRodados") == null) {
-      sessionStorage.setItem("cantidadRodados", []);
-      cantidadRodadosOldData = [];
-    } else {
-      cantidadRodadosOldData = JSON.parse(
-        sessionStorage.getItem("cantidadRodados"),
-      );
-    }
-    cantidadRodadosOldData.push(cantidadRodados);
-    sessionStorage.setItem(
-      "cantidadRodados",
-      JSON.stringify(cantidadRodadosOldData),
-    );
-
-    //horas
-    let cantidadHorasOldData;
-    if (sessionStorage.getItem("cantidadHoras") == null) {
-      sessionStorage.setItem("cantidadHoras", []);
-      cantidadHorasOldData = [];
-    } else {
-      cantidadHorasOldData = JSON.parse(
-        sessionStorage.getItem("cantidadHoras"),
-      );
-    }
-    cantidadHorasOldData.push(cantidadHoras);
-    sessionStorage.setItem(
-      "cantidadHoras",
-      JSON.stringify(cantidadHorasOldData),
-    );
-  });
+botonBorrarCarrito.addEventListener("click", function () {
+  sessionStorage.clear();
 });
