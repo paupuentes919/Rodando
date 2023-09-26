@@ -19,12 +19,7 @@ const uploadFile = multer();
 //Formulario de registro de Usuarios
 router.get("/registro", guestMiddleware, userControllers.register);
 //Proceso de registro
-router.post(
-  "/registro",
-  uploadFile.single("imagen"),
-  validations,
-  userControllers.processRegister,
-);
+router.post("/registro", uploadFile.single("imagen"), validations, userControllers.processRegister,);
 
 //LOGIN//
 //Formulario de logIn
@@ -41,9 +36,11 @@ router.get("/logout", userControllers.logout);
 //Ver todos los usuarios
 router.get("/", userControllers.vistaUsuarios);
 //Editar usuario
-router.put("/:id", userControllers.editarUsuario);
-
 router.get("/editar/:id", userControllers.vistaEditarUsuario);
+
+router.put("/editar/:id", uploadFile.single("imagen"), userControllers.editarUsuario);
+
+
 
 //Borrar usuario
 router.delete("/:id", userControllers.eliminarUsuario);

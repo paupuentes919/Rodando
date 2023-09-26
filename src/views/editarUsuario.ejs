@@ -12,12 +12,12 @@
    
         <h1 class="titulo-formulario"><strong>Editar usuario <%=locals.usuario.id || "" %></strong></h1> 
         <div class="container">
-            <form class="row row-form g-4 mt-4 pb-4" method="POST" action="/usuarios/<%= locals.usuario.id %>?_method=PUT">
+            <form class="row row-form g-4 mt-4 pb-4" method="POST" action="/usuarios/editar/<%= usuario.id %>?_method=PUT" enctype="multipart/form-data">
                 <div class="mb-3 col-6">
                     <label for="input-name" class="form-label">Nombre</label>
                     <input type="text" 
                     class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                    value="<%= locals.usuario.nombre || "" %>"
+                    value="<%= locals.usuario.nombre || %>"
                     id="input-name" 
                     name="nombre"
                     placeholder="Introduzca Nombre">
@@ -87,13 +87,12 @@
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label fw-semibold" for="imagen">Imagen de Perfil</label>
-                            <input
-                                class="form-control"
-                                value="<%= locals.usuario.imagen || "" %>"
-                                type="file"
-                                id="imagen"
-                                name="imagen"
-                            />
+                        <input
+                        class="form-control"
+                        type="file"
+                        id="imagen"
+                        name="imagen"
+                        />
                 </div>
                 <div class="mb-2 col-6">
                     <label for="rol" class="form-label">Rol de Usuario</label>

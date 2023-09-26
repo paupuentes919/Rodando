@@ -91,6 +91,25 @@
                         </button>
                     </div>
                 </form>
+
+                <form action="/productos/crear" method="post" class="form" enctype="multipart/form-data">
+                    
+                    <div class="col-md">
+                        <label for="nuevoRodado" class="form-label fw-semibold">Seleccionar Rodado</label>
+                        <select name="nuevoRodado" id="nuevoRodado" class="form-control" >
+                            <% for(let i=0; i< rodado.length; i++) { %>
+                                <option value="<%= JSON.stringify(rodado[i]) %>"><%= rodado[i].nombre %></option>
+                            <% } %>
+                        </select>  
+                    </div>
+                    
+                    <div class="d-flex justify-content-center">
+                        <button type='submit' class="btn send-btn mt-4 px-5 py-3">
+                            <h5>Añadir Rodado</h5>
+                        </button>
+                    </div>
+
+                </form>
             </main>
         </div>
     </body>

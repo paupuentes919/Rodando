@@ -179,14 +179,51 @@ const controlador = {
   },
 
   editarUsuario: async function (req, res) {
+
+  //---------------------------Carga en Cloudinary----------------------------------------// 
+  if(req.file){
+
+    const imageBuffer = req.file.buffer;
+    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
+
+    const uploadPromise = new Promise((resolve, reject) => {
+      let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
+        if (error) {
+          console.error('Error during upload:', error);
+          reject(error);
+        } else {
+          console.log('Upload successful:', result);
+          resolve(result);
+        }
+      });
+
+    streamifier.createReadStream(imageBuffer).pipe(stream);
+    });
+
+    const uploadedImage = await uploadPromise;
+ 
+  db.usuario
+    .findOne({ where: { id: req.params.id } })
+    .then((usuarioAEditar) => {
+      usuarioAEditar.update({ ...req.body, sucursal_id: req.body.sucursal, imagen:customFilename });
+      return usuarioAEditar;
+    })
+    .then((data) => res.redirect("/usuarios"));
+   
+  } else {
+
     db.usuario
       .findOne({ where: { id: req.params.id } })
       .then((usuarioAEditar) => {
-        usuarioAEditar.update({ ...req.body, sucursal_id: req.body.sucursal });
+        usuarioAEditar.update({ ...req.body, sucursal_id: req.body.sucursal});
         return usuarioAEditar;
       })
       .then((data) => res.redirect("/usuarios"));
+
+   }    
+    
   },
+
 
   vistaEditarUsuario: async function (req, res) {
     await Promise.all([
