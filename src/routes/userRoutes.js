@@ -36,7 +36,7 @@ router.get("/logout", userControllers.logout);
 //Ver todos los usuarios
 router.get("/", userControllers.vistaUsuarios);
 //Editar usuario
-router.get("/editar/:id", userControllers.vistaEditarUsuario);
+router.get("/editar/:id", guestMiddleware, userControllers.vistaEditarUsuario);
 
 router.put("/editar/:id", uploadFile.single("imagen"), userControllers.editarUsuario);
 
