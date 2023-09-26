@@ -34,5 +34,12 @@ window.addEventListener("load", function () {
 
     carritoArray.push(nuevoItem);
     sessionStorage.setItem("carrito", JSON.stringify(carritoArray));
+    Swal.fire({
+      icon: "success",
+      title: "Tu alquiler ha sido realizado",
+      showConfirmButton: false,
+      width: "50rem",
+      timer: 2500,
+    });
   });
 });
