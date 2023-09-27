@@ -14,7 +14,10 @@ cloudinary.config({
 
 const controlador = {
   register: function (req, res) {
-    return res.render("registro");
+    db.sucursal.findAll()
+      .then(function(sucursales){
+        return res.render("registro" , {sucursales})
+      })
   },
 
   processRegister: async function (req, res) {
@@ -171,9 +174,6 @@ const controlador = {
       .then(function (data) {
         usuarios = data;
       });
-    usuarios.forEach(function (u) {
-      console.log(u.sucursal);
-    });
     res.render("usuarios", { usuarios });
   },
 
