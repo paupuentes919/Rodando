@@ -4,6 +4,7 @@
 <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/CSS/styleregistro.css">  
+    
 </head>
 
 <body>
@@ -13,50 +14,48 @@
         <h1 class="titulo-formulario"><strong>Registro de Usuarios</strong></h1>
         <p class="parrafotitulo"> Dar de alta nuevo usuario al sistema </p>
         <br>
-        <div class="container">
-            <form class="row row-form g-4 mt-2" method="POST" action="/usuarios/registro" enctype="multipart/form-data">
+        <div class="container row-form">
+            <form class="row row-form g-4 mt-2 " id="formRegistro" method="POST" action="/usuarios/registro" enctype="multipart/form-data">
                 <div class="mb-3 col-6">
                     <label for="input-name" class="form-label">Nombre</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.nombre : null %>"
+                    class="form-control"
                     id="input-name" 
                     name="nombre"
+                    
                     placeholder="Introduzca Nombre">
-                        <% if (locals.errors && errors.nombre) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.nombre.msg %>
-                            </div>
-                            <% } %>
+                        
+                            <span class="cajaError"  id="errorNombre">
+                                
+                            </span >
+                            
                 </div>
                 <div class="mb-3 col-6">
                     <label for="input-apellido" class="form-label">Apellido</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>" 
-                    value="<%= locals.oldData ? oldData.apellido : null %>"
+                    class="form-control" 
+                    value=""
                     id="input-apellido" 
                     name="apellido"
                     placeholder="Introduzca Apellido">
-                        <% if (locals.errors && errors.apellido) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.apellido.msg %>
-                            </div>
-                            <% } %>
+                       
+                    <span class="cajaError"  id="errorApellido">                              
+                    </span >
+                           
                 </div>
                 <br>
                 <div class="mb-3 col-12">
-                    <label for="exampleInputEmail1" class="form-label">Mail</label>
+                    <label class="form-label">Mail</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                    value="<%= locals.oldData ? oldData.email : null %>"
-                    id="exampleInputEmail1"
+                    class="form-control" 
+                    value=""
+                    id="input-email"
                     name="email" 
                     placeholder="Introduzca Mail">
-                        <% if (locals.errors && errors.email) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.email.msg %>
-                            </div>
-                            <% } %>
+                    <span class="cajaError"  id="errorEmail">
+                                
+                    </span >
+                            
 
                     <!-- <div class="avisoformu" id="emailHelp" class="form-text">Nunca compartiremos tu correo
                         electrónico
@@ -64,17 +63,15 @@
                 </div>
                 <br>
                 <div class="mb-3 col-12">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <label  class="form-label">Contraseña</label>
                     <input type="password" 
-                    class="form-control <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" 
-                    id="exampleInputPassword1"
+                    class="form-control" 
+                    id="input-password"
                     name="contrasena" 
                     placeholder="********">
-                        <% if (locals.errors && errors.contrasena) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.contrasena.msg %>
-                            </div>
-                            <% } %>
+                        
+                    <span class="cajaError"  id="errorPassword"></span >
+                            
                     <!-- <div class="avisoformu" id="passwordhelp" class="form-text">La contraseña debe contener minimo 6
                         caracteres.</div> -->
                 </div>
@@ -82,30 +79,27 @@
                 <div class="mb-3 col-6">
                     <label for="input-telefono" class="form-label">Teléfono</label>
                     <input type="tel" 
-                    class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>" 
-                    value="<%= locals.oldData ? oldData.telefono : null %>"
+                    class="form-control " 
+                    value=""
                     id="input-telefono" 
                     name="telefono"
                     placeholder="Introduzca Teléfono">
-                        <% if (locals.errors && errors.telefono) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.telefono.msg %>
-                            </div>
-                            <% } %>
+                        
+                    <span class="cajaError" id="errorTelefono"></span >
+                           
                 </div>
                 <div class="mb-3 col-6">
                     <label for="input-direccion" class="form-label">Dirección</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.direccion ? 'is-invalid' : null %>" 
-                    value="<%= locals.oldData ? oldData.direccion : null %>"
+                    class="form-control " 
+                    value=""
                     id="input-direccion" 
                     name="direccion"
                     placeholder="Introduzca Dirección de Residencia">
-                        <% if (locals.errors && errors.direccion) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.direccion.msg %>
-                            </div>
-                            <% } %>
+                        
+                    <span class="cajaError" id="errorDireccion"></span >
+
+                            
                 </div>
                 <div class="mb-3 col-6">
                     <label class="form-label fw-semibold" for="imagen">Imagen de Perfil</label>
@@ -121,13 +115,15 @@
                     <br/>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label for= 'admin' class = "btn btn-primary btn-radio">
-                        <input type="radio" name="rol" id="admin" value = "admin" > Empleado
+                        <input type="radio" name="rol" id="admin" value = "admin" checked > Empleado
                       </label>
                       <label for= 'superadmin' class="btn btn-primary btn-radio" >
                         <input type="radio" name="rol" id="superadmin" value = "superadmin"> Admin
                       </label>
                     </div>
+                    
                 </div>
+                
                 <div class="mb-3 col-12">
                     <label for="sucursal" class="form-label">Sucursal</label>
                         <select name="sucursal" id="sucursal" class="form-control">
@@ -140,11 +136,13 @@
                             </select>
                 </div>
         </div>
+        <div class="confirm text-center" id="confirmacion"></div>
         <br>
         <br>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary btn-lg mx-auto d-block boton">Registrar</button>
+        <span class=" text-center" id="errorEnviar"></span >
+        <button type="submit" class="btn btn-primary btn-lg mx-auto d-block boton" id="boton-enviar">Registrar</button>
         <br>
         <div class="yacuenta">
             <p>¿Ya tienes cuenta? <a href="login">Iniciar sesión</a></p>
@@ -154,7 +152,7 @@
     </main class="main-back-img" >
     <%- include('./partials/footer2') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
-
+    <script type="text/javascript" defer src="/js/validaciones/validarRegistro.js"></script>
 </body>
 
 </html>

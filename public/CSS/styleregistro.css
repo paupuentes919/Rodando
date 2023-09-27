@@ -37,3 +37,25 @@
   background-color: transparent; /* Quitar el fondo */
   border: none; /* Quitar el borde */
 }
+
+.cajaError {
+  display: none;
+  margin: 0;
+  transition: all ease 1000ms;
+}
+.cajaError p {
+  display: inline;
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.confirm {
+  background-color: #020736;
+  padding: 0.8rem;
+  display: none;
+  border-radius: 5px;
+}
+.confirm h3 {
+  color: aliceblue;
+}
