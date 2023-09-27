@@ -10,115 +10,99 @@
     <%- include('./partials/header') %>
     <main class="main-back-img pb-4">
    
-        <h1 class="titulo-formulario"><strong>Editar usuario <%=locals.usuario.id || "" %></strong></h1> 
+        <h1 class="titulo-formulario"><strong>Editar usuario <%= usuario.id %></strong></h1> 
+
         <div class="container">
-            <form class="row row-form g-4 mt-4 pb-4" method="POST" action="/usuarios/<%= locals.usuario.id %>?_method=PUT">
+            <form class="row row-form g-4 mt-4 pb-4" method="POST" action="/usuarios/editar/<%= usuario.id %>?_method=PUT" enctype="multipart/form-data">
                 <div class="mb-3 col-6">
                     <label for="input-name" class="form-label">Nombre</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                    value="<%= locals.usuario.nombre || "" %>"
+                    class="form-control"
+                    value="<%= usuario.nombre %>"
                     id="input-name" 
                     name="nombre"
                     placeholder="Introduzca Nombre">
-                        <% if (locals.errors && errors.nombre) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.nombre.msg %>
-                            </div>
-                            <% } %>
                 </div>
+
                 <div class="mb-3 col-6">
                     <label for="input-apellido" class="form-label">Apellido</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>" 
-                    value="<%= locals.usuario.apellido || "" %>"
+                    class="form-control" 
+                    value="<%= usuario.apellido %>"
                     id="input-apellido" 
                     name="apellido"
                     placeholder="Introduzca Apellido">
-                        <% if (locals.errors && errors.apellido) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.apellido.msg %>
-                            </div>
-                            <% } %>
                 </div>
                 <br>
                 <div class="mb-3 col-12">
-                    <label for="exampleInputEmail1" class="form-label">Mail</label>
+                    <label for="input-email" class="form-label">Mail</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                    value="<%= locals.usuario.email || "" %>"
-                    id="exampleInputEmail1"
+                    class="form-control" 
+                    value="<%= usuario.email %>"
+                    id="input-email"
                     name="email" 
                     placeholder="Introduzca Mail">
-                        <% if (locals.errors && errors.email) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.email.msg %>
-                            </div>
-                            <% } %>
                 </div>
                 <br>
                 <div class="mb-3 col-6">
                     <label for="input-telefono" class="form-label">Teléfono</label>
                     <input type="tel" 
-                    class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>" 
-                    value="<%= locals.usuario.telefono || "" %>"
+                    class="form-control" 
+                    value="<%= usuario.telefono %>"
                     id="input-telefono" 
                     name="telefono"
                     placeholder="Introduzca Teléfono">
-                        <% if (locals.errors && errors.telefono) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.telefono.msg %>
-                            </div>
-                            <% } %>
                 </div>
+
                 <div class="mb-3 col-6">
                     <label for="input-direccion" class="form-label">Dirección</label>
                     <input type="text" 
-                    class="form-control <%= locals.errors && errors.direccion ? 'is-invalid' : null %>" 
-                    value="<%= locals.usuario.direccion || "" %>"
+                    class="form-control" 
+                    value="<%= locals.usuario.direccion %>"
                     id="input-direccion" 
                     name="direccion"
                     placeholder="Introduzca Dirección de Residencia">
-                        <% if (locals.errors && errors.direccion) { %>
-                            <div class= 'text-danger'>
-                                <%= errors.direccion.msg %>
-                            </div>
-                            <% } %>
                 </div>
+
                 <div class="mb-3 col-6">
                     <label class="form-label fw-semibold" for="imagen">Imagen de Perfil</label>
-                            <input
-                                class="form-control"
-                                value="<%= locals.usuario.imagen || "" %>"
-                                type="file"
-                                id="imagen"
-                                name="imagen"
-                            />
+                        <input
+                        class="form-control"
+                        type="file"
+                        id="imagen"
+                        name="imagen"
+                        />
                 </div>
+
                 <div class="mb-2 col-6">
                     <label for="rol" class="form-label">Rol de Usuario</label>
                     <br/>
-                    <% if (locals.usuario.rol) { %>
-                     
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label for= 'admin' class = "btn btn-primary btn-radio">
-                                <input type="radio" name="rol" id="admin" value = "admin" checked="<%= locals.usuario.rol === 'admin' ? true : false %>" > Admin
-                            </label>
-                            <label for= 'superadmin' class="btn btn-primary btn-radio" >
-                                <input type="radio" name="rol" id="superadmin" value = "superadmin" checked="<%= locals.usuario.rol === 'superadmin' ? true : false %>"> Superadmin
-                            </label>
-                        </div>
-                        <% } %>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <% if(usuario.rol == "admin") { %>  
+                        <label for= 'admin' class = "btn btn-primary btn-radio">
+                            <input type="radio" name="rol" id="admin" value = "admin" checked > Empleado
+                        </label>
+                        <label for= 'superadmin' class="btn btn-primary btn-radio" >
+                            <input type="radio" name="rol" id="superadmin" value = "superadmin"> Admin
+                        </label>
+                      <% } else { %>
+                        <label for= 'admin' class = "btn btn-primary btn-radio">
+                            <input type="radio" name="rol" id="admin" value = "admin"  > Empleado
+                        </label>
+                        <label for= 'superadmin' class="btn btn-primary btn-radio" >
+                            <input type="radio" name="rol" id="superadmin" value = "superadmin" checked> Admin
+                        </label>
+                      <% } %>
+                    </div>
                 </div>
+
                 <div class="mb-3 col-12">
                     <label for="sucursal" class="form-label">Sucursal</label>
                         <select name="sucursal" id="sucursal" class="form-control">
-                            <% if (locals.sucursales) { %>
-                              <% for( let i = 0; i < locals.sucursales.length; i++ ) { %>  
-                                    <option value= "<%= locals.sucursales[i].id %>"> <%= locals.sucursales[i].direccion %> - <%= locals.sucursales[i].ciudad.nombre %></option>
-                                <% } %>
-                            <% } %>                        
-                            </select>
+                            <% for( let i = 0; i < sucursales.length; i++ ) { %>  
+                                <option value= "<%= sucursales[i].id %>"> <%= sucursales[i].direccion %></option>
+                            <% } %>                       
+                        </select>
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary btn-lg mx-auto boton">Guardar edicion</button>

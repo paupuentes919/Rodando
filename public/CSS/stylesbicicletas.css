@@ -4,6 +4,12 @@
 	background-attachment: fixed;
 }
 
+.card-img {
+    margin-top: 10px;
+    height: 170px;
+    width: 260px;
+}
+
 .container-card {
     padding: 3rem 0;
 }
@@ -11,4 +17,12 @@
 .gap-card {
     gap: 2rem;
     justify-content: center;
+}
+
+.card-button-box {
+    padding: 1rem 0;
+}
+
+.card-button {
+    width: 120px;
 }

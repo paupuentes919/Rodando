@@ -15,18 +15,18 @@
           <div class="card col">
             <img
               src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= bicicleta.imagen %>.jpg"
-              class="card-img-top"
+              class="card-img-top card-img"
               alt="bicicleta"
             />
             <div class="card-body">
               <h5 class="card-title"><%= bicicleta.nombre %></h5>
               <p class="card-text"><%= bicicleta.descripcion %></p>
-            <div style="display: flex; justify-content: space-evenly;">
-              <a href="../productos/detalle/<%= bicicleta.id %>" class="btn btn-primary">Ver detalle</a>
-              <% if(locals.isLogged){ %> 
-              <a href="../productos/editar/<%= bicicleta.id %>" class="btn btn-primary">Editar</a>
-              <% } %> 
             </div>
+            <div class="card-button-box">
+              <a href="../productos/detalle/<%= bicicleta.id %>" class="btn btn-primary card-button">Ver detalle</a>
+              <% if(locals.isLogged){ %> 
+              <a href="../productos/editar/<%= bicicleta.id %>" class="btn btn-primary card-button">Editar</a>
+              <% } %> 
             </div>
           </div>
           <% }) %>

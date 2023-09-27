@@ -24,13 +24,11 @@
                         <div class="col-md">
                             <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
                             <select name="vehiculo" id="vehiculo" class="form-control">
-                                <% for(let i=0; i< categoria.length; i++) { %>
-                                    <% if(categoria[i].id == rodado.categoria_id) { %>
-                                        <option value="<%= categoria[i].id %>" selected><%= categoria[i].nombre %></option>
+                                    <% if(rodado.categ == "bicicleta") { %>
+                                        <option value="bicicleta" selected>bicicleta</option>
                                     <% } else { %>
-                                        <option value="<%= categoria[i].id %>"><%= categoria[i].nombre %></option>
-                                    <% } %>
-                                <% } %>    
+                                        <option value="monopatin">monopatin</option>
+                                    <% } %>   
                             </select>
                         </div>
                         <div class="col-md">
@@ -72,8 +70,8 @@
                             <input
                                 class="form-control"
                                 type="file"
-                                id="img"
-                                name="img"
+                                id="imagen"
+                                name="imagen"
                             />
                         </div>
                         <div class="col-md">
@@ -98,6 +96,9 @@
                                 name="desc"
                                 rows="6"
                             ><%= rodado.descripcion %></textarea>
+                        </div>
+                        <div style="display: none">
+                            <input name="modelo_id" value="<%= rodado.modelo_id %>" />
                         </div>
                     </div>
                     <div class="d-flex justify-content-center gap-4">

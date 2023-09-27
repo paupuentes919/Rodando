@@ -38,6 +38,11 @@ function rodadoData(sequelize, Datatypes) {
         as: "color",
         foreignKey: "color_id",
       });
+
+      rodado.belongsTo(models.usuario, {
+        as: "usuario",
+        foreignKey: "usuario_id",
+      });
   
       rodado.belongsToMany(models.alquiler, {
         as: "alquiler",

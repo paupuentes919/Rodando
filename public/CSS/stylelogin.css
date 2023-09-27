@@ -90,4 +90,17 @@ form .grupo-login {
   .form-login {
     width: 100%;
   }
+
+  .div-login {
+    width: 85%;
+    height: 50%;
+    margin: auto;
+    background-image: url(https://rodando.alwaysdata.net/test2.jpg);
+    background-size: cover;
+}
+
+form .grupo-login {
+  position: relative;
+  margin: 0;
+}
 }

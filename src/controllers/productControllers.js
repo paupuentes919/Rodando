@@ -54,16 +54,40 @@ const pcontrolador = {
   },
     
   crearVista: function (req, res) {
-    Promise.all([ db.color.findAll(),db.usuario.findAll()])
-    .then(function ([ color, usuario]) {
+    Promise.all([ db.color.findAll(),db.usuario.findAll(),db.rodado.findAll(
+      {group: ['modelo_id']})])
+    .then(function ([ color, usuario, rodado]) {
       // Pasa ambas consultas a la vista
-      res.render("crearProducto", {  color, usuario });
+      res.render("crearProducto", { color, usuario, rodado, });
     }) 
   },
 
   crearItemEnBD: async function (req, res) { 
 
-//---------------------------Carga en Cloudinary----------------------------------------// 
+    //Para Agregar al stock de nuestros rodados uno nuevo de los modelos ya existentes
+    if(req.body.nuevoRodado){
+      
+      nuevoRod = JSON.parse(req.body.nuevoRodado)
+      
+      db.rodado.create({
+        nombre: nuevoRod.nombre,
+        precio_hora: nuevoRod.precio_hora,
+        descripcion: nuevoRod.descripcion,
+        rodado: nuevoRod.rodado,
+        fecha_creacion: moment().format(),
+        fecha_eliminacion: '',
+        imagen: nuevoRod.imagen,
+        categ: nuevoRod.categ,
+        usuario_id: nuevoRod.usuario_id ,
+        modelo_id: nuevoRod.modelo_id,
+        color_id: nuevoRod.color_id,
+      })
+
+    //Para crear un nuevo modelo de rodado
+      
+    } else {
+
+    //---------------------------Carga en Cloudinary----------------------------------------// 
   
     const imageBuffer = req.file.buffer;
     const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
@@ -107,8 +131,9 @@ const pcontrolador = {
         color_id: req.body.color,
       })
       
-    })
-  
+    })  
+  }
+
     res.redirect("/");
   },  
 
@@ -116,15 +141,14 @@ const pcontrolador = {
 
     Promise.all([db.rodado.findByPk((req.params.id),
       {
-        include: [{association: 'modelo'}, {association: 'color'}]
+        include: [{association: 'usuario'}, {association: 'color'}]
       }), 
-      db.modelo.findAll(), 
       db.color.findAll(),
       db.usuario.findAll()
     ])
-    .then(function ([rodado, modelo, color, usuario]) {
+    .then(function ([rodado, color, usuario]) {
       // Pasa ambas consultas a la vista
-      res.render("editarProducto", { rodado, modelo, color, usuario });
+      res.render("editarProducto", { rodado, color, usuario });
     }) 
   },
 
@@ -159,7 +183,6 @@ const pcontrolador = {
       rodado: req.body.rodado,
       categ: req.body.vehiculo,
       usuario_id: req.body.usuario ,
-      modelo_id: req.body.vehiculo,
       color_id: req.body.color,
       imagen: customFilename,
     
@@ -168,7 +191,15 @@ const pcontrolador = {
     })
   
   } else {
+ //FUNCIONA LA EDICION DE CUALQUIER CAMPO MENOS LA IMG
 
+ //Actualizacion del nombre en la tabla modelo
+    db.modelo.update({
+      nombre: req.body.title,
+    },{
+      where: {id: req.body.modelo_id}
+    })
+ //Actualizacion de las caracteristicas del modelo del rodado en la tabla rodado
     db.rodado.update({
       nombre: req.body.title,
       precio_hora: req.body.price,
@@ -176,14 +207,13 @@ const pcontrolador = {
       rodado: req.body.rodado,
       categ: req.body.vehiculo,
       usuario_id: req.body.usuario ,
-      modelo_id: req.body.vehiculo,
       color_id: req.body.color,
     },{
       where: {id: req.params.id}
     })
   }   
-    res.redirect('../detalle/' + req.params.id);
 
+    res.redirect('../detalle/' + req.params.id);
   },
 
   borrar: function (req, res) {

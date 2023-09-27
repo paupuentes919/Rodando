@@ -7,6 +7,11 @@
   padding: 2rem 6rem;
 }
 
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 /* .p-width {
 	width: max-content;
 } */
@@ -201,6 +206,10 @@
 }
 
 .div-horas-cantidad {
+  display: flex;
+}
+
+.div-vehiculo-cantidad {
   display: flex;
 }
 

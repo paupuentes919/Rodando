@@ -20,13 +20,13 @@
             />
             <div class="card-body">
               <h5 class="card-title"><%= monopatin.nombre %></h5>
-              <p class="card-text"><%= monopatin.descripcion %></p>
-              <div style="display: flex; justify-content: space-evenly;">  
-              <a href="../productos/detalle/<%= monopatin.id %>" class="btn btn-primary">Ver detalle</a>
+              <p class="card-text"><%= monopatin.descripcion %></p>  
+            </div>
+            <div class="card-button-box">  
+              <a href="../productos/detalle/<%= monopatin.id %>" class="btn btn-primary card-button">Ver detalle</a>
                 <% if(locals.isLogged){ %>   
-              <a href="../productos/editar/<%= monopatin.id %>" class="btn btn-primary">Editar</a>
+              <a href="../productos/editar/<%= monopatin.id %>" class="btn btn-primary card-button">Editar</a>
               <% } %>
-              </div>  
             </div>
           </div>
           <% }) %>
