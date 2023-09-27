@@ -29,7 +29,7 @@
     "name": "rodando",
     "scripts": {
         "dev": "nodemon src/app",
-        "start": "node src/app",
+        "start": "npx nodemon src/app",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "version": "1.0.0"

@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
+const {validationResult} = require('express-validator');
 const db = require ('../database/models');
 
 
@@ -64,6 +65,12 @@ const pcontrolador = {
 
   crearItemEnBD: async function (req, res) { 
 
+    //Validaciones de Express
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.redirect("/productos/crear")
+    }
+   
     //Para Agregar al stock de nuestros rodados uno nuevo de los modelos ya existentes
     if(req.body.nuevoRodado){
       
@@ -154,6 +161,11 @@ const pcontrolador = {
 
   actualizar:async function (req, res) {
    
+    //Validaciones de Express
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.redirect("");
+    }
     //---------------------------Carga en Cloudinary----------------------------------------// 
    if(req.file){
 

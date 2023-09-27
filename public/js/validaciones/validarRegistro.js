@@ -112,7 +112,7 @@ inputTelefono.addEventListener("blur", function () {
 const inputDireccion = document.querySelector("#input-direccion");
 
 inputDireccion.addEventListener("blur", function () {
-  if (inputDireccion.value === "" || inputDireccion.value.length < 15) {
+  if (inputDireccion.value === "" || inputDireccion.value.length < 5) {
     let errorDireccion = document.querySelector("#errorDireccion");
     errorDireccion.innerHTML = "<p>Completar dirección <p>";
     errorDireccion.style.display = "inline";
@@ -126,8 +126,7 @@ inputDireccion.addEventListener("blur", function () {
 let formulario = document.querySelector("#formRegistro");
 
 formulario.addEventListener("submit", function (e) {
-  e.preventDefault();
-
+  
   if (
     campos.nombre &&
     campos.apellido &&
@@ -135,15 +134,23 @@ formulario.addEventListener("submit", function (e) {
     campos.password &&
     campos.telefono &&
     campos.direccion
-  ) {
-    formulario.reset();
-    errorEnviar.style.display = "none";
+) {
+    
+   // errorEnviar.style.display = "none";
+   let botonEnviar = document.querySelector("#boton-enviar");
 
     formulario.style.display = "none";
+    botonEnviar.style.display = "none!important";
 
     let confirm = document.querySelector("#confirmacion");
+    confirm.style.display = "block"
     confirm.innerHTML = "<h3>¡Formulario enviado!</h3>";
+
+    formulario.submit()
+
   } else {
+
+    e.preventDefault();
     let errorEnviar = document.querySelector("#errorEnviar");
 
     errorEnviar.innerHTML = "<p><b>Debe completar el formulario</b><p>";

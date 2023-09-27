@@ -4,10 +4,13 @@ const multer = require("multer");
 const router = express.Router();
 const productControllers = require("./../controllers/productControllers");
 
+//MIDDLEWARE//
+const validations = require("../middlewares/validateProductMiddleware");
 const guestUserMiddleware = require("../middlewares/guestUserMiddleware");
 
-
+//MULTER CONFIG//
 const upload = multer();
+
 
 /* Bicicletas */
 
@@ -24,11 +27,11 @@ router.get("/detalle/:id", productControllers.detalle);
 /*---------------- Formulario -------------------- */
 /* Form create */
 router.get("/crear", guestUserMiddleware, productControllers.crearVista);
-router.post("/crear", upload.single('imagen'), productControllers.crearItemEnBD);
+router.post("/crear", upload.single('imagen'), validations, productControllers.crearItemEnBD);
 
 /* Form update */
 router.get("/editar/:id", guestUserMiddleware, productControllers.editar);
-router.put("/editar/:id",upload.single('imagen'), productControllers.actualizar);
+router.put("/editar/:id",upload.single('imagen'), validations, productControllers.actualizar);
 
 
 /* Form delete */

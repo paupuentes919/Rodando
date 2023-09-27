@@ -22,8 +22,8 @@ const controlador = {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("registro", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
+       // errors: resultValidation.mapped(),
+       // oldData: req.body,
       });
     }
     //---------------------------Validacion de usuario repetido-------------------------------//
@@ -47,9 +47,7 @@ const controlador = {
     //---------------------------Carga en Cloudinary----------------------------------------//
 
     const imageBuffer = req.file.buffer;
-    const customFilename = `user-${Date.now()}${path.extname(
-      req.file.originalname,
-    )}`;
+    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname,)}`;
 
     const uploadPromise = new Promise((resolve, reject) => {
       let stream = cloudinary.uploader.upload_stream(
@@ -86,7 +84,8 @@ const controlador = {
       sucursal_id: null,
     });
 
-    res.redirect("/usuarios/login");
+    res.redirect("/usuarios");
+  
   },
 
   login: function (req, res) {
@@ -179,6 +178,12 @@ const controlador = {
   },
 
   editarUsuario: async function (req, res) {
+
+  //---------------------------Validaciones de express--------------------------------------//
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.redirect(req.params.id);
+    }
 
   //---------------------------Carga en Cloudinary----------------------------------------// 
   if(req.file){
