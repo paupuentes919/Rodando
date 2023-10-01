@@ -1,28 +1,43 @@
 /* FORMULARIOS */
-
+body {
+  background: #020736;
+}
 .products-form__container {
-    background: #020736;
-    color: #fff;
+  background: #020736;
+  color: #fff;
 }
 
 .send-btn {
-    background: #207c09;
+  background: #207c09;
 }
 
 .send-btn:hover {
-    background: #16470a;
+  background: #16470a;
 }
 
 .cancel-btn {
-    background: #e13633;
+  background: #e13633;
 }
 
 .cancel-btn:hover {
-    background: #a32826;
+  background: #a32826;
 }
 
 .send-btn h5,
 .cancel-btn h5 {
-    color: #fff;
-    margin: 0;
+  color: #fff;
+  margin: 0;
+}
+
+/************* MEDIA QUERY MAX-WIDTH*********************/
+@media (max-width: 992px) {
+  .container {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 27rem;
+  }
 }
