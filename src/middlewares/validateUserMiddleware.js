@@ -17,9 +17,7 @@ const validations = [
   body("avatar").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif"];
-    if (!file) {
-      throw new Error("Debe subir una imagen");
-    } else {
+    if (file) {
       let fileExtensions = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtensions)) {
         throw new Error(

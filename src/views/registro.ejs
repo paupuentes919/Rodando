@@ -22,25 +22,20 @@
                     class="form-control"
                     id="input-name" 
                     name="nombre"
-                    
                     placeholder="Introduzca Nombre">
                         
-                            <span class="cajaError"  id="errorNombre">
-                                
-                            </span >
+                    <span class="cajaError"  id="errorNombre"></span >
                             
                 </div>
                 <div class="mb-3 col-6">
                     <label for="input-apellido" class="form-label">Apellido</label>
                     <input type="text" 
                     class="form-control" 
-                    value=""
                     id="input-apellido" 
                     name="apellido"
                     placeholder="Introduzca Apellido">
                        
-                    <span class="cajaError"  id="errorApellido">                              
-                    </span >
+                    <span class="cajaError"  id="errorApellido"></span >
                            
                 </div>
                 <br>
@@ -48,18 +43,12 @@
                     <label class="form-label">Mail</label>
                     <input type="text" 
                     class="form-control" 
-                    value=""
                     id="input-email"
                     name="email" 
                     placeholder="Introduzca Mail">
-                    <span class="cajaError"  id="errorEmail">
-                                
-                    </span >
+                    
+                    <span class="cajaError"  id="errorEmail"></span >
                             
-
-                    <!-- <div class="avisoformu" id="emailHelp" class="form-text">Nunca compartiremos tu correo
-                        electrónico
-                        con nadie más.</div> -->
                 </div>
                 <br>
                 <div class="mb-3 col-12">
@@ -71,16 +60,13 @@
                     placeholder="********">
                         
                     <span class="cajaError"  id="errorPassword"></span >
-                            
-                    <!-- <div class="avisoformu" id="passwordhelp" class="form-text">La contraseña debe contener minimo 6
-                        caracteres.</div> -->
+
                 </div>
                 <br>
                 <div class="mb-3 col-6">
                     <label for="input-telefono" class="form-label">Teléfono</label>
                     <input type="tel" 
-                    class="form-control " 
-                    value=""
+                    class="form-control" 
                     id="input-telefono" 
                     name="telefono"
                     placeholder="Introduzca Teléfono">
@@ -91,14 +77,12 @@
                 <div class="mb-3 col-6">
                     <label for="input-direccion" class="form-label">Dirección</label>
                     <input type="text" 
-                    class="form-control " 
-                    value=""
+                    class="form-control" 
                     id="input-direccion" 
                     name="direccion"
                     placeholder="Introduzca Dirección de Residencia">
                         
                     <span class="cajaError" id="errorDireccion"></span >
-
                             
                 </div>
                 <div class="mb-3 col-6">
@@ -127,28 +111,23 @@
                 <div class="mb-3 col-12">
                     <label for="sucursal" class="form-label">Sucursal</label>
                         <select name="sucursal" id="sucursal" class="form-control">
-                                <option value="Rojo">Rojo</option>
-                                <option value="Azul">Azul</option>
-                                <option value="Verde">Verde</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Blanco">Blanco</option>
-                                <option value="Amarillo">Amarillo</option>
-                            </select>
+                            <% for( let i = 0; i < sucursales.length; i++ ) { %>  
+                                <option value= "<%= sucursales[i].id %>"> <%= sucursales[i].direccion %></option>
+                            <% } %>                       
+                        </select>
                 </div>
         </div>
+
         <div class="confirm text-center" id="confirmacion"></div>
-        <br>
-        <br>
-        <br>
         <br>
         <span class=" text-center" id="errorEnviar"></span >
         <button type="submit" class="btn btn-primary btn-lg mx-auto d-block boton" id="boton-enviar">Registrar</button>
         <br>
-        <div class="yacuenta">
-            <p>¿Ya tienes cuenta? <a href="login">Iniciar sesión</a></p>
-        </div>
         <br>
         </form>
+
+        
+
     </main class="main-back-img" >
     <%- include('./partials/footer2') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>

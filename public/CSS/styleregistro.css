@@ -46,16 +46,16 @@
 .cajaError p {
   display: inline;
   color: red;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 0px;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 .confirm {
-  background-color: #020736;
-  padding: 0.8rem;
   display: none;
+  background-color: #020736;
+  padding: 1.4rem;
   border-radius: 5px;
 }
 .confirm h3 {
   color: aliceblue;
+  font-size: 2.2rem;
 }

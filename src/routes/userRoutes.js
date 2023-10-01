@@ -7,7 +7,7 @@ const multer = require("multer");
 const userControllers = require("./../controllers/userControllers");
 
 //MIDDLEWARE//
-const validations = require("../middlewares/validateRegisterMiddleware");
+const validations = require("../middlewares/validateUserMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const guestUserMiddleware = require("../middlewares/guestUserMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
@@ -38,7 +38,7 @@ router.get("/", userControllers.vistaUsuarios);
 //Editar usuario
 router.get("/editar/:id", guestMiddleware, userControllers.vistaEditarUsuario);
 
-router.put("/editar/:id", uploadFile.single("imagen"), userControllers.editarUsuario);
+router.put("/editar/:id", uploadFile.single("imagen"), validations, userControllers.editarUsuario);
 
 
 
