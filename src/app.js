@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const cookies = require("cookie-parser");
+const cors = require('cors');
 const app = express();
 /* requiero path */
 const path = require("path");
@@ -17,6 +18,9 @@ app.use(
 );
 /* requiriendo cookie parser*/
 app.use(cookies());
+
+/* requiriendo cors para conceder acceso a nuestra API*/
+app.use(cors());
 
 /* requiriendo middleware userLoggedMiddleware */
 app.use(userLoggedMiddleware);
