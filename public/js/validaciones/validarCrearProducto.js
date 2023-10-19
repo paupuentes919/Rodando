@@ -1,11 +1,12 @@
-const formulario = document.getElementById("formulario");
+// let formulario = document.getElementById("formulario");
+const boton = document.getElementById("sendButton");
 const inputs = document.querySelectorAll(
   "#formulario input, #formulario textarea",
 );
 
 const expReg = {
   titulo: /^[0-9a-záéíóúüñA-ZÁÉÍÓÚÜÑ ]{5,26}$/, // Letras, numeros, guion y guion_bajo
-  rodado: /^[0-9]{1,5}$/, // Letras y espacios, puede llevar acentos.
+  rodado: /^[0-9]{2}$/, // Solo numero de 2 digitos.
   descripcion: /^.{10,100}$/, //Maximo 100 caracteres
 };
 
@@ -25,7 +26,6 @@ const validarFormulario = (e) => {
       validarCampos(expReg.rodado, e.target, e.target.id);
       break;
     case "imagen":
-      console.log(e.target.id);
       validarCampoImagen(e.target.files, e.target.id);
 
       break;
@@ -98,39 +98,43 @@ inputs.forEach((input) => {
 });
 
 //Submit de formulario
-formulario.addEventListener("submit", (e) => {
-  if (campos.title && campos.rodado && campos.imagen && campos.desc) {
-    formulario.reset();
+let formulario = document
+  .getElementById("formulario")
+  .addEventListener("submit", (e) => {
+    if (campos.title && campos.rodado && campos.imagen && campos.desc) {
+      formulario.reset();
 
-    document.getElementById("msj-correcto").classList.add("enviar-msj-mostrar");
-    setTimeout(() => {
       document
         .getElementById("msj-correcto")
-        .classList.remove("enviar-msj-mostrar");
-    }, 4000);
+        .classList.add("enviar-msj-mostrar");
+      setTimeout(() => {
+        document
+          .getElementById("msj-correcto")
+          .classList.remove("enviar-msj-mostrar");
+      }, 4000);
 
-    document.querySelectorAll(".check-cruz-correcto").forEach((check) => {
-      check.classList.remove("check-cruz-correcto");
-    });
-    document.querySelectorAll(".correcto").forEach((check) => {
-      check.classList.remove("correcto");
-    });
+      document.querySelectorAll(".check-cruz-correcto").forEach((check) => {
+        check.classList.remove("check-cruz-correcto");
+      });
+      document.querySelectorAll(".correcto").forEach((check) => {
+        check.classList.remove("correcto");
+      });
 
-    /*Volver todo a false. Porque sino, se puede presionar "Enviar" nuevamente
+      /*Volver todo a false. Porque sino, se puede presionar "Enviar" nuevamente
      y se enviara los campos vacios (valido solo para el envío sin actualizar)*/
 
-    Object.keys(campos).forEach(function (key) {
-      campos[key] = !campos[key];
-    });
-  } else {
-    e.preventDefault();
-    document
-      .getElementById("msj-incorrecto")
-      .classList.add("enviar-msj-mostrar");
-    setTimeout(() => {
+      Object.keys(campos).forEach(function (key) {
+        campos[key] = !campos[key];
+      });
+    } else {
+      e.preventDefault();
       document
         .getElementById("msj-incorrecto")
-        .classList.remove("enviar-msj-mostrar");
-    }, 2000);
-  }
-});
+        .classList.add("enviar-msj-mostrar");
+      setTimeout(() => {
+        document
+          .getElementById("msj-incorrecto")
+          .classList.remove("enviar-msj-mostrar");
+      }, 2000);
+    }
+  });
