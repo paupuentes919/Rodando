@@ -115,7 +115,7 @@ if (sessionStorage.length == 0) {
 }
 
 formulario.addEventListener("submit", function (e) {
-  e.preventDefault();
+  
   if (
     campos.nombre &&
     campos.apellido &&
@@ -134,7 +134,10 @@ formulario.addEventListener("submit", function (e) {
     confirm.innerHTML = "<h3>¡Compra realizada!</h3>";
 
     formulario.style.display = "none";
+
+    formulario.submit()
   } else {
+    e.preventDefault();
     errorEnviar.innerHTML = "<h4><b>Debe completar el formulario</b></h4>";
     errorEnviar.style.color = "aliceblue";
     errorEnviar.style.display = "inline";

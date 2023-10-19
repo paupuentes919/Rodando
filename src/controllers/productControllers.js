@@ -164,8 +164,11 @@ const pcontrolador = {
     //Validaciones de Express
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      return res.redirect("");
+      if(resultValidation.errors[0].msg != 'Debe subir una imagen'){
+        return res.redirect("/");
+      } 
     }
+
     //---------------------------Carga en Cloudinary----------------------------------------// 
    if(req.file){
 
@@ -236,6 +239,12 @@ const pcontrolador = {
         }
     })
 
+    db.modelo.destroy({
+      where: {
+        id: req.body.modelo_id
+      }
+    })
+    
     res.redirect('/');
 
   },
@@ -243,6 +252,45 @@ const pcontrolador = {
   carrito: function (req, res) {
     res.render("carrito");
   },
-};
 
+  alquiler: function (req, res) {
+
+    console.log(req.body.nombre)
+    
+}
+}
 module.exports = pcontrolador;
+
+
+
+
+
+
+/*
+db.alquiler.findAll({
+}).then(function(alquiler){
+  if (alquiler.id == 0){
+    nuevoId = 1
+  } else {
+    nuevoId = alquiler[(alquiler.length - 1)].id + 1
+  }
+  
+
+  db.alquiler.create({
+    id: nuevoId,
+    nombre: req.body.nombre,
+    apellido: req.body.apellido,
+    telefono: req.body.telefono,
+    email: req.body.email,
+    fecha_inicio: moment().format(),
+    fecha_fin: '',
+    direccion: req.body.direccion,
+  })
+
+  db.rodado_alquiler.create({
+    alquiler_id: nuevoId,
+    rodado_id: req.body.rodado_id,
+    cant_horas: req.body.horas
+  })
+})
+*/

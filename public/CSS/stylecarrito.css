@@ -122,6 +122,9 @@ button:disabled {
   color: white;
 }
 
+.carrito-off {
+  display: none;
+}
 /*-----------------------------------------------Nuevas clases Tomi -------------------------------------*/
 
 .div__h2--detalle-carrito {

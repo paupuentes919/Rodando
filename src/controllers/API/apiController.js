@@ -78,11 +78,13 @@ const apiController = {
       });
   },
   getCategories: (req, res) => {
-    db.rodado
-      .findAll({ attributes: ["categ"], group: ["categ"] })
-      .then((rodadosCateg) => {
-        res.json(rodadosCateg.length);
-      });
+    
+    db.rodado.findAll({
+      group: ['modelo_id']
+    }).then(function(rod){ 
+      res.json(rod)
+    })
+      
   },
 };
 

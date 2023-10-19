@@ -24,10 +24,11 @@ if (!carritoArrayInicial) {
   botonComprarCarrito.disabled = true;
 }
 
+let section = document.getElementById("div1");
+
 carritoArrayInicial &&
   carritoArrayInicial.forEach((obj, i) => {
     let div = document.createElement("div");
-    let section = document.getElementById("div1");
     sumatoriaTotal = sumatoriaTotal + obj.precioTotal;
     div.innerHTML = `<div class="div--precio-numero">
   <div class="display-flex">
@@ -65,9 +66,36 @@ carritoArrayInicial &&
 
 precioTotalCarrito.innerHTML += sumatoriaTotal;
 
+
+let form = document.getElementById("formCompra");
+
+
 // Borrado de carrito completo
 
 botonBorrarCarrito.addEventListener("click", function () {
   sessionStorage.clear();
   window.location.reload();
 });
+
+
+let enviar = document.getElementById("boton-enviar")
+
+botonComprarCarrito.addEventListener("click", function() {
+  if (botonComprarCarrito.innerText == 'Confirmar'){
+    botonComprarCarrito.innerText = 'Ver Carrito'
+  } else {
+    botonComprarCarrito.innerText = 'Confirmar'
+  }
+    section.classList.toggle('carrito-off')
+    form.classList.toggle('carrito-off')
+    enviar.classList.toggle('carrito-off')
+})
+
+// creo los input para enviar la info que esta en memoria al back
+let memoryData = document.getElementById("div2");
+let inputs = document.createElement("div");
+div.innerHTML = `<div>
+                  <input type='hidden' name='rodado_id'>${obj.id}</input>
+                  <input type='hidden' name='horas'>${obj.cantidadHoras}</input>
+                </div>`
+memoryData.appendChild(inputs);
