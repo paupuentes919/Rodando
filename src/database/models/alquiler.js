@@ -8,14 +8,14 @@ function alquilerData(sequelize, Datatypes) {
         primaryKey: true,
         autoIncrement: true,
       },
-      nombre_persona: { type: Datatypes.STRING(200) },
+      nombre: { type: Datatypes.STRING(200) },
+      apellido: { type: Datatypes.STRING(200) },
       telefono: { type: Datatypes.STRING(200) },
       fecha_inicio: { type: Datatypes.DATE },
       fecha_fin: { type: Datatypes.DATE },
-      monto_hora: { type: Datatypes.DECIMAL },
+      direccion: { type: Datatypes.STRING(200) },
+      monto_total: { type: Datatypes.DECIMAL },
       pagado: { type: Datatypes.BOOLEAN },
-      monto_seguro: { type: Datatypes.DECIMAL },
-      seguro_devuelto: { type: Datatypes.BOOLEAN },
     };
     
     let config = { 

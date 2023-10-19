@@ -4,8 +4,8 @@ const inputs = document.querySelectorAll(
 );
 
 const expReg = {
-  titulo: /^[0-9a-záéíóúüñA-ZÁÉÍÓÚÜÑ ]{5,16}$/, // Letras, numeros, guion y guion_bajo
-  rodado: /^[a-zA-ZÀ-ÿ\s]{6,40}$/, // Letras y espacios, puede llevar acentos.
+  titulo: /^[0-9a-záéíóúüñA-ZÁÉÍÓÚÜÑ ]{5,26}$/, // Letras, numeros, guion y guion_bajo
+  rodado: /^[0-9]{1,5}$/, // Letras y espacios, puede llevar acentos.
   descripcion: /^.{10,100}$/, //Maximo 100 caracteres
 };
 

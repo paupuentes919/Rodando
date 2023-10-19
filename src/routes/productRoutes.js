@@ -40,5 +40,6 @@ router.delete("/borrar/:id", guestUserMiddleware,  productControllers.borrar);
 
 /* Carrito */
 router.get("/carrito", productControllers.carrito);
+router.post("/carrito", productControllers.alquiler);
 
 module.exports = router;

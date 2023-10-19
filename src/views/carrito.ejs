@@ -23,7 +23,7 @@
             </div>
             <div class="btn__container--realizar-pago">
               <button class="btn--realizar-pago" id="comprar-boton">
-                Comprar
+                Confirmar
               </button>
               <button class="btn--realizar-pago" id="borrar-Carrito">
                 Borrar carrito
@@ -33,82 +33,87 @@
         </div>
       </div>
 
-      <!---FORMULARIO DE CARRITO, DESPUES BORRAr--->
+      <!-----------------------------------SECTION RODADOS ALQUILADOS-------------------------------->
+      <section class="section-productos" id="div1"></section>
+    
+
+
+
+      <!---FORMULARIO DE CARRITO, DESPUES BORRAR--->
 
 <div class="container">
-  <form class="row row-form g-4 mt-3 rounded" id="formCompra" method="POST" action="#" enctype="multipart/form-data">
-    <div class=" mb-3 col-6">
+  <form class="row row-form g-4 mt-3 rounded carrito-off" id="formCompra" method="POST" action="/productos/carrito" enctype="multipart/form-data">
+    
+    <div class="mb-3 col-6">
         <label for="input-name" class="form-label">Nombre</label>
         <input type="text" 
         class="form-control"
         id="input-name" 
         name="nombre"        
-        placeholder="Introduzca Nombre">
+        placeholder="Introduzca Nombre"/>
             
-                <span class="cajaError"  id="errorNombre">
-                    
-                </span >
+        <span class="cajaError"  id="errorNombre"></span >
                 
     </div>
+
     <div class="mb-3 col-6">
         <label for="input-apellido" class="form-label">Apellido</label>
         <input type="text" 
         class="form-control" 
-        value=""
         id="input-apellido" 
         name="apellido"
-        placeholder="Introduzca Apellido">
+        placeholder="Introduzca Apellido"/>
            
-        <span class="cajaError"  id="errorApellido">                              
-        </span >
+        <span class="cajaError"  id="errorApellido"></span >
                
     </div>
-    <br>
+    
     <div class="mb-3 col-6">
         <label class="form-label">Mail</label>
         <input type="text" 
         class="form-control" 
-        value=""
         id="input-email"
         name="email" 
-        placeholder="Introduzca Mail">
-        <span class="cajaError"  id="errorEmail">
-                    
-        </span >               
+        placeholder="Introduzca Mail"/>
+
+        <span class="cajaError"  id="errorEmail"></span >               
         
     </div>
-    <br>
     
-    <br>
     <div class="mb-3 col-6">
         <label for="input-telefono" class="form-label">Teléfono</label>
         <input type="tel" 
         class="form-control " 
-        value=""
         id="input-telefono" 
         name="telefono"
-        placeholder="Introduzca Teléfono">
+        placeholder="Introduzca Teléfono"/>
             
         <span class="cajaError" id="errorTelefono"></span >
                
     </div>
+
     <div class="mb-3 col-6">
         <label for="input-direccion" class="form-label">Dirección</label>
         <input type="text" 
         class="form-control " 
-        value=""
         id="input-direccion" 
         name="direccion"
-        placeholder="Introduzca Dirección de Residencia">
+        placeholder="Introduzca Dirección de Residencia"/>
             
         <span class="cajaError" id="errorDireccion"></span >
 
-                
     </div>
        
-    
+    <div style="display:flex">
+      <button type="submit" class="btn btn-primary btn-lg mx-auto  carrito-off " id="boton-enviar">Pagar</button>
+    </div>  
+  
+    <div id="div2"></div>
+  
+  </form>  
     
 </div>
+
 <div class="confirm text-center mx-auto " id="confirmacion"></div>
 <br>
 
@@ -116,18 +121,7 @@
 <span class=" text-center" id="errorEnviar"></span >
   
 
-    <button type="submit" class="btn btn-primary btn-lg mx-auto d-block " id="boton-enviar">Pagar</button>
- 
-<br>
-
-<br>
-</form>
-</div>
-
-
-      <!-----------------------------------SECTION RODADOS ALQUILADOS-------------------------------->
-      <section class="section-productos" id="div1"></section>
-    </main>
+</main>     
     <!--------------------------------------------------FOOTER----------------------------------------------------------->
     <%- include('./partials/footer2') %>
     <script type="text/javascript" defer src="/js/validaciones/validarFormCarrito.js"></script>
