@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const cookies = require("cookie-parser");
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 /* requiero path */
 const path = require("path");
@@ -52,6 +52,7 @@ app.set("views", path.join(__dirname, "views"));
 const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
+const { alquilerRouter } = require("./routes/alquilerRoutes");
 const apiRouter = require("./routes/API/apiRoutes");
 
 /* Configurar metodos put delete patch */
@@ -61,6 +62,7 @@ app.use(methodOverride("_method"));
 app.use("/", mainRoutes);
 app.use("/productos", productRoutes);
 app.use("/usuarios", userRoutes);
+app.use("/alquiler", alquilerRouter);
 app.use("/api", apiRouter);
 
 /* puerto */

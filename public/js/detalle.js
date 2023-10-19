@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
     sessionStorage.setItem("carrito", JSON.stringify(carritoArray));
     Swal.fire({
       icon: "success",
-      title: "Tu alquiler ha sido realizado",
+      title: "Tu reserva se agrego correctamente al carrito",
       showConfirmButton: false,
       width: "50rem",
       timer: 2500,
