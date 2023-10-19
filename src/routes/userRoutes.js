@@ -34,7 +34,7 @@ router.get("/perfil", guestUserMiddleware, userControllers.profile);
 router.get("/logout", userControllers.logout);
 
 //Ver todos los usuarios
-router.get("/", userControllers.vistaUsuarios);
+router.get("/", guestUserMiddleware, userControllers.vistaUsuarios);
 //Editar usuario
 router.get("/editar/:id", guestMiddleware, userControllers.vistaEditarUsuario);
 

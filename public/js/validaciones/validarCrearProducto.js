@@ -1,3 +1,4 @@
+console.log(Window)
 // let formulario = document.getElementById("formulario");
 const boton = document.getElementById("sendButton");
 const inputs = document.querySelectorAll(
@@ -6,8 +7,8 @@ const inputs = document.querySelectorAll(
 
 const expReg = {
   titulo: /^[0-9a-záéíóúüñA-ZÁÉÍÓÚÜÑ ]{5,26}$/, // Letras, numeros, guion y guion_bajo
-  rodado: /^[0-9]{2}$/, // Solo numero de 2 digitos.
-  descripcion: /^.{10,100}$/, //Maximo 100 caracteres
+  rodado: /^[0-9]{2}$/, // Numeros de 2 digitos.
+  descripcion: /^.{10,1000}$/, //Maximo 1000 caracteres
 };
 
 let campos = {

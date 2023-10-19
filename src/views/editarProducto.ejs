@@ -107,6 +107,7 @@
                         </button>
                     </form>
                         <form action="/productos/borrar/<%= rodado.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="modelo_id" value="<%= rodado.modelo_id %>"> </input>    
                         <button type='submit' class="btn cancel-btn mt-4 px-5 py-3">
                             <h5>Eliminar</h5>
                         </button>

@@ -164,8 +164,11 @@ const pcontrolador = {
     //Validaciones de Express
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      return res.redirect("");
+      if(resultValidation.errors[0].msg != 'Debe subir una imagen'){
+        return res.redirect("/");
+      } 
     }
+
     //---------------------------Carga en Cloudinary----------------------------------------// 
    if(req.file){
 
@@ -236,6 +239,12 @@ const pcontrolador = {
         }
     })
 
+    db.modelo.destroy({
+      where: {
+        id: req.body.modelo_id
+      }
+    })
+    
     res.redirect('/');
 
   },
