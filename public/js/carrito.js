@@ -66,9 +66,7 @@ carritoArrayInicial &&
 
 precioTotalCarrito.innerHTML += sumatoriaTotal;
 
-
 let form = document.getElementById("formCompra");
-
 
 // Borrado de carrito completo
 
@@ -77,25 +75,63 @@ botonBorrarCarrito.addEventListener("click", function () {
   window.location.reload();
 });
 
+let enviar = document.getElementById("boton-enviar");
 
-let enviar = document.getElementById("boton-enviar")
-
-botonComprarCarrito.addEventListener("click", function() {
-  if (botonComprarCarrito.innerText == 'Confirmar'){
-    botonComprarCarrito.innerText = 'Ver Carrito'
+botonComprarCarrito.addEventListener("click", function () {
+  if (botonComprarCarrito.innerText == "Confirmar") {
+    botonComprarCarrito.innerText = "Ver Carrito";
   } else {
-    botonComprarCarrito.innerText = 'Confirmar'
+    botonComprarCarrito.innerText = "Confirmar";
   }
-    section.classList.toggle('carrito-off')
-    form.classList.toggle('carrito-off')
-    enviar.classList.toggle('carrito-off')
-})
+  section.classList.toggle("carrito-off");
+  form.classList.toggle("carrito-off");
+  enviar.classList.toggle("carrito-off");
+});
 
 // creo los input para enviar la info que esta en memoria al back
-let memoryData = document.getElementById("div2");
-let inputs = document.createElement("div");
-div.innerHTML = `<div>
-                  <input type='hidden' name='rodado_id'>${obj.id}</input>
-                  <input type='hidden' name='horas'>${obj.cantidadHoras}</input>
-                </div>`
-memoryData.appendChild(inputs);
+// let memoryData = document.getElementById("div2");
+// let inputs = document.createElement("div");
+// div.innerHTML = `<div>
+//                   <input type='hidden' name='rodado_id'>${obj.id}</input>
+//                   <input type='hidden' name='horas'>${obj.cantidadHoras}</input>
+//                 </div>`;
+// memoryData.appendChild(inputs);
+
+const formAlquiler = document.getElementById("formCompra");
+
+const postAlquiler = async (data) => {
+  // console.log(data);
+  const res = await axios.post("/alquiler", data);
+  console.log(res);
+  if (res.status === 201) {
+    botonBorrarCarrito.click();
+    Swal.fire({
+      icon: "success",
+      title: `Reserva realizada exitosamente!
+      su codigo es : ${res.data.alquiler.codigo_reserva}`,
+      showConfirmButton: false,
+      width: "50rem",
+      timer: 2500,
+    });
+    // window.location.replace("/");
+  } else
+    Swal.fire({
+      icon: "error",
+      title: "Ocurrio un error 😢",
+      showConfirmButton: false,
+      width: "50rem",
+      timer: 2500,
+    });
+};
+
+formAlquiler.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+  postAlquiler({
+    nombre: e.target.nombre.value,
+    apellido: e.target.apellido.value,
+    telefono: e.target.telefono.value,
+    email: e.target.email.value,
+    carrito,
+  });
+});

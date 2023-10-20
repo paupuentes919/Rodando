@@ -6,17 +6,18 @@ window.addEventListener("load", function () {
   let cantidadRodados = document.getElementById("cantidad-rodados");
   let cantidadHoras = document.getElementById("cantidad-horas");
   let imgProducto = document.getElementById("imagen-producto");
+  let productId = document.getElementById("product-id").value;
   // let datepicker = document.getElementById("#datepicker");
 
   btnCarrito.addEventListener("click", function () {
     let carrito = JSON.parse(sessionStorage.getItem("carrito"));
-    let maxId = 0;
-    if (carrito && carrito.length > 0) {
-      let ids = carrito.map((elem) => elem.id);
-      maxId = Math.max(...ids) + 1;
-    }
+    // let maxId = 0;
+    // if (carrito && carrito.length > 0) {
+    //   let ids = carrito.map((elem) => elem.id);
+    //   maxId = Math.max(...ids) + 1;
+    // }
     let nuevoItem = {
-      id: maxId,
+      id: productId,
       imagen: imgProducto.src,
       tituloRodado: tituloRodado.innerText,
       cantidadRodado: cantidadRodados.value,

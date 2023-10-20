@@ -13,7 +13,8 @@ function rodado_alquilerData(sequelize, Datatypes) {
     alquiler_id: {
       type: Datatypes.INTEGER,
     },
-    cant_horas: { type: Datatypes.INTEGER },
+    cantidad_rodados: { type: Datatypes.INTEGER },
+    cantidad_horas: { type: Datatypes.INTEGER },
     precio_hora: { type: Datatypes.DECIMAL },
   };
 

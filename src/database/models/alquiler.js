@@ -12,6 +12,7 @@ function alquilerData(sequelize, Datatypes) {
     nombre: { type: Datatypes.STRING(200) },
     apellido: { type: Datatypes.STRING(200) },
     telefono: { type: Datatypes.STRING(200) },
+    email: { type: Datatypes.STRING(200) },
     pagado: { type: Datatypes.BOOLEAN },
   };
 
