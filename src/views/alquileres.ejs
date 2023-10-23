@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/styleregistro.css" />
+    <link rel="stylesheet" href="/CSS/usuarios.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+    <main class="main-back-img">
+      <div class="titulo-contenedor">
+        <h1 class="titulo-formulario"><strong>Alquileres Activos</strong></h1>
+      </div>
+      <div  class="container">
+        <% if (locals.alquileres) { %>
+        <div class="grilla-usuarios">
+          <% for( let i = 0; i < alquileres.length; i++ ) { %>
+          <article id="containerId" class="d-flex flex-column cajita">
+            <div class="mb-2 article-fields">
+              <div class=" user-title-box">
+                  <h4 class="titulo-alquiler">Alquiler <%= i %> </h4>
+                  <h3><%= alquileres[i].codigo_reserva %></h3>
+              </div>
+              
+              <h5>Nombre del Usuario: <%= alquileres[i].nombre || "-" %></h5>
+              <h5>Apellido del Usuario: <%= alquileres[i].apellido || "-" %></h5>
+              <h5>Email: <%= alquileres[i].email || "-" %></h5>
+              <h5>Telefono: <%= alquileres[i].telefono || "-" %></h5>
+            </div>
+
+            <div id="adicionales" >
+              <h4>Rodados Alquilados</h4>
+              <% for( let j = 0; j < alquileres[i].rodados.length; j++ ) { %>
+              <h5>Rodado: <%= alquileres[i].rodados[j].nombre%> </h5>
+                <% for( let r = 0; r < rod_alq.length; r++ ) { %>
+                  <% if(alquileres[i].rodados[j].id == rod_alq[r].rodado_id){ %>
+                    <h5>Cantidad: <%= rod_alq[r].cantidad_rodados %> </h5>
+                    <h5>Horas: <%= rod_alq[r].cantidad_horas %> </h5>
+                  <% } %>
+                <% } %>  
+              <% } %>
+
+              <h4>Precio Total: $ <%= alquileres[i].precio_total %></h4>
+            </div>
+            <div
+              class = "btn-box"
+            >
+              <a href="/alquiler/editar/<%= alquileres[i].id %>">
+                <button class="btn-edit" type="button">
+                  <p>Editar</p>
+                </button>
+              </a>
+              <form
+                method="POST"
+                action="/<%= alquileres[i].id %>?_method=DELETE"
+              >
+                <button class="btn-delete">
+                  <p>Borrar</p>
+                </button>
+              </form>
+            </div>
+          </article>
+          <% } %>
+        </div>
+        <% } else { %>
+        <p>no hay usuarios</p>
+        <% } %>
+      </div>
+    </main>
+    <%- include('./partials/footer2') %>
+    <script type="text/javascript" src="/js/alquileres.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

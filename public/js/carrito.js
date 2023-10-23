@@ -132,6 +132,7 @@ formAlquiler.addEventListener("submit", (e) => {
     apellido: e.target.apellido.value,
     telefono: e.target.telefono.value,
     email: e.target.email.value,
+    precio_total: sumatoriaTotal,
     carrito,
   });
 });

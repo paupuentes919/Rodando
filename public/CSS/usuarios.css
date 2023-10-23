@@ -66,3 +66,26 @@ button p {
   text-align: center;
   margin-bottom: 20px;
 }
+
+/*------------------------------------------------Nuevas clases para Alquileres -------------------------------------*/
+
+.titulo-alquiler {
+  font-weight: 900 ;
+  text-transform: uppercase;
+}
+
+.cajita {
+  background-color: white;
+    margin: 5% 0;
+    border-radius: 4px;
+    border: solid 1px white;
+    transition: all  400ms;
+}
+
+.cajita:hover{ 
+  box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
+}
+
+.display{
+  display: none;
+}

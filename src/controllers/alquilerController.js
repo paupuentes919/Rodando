@@ -2,16 +2,41 @@ const { uuid } = require("uuidv4");
 const db = require("../database/models");
 
 const alquilerController = {
+/*  
   mostrarAlquileres: async (req, res) => {
     db.alquiler
-      .findAll()
-      .then((resultadoAlquileres) => {
-        res.json(resultadoAlquileres);
+      .findAll({
+        include: [{ association: "rodados" }],
+        where: {
+          estado: 'activo'  
+        }
+      })
+      .then((alquileres) => {
+        console.log(alquileres[0])
+        res.render( "alquileres" , {alquileres} );
       })
       .catch((error) => {
         res.json({ message: "Ocurrio un error", error });
       });
   },
+ */
+  
+  mostrarAlquileres: function (req, res) {
+      Promise.all([db.rodado_alquiler.findAll(), db.alquiler.findAll({
+          include: [{ association: "rodados" }],
+            where: {
+              estado: 'activo'  
+            }
+          })
+      ])
+      .then(function ([ rod_alq , alquileres  ]) {
+        res.render( "alquileres" , { rod_alq, alquileres} );
+      })
+      .catch((error) => {
+        res.json({ message: "Ocurrio un error", error });
+      });
+  },
+  
 
   mostrarAlquilerById: async (req, res) => {
     try {
@@ -29,16 +54,17 @@ const alquilerController = {
   },
 
   postAlquiler: async (req, res) => {
-    const { nombre, apellido, telefono, email, carrito } = req.body;
+    const { nombre, apellido, telefono, email, precio_total, carrito } = req.body;
     try {
       const alquiler = await db.alquiler.create({
-        codigo_reserva: uuid(),
+        codigo_reserva: "CODhdjdi",
         fecha_emision_alquiler: new Date(),
         nombre,
         apellido,
         telefono,
         email,
-        pagado: false,
+        precio_total,
+        estado: 'activo',
       });
 
       carrito.forEach(async (rodado) => {
