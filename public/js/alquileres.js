@@ -13,9 +13,9 @@ fetch(`http://localhost:3010/alquiler`)
         cant.innerHTML += lista_detalle[rodadoID.innerHTML].cantidad_rodados
     })
 
-let container = document.querySelector('#containerId');
-let display1 = document.querySelector('#adicionales');
+let container = document.querySelector('.cajita');
+let adicionales = document.querySelector('.adicionales');
 
 container.addEventListener('click', function(){
-    display1.classList.toggle("display")
+    adicionales.classList.toggle("adicionales")
 })

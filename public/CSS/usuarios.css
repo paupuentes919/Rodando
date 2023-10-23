@@ -86,6 +86,31 @@ button p {
   box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
 }
 
-.display{
-  display: none;
+.adicionales {
+  font-size: 0px;
+  opacity: 0;
+  margin: 0;
+  transition: all 400ms;
+}
+
+.cajita:hover .adicionales{
+  font-size: 15px;
+  opacity: 100;  
+}
+
+.adicionales h4 {
+  font-size: 0px;
+  opacity: 0;
+  margin: 0;
+  transition: all 400ms;
+}
+
+.cajita:hover .adicionales h4{
+  font-size: 25px;
+  opacity: 100;
+  margin: 25px 0 10px;   
+}
+
+.bold {
+  font-weight: 700;
 }

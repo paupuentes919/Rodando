@@ -29,14 +29,14 @@
               <h5>Telefono: <%= alquileres[i].telefono || "-" %></h5>
             </div>
 
-            <div id="adicionales" >
+            <div id="adicionales" class="adicionales">
               <h4>Rodados Alquilados</h4>
               <% for( let j = 0; j < alquileres[i].rodados.length; j++ ) { %>
-              <h5>Rodado: <%= alquileres[i].rodados[j].nombre%> </h5>
+              <p class="bold">Rodado: <%= alquileres[i].rodados[j].nombre%> </p>
                 <% for( let r = 0; r < rod_alq.length; r++ ) { %>
                   <% if(alquileres[i].rodados[j].id == rod_alq[r].rodado_id){ %>
-                    <h5>Cantidad: <%= rod_alq[r].cantidad_rodados %> </h5>
-                    <h5>Horas: <%= rod_alq[r].cantidad_horas %> </h5>
+                    <p>Cantidad: <%= rod_alq[r].cantidad_rodados %> </p>
+                    <p>Horas: <%= rod_alq[r].cantidad_horas %> </p>
                   <% } %>
                 <% } %>  
               <% } %>
