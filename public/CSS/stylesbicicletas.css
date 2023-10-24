@@ -26,3 +26,18 @@
 .card-button {
     width: 120px;
 }
+
+@media (max-width: 900px){
+    .gap-card {
+        column-gap: 10rem;
+    }
+    .card{
+        width: 22rem;
+    }
+}
+
+@media (max-width: 300px){
+    .card {
+        width: 17rem;
+    }
+}
