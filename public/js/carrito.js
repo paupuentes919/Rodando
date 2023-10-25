@@ -40,7 +40,7 @@ carritoArrayInicial &&
   </div>
   <div class="div-container-products">
   <div class="p-titulo-tipo-rodado">
-  <h2>${obj.tituloRodado}</h2>
+  <h2 class="titulo-carrito-bici-mono">${obj.tituloRodado}</h2>
   </div>
   <div class="div-horas-cantidad" >
   <p class="p-horas-cantidad horas">Horas contratadas: </p>
