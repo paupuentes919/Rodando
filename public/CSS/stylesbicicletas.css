@@ -1,28 +1,43 @@
 #bicicletas-img {
-    background-image: url("/img/fondo.png");
-	background-repeat: repeat;
-	background-attachment: fixed;
+  background-image: url("/img/fondo.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .card-img {
-    margin-top: 10px;
-    height: 170px;
-    width: 260px;
+  margin-top: 10px;
+  height: 170px;
+  width: 260px;
 }
 
 .container-card {
-    padding: 3rem 0;
+  padding: 3rem 0;
 }
 
 .gap-card {
-    gap: 2rem;
-    justify-content: center;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .card-button-box {
-    padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 .card-button {
-    width: 120px;
+  width: 120px;
+}
+
+@media (max-width: 900px) {
+  .gap-card {
+    column-gap: 10rem;
+  }
+  .card {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .card {
+    width: 17rem;
+  }
 }

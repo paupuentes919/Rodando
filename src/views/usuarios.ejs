@@ -21,15 +21,18 @@
           <% for( let i = 0; i < usuarios.length; i++ ) { %>
           <article class="d-flex flex-column">
             <div class="mb-2 article-fields">
-              <div class=" user-title-box">
+              <div class="user-title-box">
                 <% if (usuarios[i].imagen) { %>
-                  <img src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= usuarios[i].imagen %>.jpg" alt="<%= i %> - foto" class="user-img"/>
+                <img
+                  src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= usuarios[i].imagen %>.jpg"
+                  alt="<%= i %> - foto"
+                  class="user-img"
+                />
                 <% } %>
-                  <h4>
-                <% if (usuarios[i].nombre) { %> <%= usuarios[i].nombre %> <%=
+                <h4>
+                  <% if (usuarios[i].nombre) { %> <%= usuarios[i].nombre %> <%=
                   usuarios[i].apellido || "" %> <% } else { %> - <% } %>
-                  </h4>
-                
+                </h4>
               </div>
               <h5>Tel: <%= usuarios[i].telefono || "-" %></h5>
               <h5>Direccion: <%= usuarios[i].direccion || "-" %></h5>
@@ -45,9 +48,7 @@
                 usuarios[i].sucursal.direccion || "" %> <% } else { %> - <% } %>
               </h5>
             </div>
-            <div
-              class = "btn-box"
-            >
+            <div class="btn-box">
               <a href="/usuarios/editar/<%= usuarios[i].id %>">
                 <button class="btn-edit" type="button">
                   <p>Editar</p>

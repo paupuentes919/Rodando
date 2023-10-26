@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/styleregistro.css" />
+    <link rel="stylesheet" href="/CSS/usuarios.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+    <main class="main-back-img">
+      <a href="/alquileres">
+        <h3><- Atras</h3>
+      </a>
+
+      
+      <div style="background-color: rgba(251, 251, 246, 0.5);" class="mx-5 mt-4 p-4">
+        <div class="text-center">
+          <h1 style="color: #df4249;">
+            <b>Alquiler: <%= alquiler.codigo_reserva %></b>
+        </h1>
+      </div>
+      
+      
+      <div class="d-flex justify-content-center">
+        <div class="p-4 d-flex justify-content-center flex-column" style="width: 70%">
+          <div class="d-flex gap-4">
+            <p style="flex-basis: 50%;"><b>Nombre:</b> <%= alquiler.nombre && alquiler.apellido ? `${alquiler.nombre}
+          ${alquiler.apellido}` : "-" %></p>
+          <p style="flex-basis: 50%;"><b>Email:</b> <%= alquiler.email || "-" %></p>
+        </div>
+        
+        <div class="d-flex gap-4">
+          <% if (alquiler.fecha_emision_alquiler) { %>
+            <p style="flex-basis: 50%;"><b>Fecha emision alquiler:</b> <%= alquiler.fecha_emision_alquiler %></p>
+            <% } %>
+            
+            <p style="flex-basis: 50%;"><b>Telefono:</b> <%= alquiler.telefono || "-" %></p>
+          </div>
+          
+          <div class="d-flex justify-content-between">
+            
+            <div class="d-flex gap-2 align-items-center">
+              <h3 class="m-0"  style="color: #333;">Pagado</h3>
+              <select id="selectPagado" class="p-1" style="font-size: 20px; border-radius: 5px;">
+                <option value="si" <%= alquiler.pagado === 'si'?'selected' : null %>>SI</option>
+                <option value="no" <%= alquiler.pagado === 'no'?'selected' : null %>>NO</option>
+              </select>
+            </div>
+            
+            <div class="d-flex justify-content-end align-self-end">
+              <h2 class="m-0" style="color: #333;">
+                Total: $<%= (detalles.reduce((acc, count) => { acc +=
+          (Number(count.precio_hora) * count.cantidad_horas *
+          count.cantidad_rodados); return acc },0)).toLocaleString('es-AR') ||
+          "-" %>
+        </h2>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="container">
+        <% if (locals.detalles) { %>
+        <div class="grilla-usuarios">
+          <% for( let i = 0; i < detalles.length; i++ ) { %>
+          <article class="d-flex flex-column" style="border-radius: 5px;">
+            <div class="mb-2 article-fields">
+              <div class="user-title-box">
+                <h4 style="color: #df4249;">
+                <b>
+                  <%= detalles[i].rodado.nombre || '-' %>
+                </b>
+                </h4>
+              </div>
+              <div class="d-flex justify-content-center my-4">
+                <img height="150"
+                src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= detalles[i].rodado.imagen %>.jpg"
+                alt="<%= detalles[i].rodado.nombre %>"
+                />
+              </div>
+              <div>
+                <p><b>
+                  Precio por hora:</b> $<%=
+                  Number(detalles[i].precio_hora).toLocaleString('es-AR') %>
+                </p>
+              </div>
+              <div>
+                <p><b>Cantidad de horas:</b> <%= detalles[i].cantidad_horas %></p>
+              </div>
+              <div>
+                <p><b>
+                  Cantidad de rodados:</b> <%= detalles[i].cantidad_rodados %>
+                </p>
+              </div>
+              <div>
+                <h3>
+                  Total: $<%= (Number(detalles[i].precio_hora) *
+                  detalles[i].cantidad_horas *
+                  detalles[i].cantidad_rodados).toLocaleString('es-AR') %>
+                  </h3>
+              </div>
+            </div>
+          </article>
+          <% } %>
+        </div>
+        <% } else { %>
+        <p><b>No hay alquileres</p>
+        <% } %>
+      </div>
+    </main>
+    <%- include('./partials/footer2') %>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/alquiler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

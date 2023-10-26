@@ -17,7 +17,10 @@ button:disabled {
 } */
 
 /*------------------------------------------------Nuevas clases Tomi -------------------------------------*/
-
+.div--container--precio-total {
+  right: 0;
+  position: relative;
+}
 .section-productos {
   display: flex;
   flex-direction: column;
@@ -244,7 +247,11 @@ button:disabled {
 }
 
 /************* MEDIA QUERY MAX-WIDTH*********************/
-
+@media (max-width: 1380px) {
+  .titulo-carrito-bici-mono {
+    font-size: 25px;
+  }
+}
 @media (max-width: 1200px) {
   .img-width-height {
     width: 200px;
@@ -350,12 +357,41 @@ button:disabled {
   .botones {
     left: 50px;
   }
+  .titulo-carrito-bici-mono {
+    font-size: 20px;
+  }
+  .div-horas-cantidad,
+  .div-vehiculo-cantidad {
+    display: grid;
+  }
+  .img-width-height {
+    top: 50px;
+  }
+  .div--precio-numero {
+    right: 4rem;
+  }
+
+  .div--container--precio-total {
+    right: 4rem;
+  }
+
+  .div--precio-numero {
+    width: 25rem;
+  }
 }
 
 @media (max-width: 560px) {
   .div-img-products {
     margin: 3rem 1rem;
     max-width: 100%;
+  }
+
+  .div--container--precio-total {
+    justify-content: normal;
+  }
+
+  .div--precio-numero-total {
+    display: block;
   }
 
   .img-width-height {
@@ -372,5 +408,28 @@ button:disabled {
 
   .botones {
     left: 35px;
+  }
+}
+
+@media (max-width: 450px) {
+  .div-img-products {
+    display: none;
+  }
+  .div-horas-cantidad,
+  .div-vehiculo-cantidad {
+    display: flex;
+  }
+  .div--precio-numero {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .div--precio-numero,
+  .div--container--precio-total {
+    right: 5rem;
+  }
+  .div--precio-numero {
+    width: 16rem;
   }
 }

@@ -11,7 +11,6 @@ const guestUserMiddleware = require("../middlewares/guestUserMiddleware");
 //MULTER CONFIG//
 const upload = multer();
 
-
 /* Bicicletas */
 
 router.get("/bicicletas", productControllers.bicicletas);
@@ -27,19 +26,31 @@ router.get("/detalle/:id", productControllers.detalle);
 /*---------------- Formulario -------------------- */
 /* Form create */
 router.get("/crear", guestUserMiddleware, productControllers.crearVista);
-router.post("/crear", upload.single('imagen'), validations, productControllers.crearItemEnBD);
+router.post(
+  "/crear",
+  upload.single("imagen"),
+  validations,
+  productControllers.crearItemEnBD,
+);
 
 /* Form update */
 router.get("/editar/:id", guestUserMiddleware, productControllers.editar);
-router.put("/editar/:id",upload.single('imagen'), validations, productControllers.actualizar);
-
+router.put(
+  "/editar/:id",
+  upload.single("imagen"),
+  validations,
+  productControllers.actualizar,
+);
 
 /* Form delete */
 
-router.delete("/borrar/:id", guestUserMiddleware,  productControllers.borrar);
+router.delete("/borrar/:id", guestUserMiddleware, productControllers.borrar);
 
 /* Carrito */
 router.get("/carrito", productControllers.carrito);
 router.post("/carrito", productControllers.alquiler);
+
+// Confirmacion
+router.get("/confirmacion", productControllers.confirmacion);
 
 module.exports = router;
