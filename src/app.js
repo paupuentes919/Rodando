@@ -54,6 +54,7 @@ const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const { alquilerRouter } = require("./routes/alquilerRoutes");
 const apiRouter = require("./routes/API/apiRoutes");
+const { alquilerController } = require("./controllers/alquilerController");
 
 /* Configurar metodos put delete patch */
 app.use(methodOverride("_method"));
@@ -62,7 +63,7 @@ app.use(methodOverride("_method"));
 app.use("/", mainRoutes);
 app.use("/productos", productRoutes);
 app.use("/usuarios", userRoutes);
-app.use("/alquiler", alquilerRouter);
+app.use("/alquileres", alquilerRouter);
 app.use("/api", apiRouter);
 
 /* puerto */

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/stylelogin.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <%- include('./partials/header') %>
+    <form
+      class="form-login flex-grow-1"
+      method="POST"
+      action="/usuarios/login"
+      id="form"
+    >
+      <div class="div-login py-5 px-5 mt-5" style="width: 70%">
+        <h1 class="mb-5 text-center" style="font-size: 50px">Listo!</h1>
+        <h4 class="mb-5 text-justify">
+          Tu reserva se ha realizado con éxito, pronto recibirás un correo
+          electrónico con los datos de la misma.
+        </h4>
+        <h2 class="text-center">Muchas gracias por confiar en nosotros!</h2>
+      </div>
+    </form>
+    <%- include('./partials/footer2') %>
+  </body>
+</html>

@@ -34,8 +34,10 @@ carritoArrayInicial &&
   <div class="display-flex">
   <div class="div-img-products">
   <img
-  class="img-width-height"
+  height="200"
+  width="200"
   src="${obj.imagen}"
+  style="object-fit: contain;"
   />
   </div>
   <div class="div-container-products">
@@ -101,19 +103,11 @@ const formAlquiler = document.getElementById("formCompra");
 
 const postAlquiler = async (data) => {
   // console.log(data);
-  const res = await axios.post("/alquiler", data);
+  const res = await axios.post("/alquileres", data);
   console.log(res);
   if (res.status === 201) {
     botonBorrarCarrito.click();
-    Swal.fire({
-      icon: "success",
-      title: `Reserva realizada exitosamente!
-      su codigo es : ${res.data.alquiler.codigo_reserva}`,
-      showConfirmButton: false,
-      width: "50rem",
-      timer: 2500,
-    });
-    // window.location.replace("/");
+    window.location.replace("/productos/confirmacion");
   } else
     Swal.fire({
       icon: "error",
