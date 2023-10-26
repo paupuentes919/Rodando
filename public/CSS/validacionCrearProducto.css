@@ -1,0 +1,92 @@
+.contenedor-input {
+  position: relative;
+}
+.check-cruz-estado {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  z-index: 100;
+  font-size: 16px;
+  opacity: 0;
+  transition: 0.8s ease all;
+}
+
+/* estilos para validaciones */
+
+.estilos-input {
+  border-width: 3px;
+  border: 3px solid #fff;
+
+  border-radius: 0.375rem;
+  background-color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  background-clip: padding-box;
+  padding: 0.375rem 0.75rem;
+  transition: 0.8s ease all;
+}
+
+/* correcto */
+.correcto {
+  border-width: 3px;
+  border-color: #1ed12d;
+}
+/* error */
+.error {
+  border-width: 3px;
+  border-color: #bb2929;
+}
+
+.estilos-input:focus {
+  /* border-color: rgb(4, 128, 236); */
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(9, 123, 184, 0.4);
+}
+.leyenda-error-inactivo {
+  font-weight: 200;
+  color: aliceblue;
+  margin-left: 5px;
+  /* display: none; */
+  visibility: hidden;
+}
+.leyenda-error-activo {
+  /* display: inline-block; */
+  visibility: visible;
+}
+
+.check-cruz-correcto {
+  color: #1ed12d;
+  opacity: 1;
+}
+.check-cruz-incorrecto {
+  color: #bb2929;
+  opacity: 1;
+}
+.enviar-msj-correcto {
+  /* margin: 1rem; */
+  border-radius: 5px;
+  color: #1ed12d;
+  font-size: larger;
+  font-variant: small-caps;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.enviar-msj-error {
+  /* margin: 1rem; */
+  border-radius: 5px;
+  color: #db230b;
+  font-size: larger;
+
+  /* display: none; */
+  visibility: hidden;
+}
+
+.enviar-msj-mostrar {
+  /* display: block; */
+  visibility: visible;
+}
+.desvanecer {
+  transition: 0.8s ease all;
+}

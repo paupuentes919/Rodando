@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body>
+    <!--------------------------------------------------HEADER----------------------------------------------------------->
+    <%- include('./partials/header') %>
+    <link rel="stylesheet" href="/CSS/stylesbicicletas.css" />
+    <!---------------------------------------------------MAIN------------------------------------------------------------>
+    <main id="bicicletas-img">
+      <div class="container container-card">
+        <div class="row row-cols-4 gap-card">
+          <% mono.forEach(monopatin => { %>
+          <div class="card col">
+            <img
+              src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= monopatin.imagen %>.jpg"
+              class="card-img-top"
+              alt="monopatin"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= monopatin.nombre %></h5>
+              <p class="card-text"><%= monopatin.descripcion %></p>
+            </div>
+            <div class="card-button-box d-flex gap-4 justify-content-center">
+              <a
+                href="../productos/detalle/<%= monopatin.id %>"
+                class="btn btn-primary card-button d-flex align-items-center justify-content-center"
+                style="
+                  background: #df4249;
+                  border-color: #df4249;
+                  flex-basis: 35%;
+                "
+                >Ver detalle</a
+              >
+              <% if(locals.isLogged){ %>
+              <a
+                href="../productos/editar/<%= monopatin.id %>"
+                class="btn btn-primary card-button d-flex align-items-center justify-content-center"
+                style="
+                  background: #df4249;
+                  border-color: #df4249;
+                  flex-basis: 35%;
+                "
+                >Editar</a
+              >
+              <% } %>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <!--------------------------------------------------FOOTER----------------------------------------------------------->
+    <%- include('./partials/footer2') %>
+  </body>
+</html>

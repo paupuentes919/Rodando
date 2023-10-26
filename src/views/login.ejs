@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/stylelogin.css" />
+  </head>
+  <body class="d-flex flex-column">
+    <%- include('./partials/header') %>
+    <form
+      class="form-login flex-grow-1"
+      method="POST"
+      action="/usuarios/login"
+      id="form"
+    >
+      <div class="div-login py-5 px-5">
+        <h1 class="h1-login">Login</h1>
+        <div class="grupo-login my-2">
+          <input
+            class="input-login"
+            type="text"
+            name="email"
+            id="name"
+            required
+          />
+          <label class="label-login" for="">MAIL</label>
+          <span class="barra"></span>
+          <% if (locals.errors && errors.email) { %>
+          <div class="text-danger"><%= errors.email.msg %></div>
+          <% } %>
+        </div>
+        <div class="grupo-login my-4">
+          <input
+            class="input-login"
+            type="password"
+            name="contrasena"
+            id="name"
+            required
+          /><span class="barra"></span>
+          <label class="label-login" for=""> CONTRASEÑA</label>
+          <% if (locals.errors && errors.contrasena) { %>
+          <div class="text-danger"><%= errors.contrasena.msg %></div>
+          <% } %>
+        </div>
+        <div class="form-checkbox mb-4">
+          <label class="form-checkbox-label">
+            <input
+              type="checkbox"
+              class="form-checkbox-input"
+              name="recordarUsuario"
+            />
+            Recordar mi usuario
+          </label>
+        </div>
+        <div>
+          <button class="btn-login" type="submit">Ingresar</button>
+          <button class="btn-login" type="submit">Olvidó su contraseña?</button>
+        </div>
+      </div>
+    </form>
+    <%- include('./partials/footer2') %>
+  </body>
+</html>

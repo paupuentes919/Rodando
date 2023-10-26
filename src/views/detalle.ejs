@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styledetalle.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <div class="container-title-product">
+        <h2 id="titulo-rodado"><%= product.nombre %></h2>
+      </div>
+      <div class="card">
+        <div class="face front">
+          <img
+            id="imagen-producto"
+            src="https://res.cloudinary.com/dkguig17n/image/upload/v1691785191/<%= product.imagen %>.jpg"
+          />
+        </div>
+        <div class="face back">
+          <h3><strong>Descripción</strong></h3>
+          <p style="color: #7b807a">- <%= product.nombre %></p>
+          <p style="color: #7b807a">- <%= product.categ %></p>
+          <p style="color: #7b807a">- <%= product.descripcion %></p>
+          <p style="color: #7b807a">- <%= product.rodado %></p>
+          <p style="color: #7b807a">- <%= product.color.nombre %></p>
+          <p class="aclaracion">
+            *La imagen publicada es de referencia y sus características pueden
+            llegar a variar de acuerdo con la flota disponible.
+          </p>
+        </div>
+      </div>
+      <div class="container-info_product">
+        <div class="container-price">
+          <h3><strong>Costo hora</strong></h3>
+          <span id="precio-unitario">
+            <i class="fa-solid fa-dollar-sign"></i><%= product.precio_hora
+            %></span
+          >
+        </div>
+        <input type="text" value="<%= product.id%>" id="product-id" hidden />
+        <div>
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- cantidad de rodados -->
+            <div
+              class="d-flex gap-3 align-items-center"
+              style="font-size: 20px"
+            >
+              <label for="cantidad-rodados">
+                <p class="m-0">Cantidad</p>
+              </label>
+              <input
+                type="number"
+                value="1"
+                min="1"
+                max="8"
+                id="cantidad-rodados"
+                class="px-2 py-1"
+                style="width: 60px"
+              />
+            </div>
+            <!-- cantidad de horas-->
+            <div
+              class="d-flex gap-3 align-items-center"
+              style="font-size: 20px"
+            >
+              <label for="cantidad-horas">
+                <p class="m-0">Horas</p>
+              </label>
+              <input
+                type="number"
+                value="1"
+                min="1"
+                max="12"
+                id="cantidad-horas"
+                class="px-2 py-1"
+                style="width: 60px"
+              />
+            </div>
+          </div>
+          <!-- <input
+            type="datetime-local"
+            id=""
+            placeholder="Comienzo reserva"
+          />
+          <input
+            type="datetime-local"
+            id=""
+            placeholder="Fin reserva"
+          /> -->
+          <div class="d-flex py-4">
+            <button
+              id="btn-carrito"
+              class="btn-add-to-cart"
+              style="
+                background-color: #df4249;
+                border: #df4249;
+                border-radius: 5px;
+              "
+            >
+              <i class="fa-solid fa-cart-plus"></i>
+              Añadir al Carrito
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="container-add-cart">
+                <div class="container-quantity">
+                    <h4>Horas</h4>
+                    <div class="container-quantity-counter">
+                        <input type="number" placeholder="1" value="1" min="1" class="input-quantity"/>
+                        <div class="btn-increm-decrem">
+                           <i class="fa-solid fa-chevron-up"></i>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <button id="btn-carrito" class="btn-add-to-cart">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Añadir al Carrito
+                </button>
+            </div> -->
+        <div class="container-description">
+          <div class="title-description">
+            <h3><strong>Requisitos</strong></h3>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-description">
+            <p>Documento de identificación:</p>
+            <p>- Dejar DNI</p>
+            <p>- Licencia de conducir</p>
+            <p>- Cédula de extranjería o pasaporte</p>
+            <span
+              >Dejar una fianza o valor reembolsable de USD 20 por
+              bicicleta.</span
+            >
+            <span>Aplican T&C</span>
+          </div>
+        </div>
+        <div class="container-additional-info">
+          <div class="title-additional-info">
+            <h3><strong>Información General</strong></h3>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-additional-info">
+            <p style="color: #909390">Horario de atención:</p>
+            <p style="color: #909390">- Lunes a Sábados 8am a 8pm.</p>
+            <span style="color: #909390">Alquiler únicamente con reserva.</span>
+          </div>
+        </div>
+        <div class="container-include">
+          <div class="title-include">
+            <h3><strong>Incluye:</strong></h3>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-include">
+            <p style="color: #909390">- Casco ajustable.</p>
+            <p style="color: #909390">- Candado tipo guaya de clave.</p>
+            <p style="color: #909390">- Kit de Reparaciones.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./partials/footer2') %>
+    <script type="text/javascript" src="/js/detalle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+      var picker = new Pikaday({
+        field: document.getElementById("datepicker"),
+        firstDay: 1,
+        minDate: new Date(),
+        i18n: {
+          previousMonth: "Mes anterior",
+          nextMonth: "Mes siguiente",
+          months: [
+            "Enero",
+            "Feberero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+          ],
+          weekdays: [
+            "Lunes",
+            "Martes",
+            "Miercoles",
+            "Jueves",
+            "Viernes",
+            "Sabado",
+            "Domingo",
+          ],
+          weekdaysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+        },
+      });
+    </script>
+  </body>
+</html>

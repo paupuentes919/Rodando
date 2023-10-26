@@ -1,0 +1,61 @@
+.titulo-formulario {
+  padding-top: 5%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.parrafotitulo {
+  text-align: center;
+}
+
+.barra-superior {
+  background-color: #020736;
+}
+
+/*main*/
+
+.main-back-img {
+  background-image: url("https://rodando.alwaysdata.net/test2.jpg");
+  background-size: cover;
+}
+
+.row-form {
+  background-color: #020736;
+  color: white;
+}
+
+.avisoformu {
+  font-size: small;
+  color: white;
+}
+
+.yacuenta {
+  text-align: center;
+}
+
+.btn-radio {
+  background-color: transparent; /* Quitar el fondo */
+  border: none; /* Quitar el borde */
+}
+
+.cajaError {
+  display: none;
+  margin: 0;
+  transition: all ease 1000ms;
+}
+.cajaError p {
+  display: inline;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+.confirm {
+  display: none;
+  background-color: #020736;
+  padding: 1.4rem;
+  border-radius: 5px;
+}
+.confirm h3 {
+  color: aliceblue;
+  font-size: 2.2rem;
+}

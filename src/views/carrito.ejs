@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/stylecarrito.css" />
+    <link rel="stylesheet" href="/CSS/styleregistro.css" />
+  </head>
+  <body>
+    <!--------------------------------------------------HEADER----------------------------------------------------------->
+    <%- include('./partials/header') %>
+    <!---------------------------------------------------MAIN------------------------------------------------------------>
+    <!-----------------------------------SECTION PRECIO TOTAL-------------------------------->
+    <main id="main__background--carrito">
+      <div>
+        <h2 class="div__h2--detalle-carrito" id="tituloDetalleCarrito">
+          DETALLE DE CARRITO
+        </h2>
+        <div class="div--container--precio-total">
+          <div class="div--precio-numero-total precio-numero-container">
+            <div class="div-total-numero">
+              <h4 class="h4--precio-total">Precio Total</h4>
+              <h4 class="h6--precio-numero" id="precio-total">$</h4>
+            </div>
+            <div class="btn__container--realizar-pago">
+              <button class="btn--realizar-pago" id="comprar-boton">
+                Confirmar
+              </button>
+              <button class="btn--realizar-pago" id="borrar-Carrito">
+                Borrar carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-----------------------------------SECTION RODADOS ALQUILADOS-------------------------------->
+      <section class="section-productos" id="div1"></section>
+
+      <!---FORMULARIO DE CARRITO, DESPUES BORRAR--->
+
+      <div class="container">
+        <form class="row row-form g-4 mt-3 rounded carrito-off" id="formCompra">
+          <div class="mb-3 col-6">
+            <label for="input-name" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-name"
+              name="nombre"
+              placeholder="Introduzca Nombre"
+            />
+
+            <span class="cajaError" id="errorNombre"></span>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="input-apellido" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-apellido"
+              name="apellido"
+              placeholder="Introduzca Apellido"
+            />
+
+            <span class="cajaError" id="errorApellido"></span>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label class="form-label">Mail</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-email"
+              name="email"
+              placeholder="Introduzca Mail"
+            />
+
+            <span class="cajaError" id="errorEmail"></span>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="input-telefono" class="form-label">Teléfono</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="input-telefono"
+              name="telefono"
+              placeholder="Introduzca Teléfono"
+            />
+
+            <span class="cajaError" id="errorTelefono"></span>
+          </div>
+          <div style="display: flex">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg mx-auto carrito-off"
+              id="boton-enviar"
+            >
+              Pagar
+            </button>
+          </div>
+
+          <div id="div2"></div>
+        </form>
+      </div>
+
+      <div class="confirm text-center mx-auto" id="confirmacion"></div>
+      <br />
+
+      <br />
+      <span class="text-center" id="errorEnviar"></span>
+    </main>
+    <!--------------------------------------------------FOOTER----------------------------------------------------------->
+    <%- include('./partials/footer2') %>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      type="text/javascript"
+      src="/js/validaciones/validarFormCarrito.js"
+    ></script>
+    <script src="/js/carrito.js" type="module"></script>
+  </body>
+</html>

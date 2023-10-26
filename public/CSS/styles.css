@@ -1,347 +1,335 @@
 /* ---- RESETS GENERALES ---- */
 /* normalizado*/
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-	min-height: 100vh;
+  min-height: 100vh;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* ---- NAVBAR ---- */
 
 .header__navbar {
-	background-color: #020736;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 0.5rem;
+  background-color: #020736;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
 }
 .header__nav--menu {
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .header__nav--item {
-	text-decoration: none;
-	list-style: none;
+  text-decoration: none;
+  list-style: none;
 }
 .link-nav {
-	text-decoration: none;
-	color: aliceblue;
-	font-size: large;
-	font-weight: 600;
-	padding: 0.3rem;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: large;
+  font-weight: 600;
+  padding: 0rem;
+  margin: 0 0.3rem;
 }
 .link-nav:hover {
-	color: #e13633;
+  color: #e13633;
 
-	border-bottom: #e13633;
-	transition: 300ms;
+  border-bottom: #e13633;
+  transition: 300ms;
 }
 
 #menu-toggle {
-	display: none;
+  display: none;
 }
 .menu-icon {
-	display: none;
+  display: none;
 }
 .active {
-	color: #e13633;
-	font-size: large;
+  color: #e13633;
+  font-size: large;
 }
+
+.cart-color {
+  color: #fff;
+}
+
+/*inicio icono usuario */
+
+.dropdown1-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown1-checkbox {
+  display: none;
+}
+
+.dropdown1-menu {
+  display: none;
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  list-style-type: none;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.dropdown1-item {
+  padding: 10px;
+}
+
+.dropdown1-item a {
+  color: rgb(214, 210, 210);
+  text-decoration: none;
+}
+.link-subMenu:hover {
+  color: #e13633;
+  border-bottom: #e13633;
+  transition: 300ms;
+}
+.dropdown1-checkbox:checked ~ .dropdown1-menu {
+  display: block;
+  margin-top: 0rem;
+  z-index: 10;
+  background-color: #020736;
+  border-radius: 5px;
+  top: 4rem;
+  right: 1rem;
+  width: 10rem;
+  padding: 1rem 0;
+  box-shadow: 2px 2px 10px rgb(61, 61, 62);
+}
+
+/* fin icono usuario */
 
 /* ----- PRODUCTOS ------ */
 
 .principal {
-	background-size: cover;
-
-	background-image: url("/img/fondo.png");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+  background-size: cover;
+  background-image: url("/img/fondo.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 .productos {
-	background-color: aliceblue;
+  background-color: aliceblue;
 }
 .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
 }
 .productos__boton {
-	position: absolute;
-	top: auto;
-	right: auto;
-	bottom: auto;
-	left: auto;
-	margin-bottom: 1rem;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  margin-bottom: 1rem;
 }
 
 .boton-producto {
-	background-color: #020736;
-	padding: 0.6rem 1rem;
-	color: white;
-	font-size: 1rem;
-	border-top-right-radius: 2rem;
-	border-bottom-right-radius: 2rem;
-	border-left: 0.7rem solid #e13633;
-	text-transform: uppercase;
-	text-decoration: none;
-	cursor: pointer;
+  background-color: #020736;
+  padding: 0.6rem 1rem;
+  color: white;
+  font-size: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-left: 0.7rem solid #e13633;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 
-	transition: 0.4s;
+  transition: 0.4s;
 }
 .boton-producto:hover {
-	background-color: #e13633;
-	border-left: 0.7rem solid #020736;
+  background-color: #e13633;
+  border-left: 0.7rem solid #020736;
 }
 
-.verde {
-	color: green;
-}
-
-/*-------------------------------------------------DETALLE CARRITO-------------------------------------------------------*/
-#main__background--carrito {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url(../img/bicicletas-ciudad.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 650px;
-	padding: 2rem 6rem;
-}
-
-.div__h2--detalle-carrito {
-	display: flex;
-	justify-content: center;
-	color: #111211;
-	padding-bottom: 2rem;
-}
-
-.div--container--precio-total {
-	display: flex;
-	justify-content: flex-end;
-	color: #111211;
-}
-
-.div--precio-numero {
-	display: flex;
-	background-color: white;
-	border-radius: 6px;
-	padding: 2rem;
-	margin-bottom: 2rem;
-}
-
-.div-total-numero {
-	display: flex;
-	align-items: center;
-	gap: 2rem;
-	border-bottom: 1px solid black;
-}
-
-.h6--precio-numero {
-	margin-right: 2rem;
-	margin-top: 0.3rem;
-}
-
-.btn__container--realizar-pago {
-	border-bottom: 1px solid black;
-}
-
-.btn--realizar-pago {
-	background-color: #020736;
-	color: white;
-	border: none;
-	border-radius: 6px;
-	padding: 0.7rem;
-	margin: 1rem 0;
-}
-
-.div--products-details-container {
-	margin-top: 2rem;
-	margin-left: 10rem;
-}
-
-.div-img-products {
-	margin: 0 5rem;
-	background-color: azure;
-	border-radius: 6px;
-}
-
-.div-container-products {
-	align-items: center;
-	display: grid;
-	margin-right: 5rem;
-}
-
-.p-titulo-tipo-rodado {
-	font-weight: bold;
-}
-
-.div-horas-cantidad {
-	display: flex;
-}
-
-.p-horas-cantidad {
-	font-weight: bold;
-}
-
-.div-numero {
-	display: flex;
-	align-items: center;
-}
-
-.p-numero {
-	border-bottom: 1px solid black;
-	font-weight: bold;
-	padding-right: 3rem;
-}
-
-.div-btn-products {
-	display: flex;
-	align-items: center;
-	gap: 2rem;
-	margin-left: 3.4rem;
-}
-
-.horas {
-	margin-right: 3rem;
-}
-
-.cantidad {
-	margin-right: 1.5rem;
-}
-
-/************* MEDIA QUERY MAX-WIDTH*********************/
-
-@media (max-width: 768px) {
-	.menu {
-		display: none;
-	}
-	.menu-icon {
-		display: block;
-		top: 0.3rem;
-		right: 1.4rem;
-		padding: 0.5rem;
-		background-color: #c72f2d;
-		color: aliceblue;
-		font-size: 1rem;
-		cursor: pointer;
-		position: absolute;
-		border-radius: 6px;
-		z-index: 10;
-	}
-	#menu-toggle:checked ~ .menu {
-		display: block;
-		z-index: 10;
-		margin-top: 2rem;
-		background-color: #020736;
-		border-radius: 5px;
-		position: fixed;
-		top: 2rem;
-		right: 1rem;
-		width: 10rem;
-		padding: 1rem 0;
-		box-shadow: 2px 2px 10px rgb(61, 61, 62);
-	}
-
-	.header__nav--menu {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		align-items: start;
-		margin: auto;
-	}
-}
-
-@media (max-width: 715px) {
-	#main__background--carrito {
-		padding: 2rem 3.4rem;
-	}
-
-	.div--container--precio-total {
-		justify-content: center;
-	}
-}
-
-@media (max-width: 550px) {
-	.div--precio-numero {
-		display: grid;
-	}
-
-	.div-total-numero {
-		border-bottom: 0;
-	}
-
-	.h6--precio-numero {
-		margin-top: 0;
-	}
-
-	.btn__container--realizar-pago {
-		display: flex;
-		justify-content: center;
-	}
-}
-
-@media (max-width: 440px) {
-	#main__background--carrito {
-		padding: 1.5rem;
-	}
-}
-
-@media (max-width: 380px) {
-	.div--precio-numero {
-		padding: 1rem;
-	}
-
-	.h4--precio-total {
-		font-size: small;
-	}
-
-	.h6--precio-numero {
-		font-size: small;
-	}
-}
-/* -----  ------ */
-
-.verde {
-	color: green;
-}
-
-/* ---- ACERCA DE NOSOTROS ---- */
+/* Seccion acerca de nosotros */
 
 .about-us {
-	background-image: url("./15 1.png");
+  background-image: url("/img/fondo-bicicleta.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.about-us h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
-/* ---- FOOTER ---- */
-
-.footer {
-	background: #020736;
-	color: white;
+.about-us__left {
+  background: #fffa;
 }
 
-.footer-icon {
-	border: 1px solid white;
-	border-radius: 100%;
-	padding: 5px;
-	width: 30px;
-	height: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.about-us__right {
+  @media (min-width: 1200px) {
+    text-align: right;
+  }
+  @media (orientation: portrait) {
+    text-align: center;
+  }
+}
+
+/* Seccion footer-home */
+
+.footer-home {
+  background: #020736;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-home__content {
+  flex-direction: column-reverse;
+  gap: 30px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-home__company {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.footer-home__social {
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.footer-home__location {
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer-home__location h2 {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.footer-home__location iframe {
+  width: 350px;
+  height: 300px;
+}
+
+.footer-home__icon {
+  border: 1px solid white;
+  border-radius: 100%;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-home__icon:hover {
+  border-color: #c72f2d;
+  background: #c72f2d;
 }
 
 .text-justify {
-	text-align: justify !important;
+  text-align: justify !important;
+}
+/************* MEDIA QUERY MAX-WIDTH*********************/
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    top: 0.3rem;
+    right: 1.4rem;
+    padding: 0.5rem;
+    background-color: #c72f2d;
+    color: aliceblue;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 6px;
+    z-index: 10;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    display: block;
+    z-index: 10;
+    margin-top: 2rem;
+    background-color: #020736;
+    border-radius: 5px;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    width: 11rem;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 10px rgb(61, 61, 62);
+  }
+  .header__nav--menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: auto;
+  }
+
+  .dropdown1-menu {
+    position: relative;
+    margin-top: 0rem;
+    z-index: 10;
+    background-color: none;
+    border-radius: 5px;
+    top: 0;
+    right: 1rem;
+    width: 100%;
+    padding: 0 0;
+    box-shadow: none;
+  }
+  .dropdown1-checkbox:checked ~ .dropdown1-menu {
+    display: block;
+    margin-top: 0rem;
+    z-index: 10;
+    background-color: none;
+    position: relative;
+    border-radius: 5px;
+    top: 0.3rem;
+    right: 0;
+    width: 100%;
+    padding: 0 0;
+    box-shadow: none;
+    border: none;
+  }
 }

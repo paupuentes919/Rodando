@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/CSS/styles-productos-forms.css" />
+    </head>
+
+    <body>
+        <div class="vh-100 d-flex align-items-center products-form__container">
+            <main class="container">
+                <h1 class="text-center mb-4">Editar Producto</h1>
+                <form action="/productos/editar/<%= rodado.id %>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
+                    <div class="row mt-4">
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="title">Titulo</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="title"
+                                name="title"
+                                value="<%= rodado.nombre %>"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label for="vehiculo" class="form-label fw-semibold">Vehiculo</label>
+                            <select name="vehiculo" id="vehiculo" class="form-control">
+                                    <% if(rodado.categ == "bicicleta") { %>
+                                        <option value="bicicleta" selected>bicicleta</option>
+                                    <% } else { %>
+                                        <option value="monopatin">monopatin</option>
+                                    <% } %>   
+                            </select>
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="rodado">Rodado</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="rodado"
+                                name="rodado"
+                                value="<%= rodado.rodado %>"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="price">Costo por hora</label>
+                            <input
+                                class="form-control"
+                                type="number"
+                                id="price"
+                                name="price"
+                                value="<%= rodado.precio_hora %>"
+                            />
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md">
+                            <label for="color" class="form-label fw-semibold">Color</label>
+                            <select name="color" id="color" class="form-control" >
+                                <% for(let i=0; i< color.length; i++) { %>
+                                    <% if(color[i].id == rodado.color_id) { %>
+                                        <option value="<%= color[i].id %>" selected><%= color[i].nombre %></option>
+                                    <% } else { %>
+                                        <option value="<%= color[i].id %>"><%= color[i].nombre %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>  
+                         </div>
+                        <div class="col-md">
+                            <label class="form-label fw-semibold" for="img">Imagen</label>
+                            <input
+                                class="form-control"
+                                type="file"
+                                id="imagen"
+                                name="imagen"
+                            />
+                        </div>
+                        <div class="col-md">
+                            <label for="usuario" class="form-label fw-semibold">usuario</label>
+                            <select name="usuario" id="usuario" class="form-control" >
+                                <% for(let i=0; i< usuario.length; i++) { %>
+                                    <% if(usuario[i].id == rodado.usuario_id) { %>
+                                        <option value="<%= usuario[i].id %>" selected ><%= usuario[i].nombre %></option>
+                                    <% } else { %>
+                                        <option value="<%= usuario[i].id %>" ><%= usuario[i].nombre %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <label class="form-label fw-semibold" for="desc">Descripcion</label>
+                            <textarea
+                                class="form-control"
+                                id="desc"
+                                name="desc"
+                                rows="6"
+                            ><%= rodado.descripcion %></textarea>
+                        </div>
+                        <div style="display: none">
+                            <input name="modelo_id" value="<%= rodado.modelo_id %>" />
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center gap-4">
+                        <button type='submit' class="btn send-btn mt-4 px-5 py-3">
+                            <h5>Actualizar</h5>
+                        </button>
+                    </form>
+                        <form action="/productos/borrar/<%= rodado.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="modelo_id" value="<%= rodado.modelo_id %>"> </input>    
+                        <button type='submit' class="btn cancel-btn mt-4 px-5 py-3">
+                            <h5>Eliminar</h5>
+                        </button>
+                        </form>
+                    </div>
+            </main>
+        </div>
+    </body>
+</html>

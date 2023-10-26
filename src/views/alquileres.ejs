@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/CSS/styleregistro.css" />
+    <link rel="stylesheet" href="/CSS/usuarios.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+    <main class="main-back-img">
+      <div class="titulo-contenedor">
+        <h1 style="color: #df4249" class="text-center pt-4">
+          <b>Alquileres</b>
+        </h1>
+      </div>
+      <div class="container">
+        <% if (locals.alquileres) { %>
+        <div class="grilla-usuarios">
+          <% for( let i = 0; i < alquileres.length; i++ ) { %>
+          <article class="d-flex flex-column" style="border-radius: 5px">
+            <div class="mb-2 article-fields">
+              <div class="user-title-box">
+                <h4><%= alquileres[i].codigo_reserva || '-' %></h4>
+              </div>
+              <p>
+                <b>Nombre:</b> <%= alquileres[i].nombre &&
+                alquileres[i].apellido ? `${alquileres[i].nombre}
+                ${alquileres[i].apellido}` : "-" %>
+              </p>
+              <p><b>Email:</b> <%= alquileres[i].email || "-" %></p>
+              <% if (alquileres[i].fecha_emision_alquiler) { %>
+              <p>
+                <b>Fecha emision alquiler:</b> <%=
+                alquileres[i].fecha_emision_alquiler %>
+              </p>
+              <% } %>
+              <p><b>Telefono:</b> <%= alquileres[i].telefono || "-" %></p>
+              <p><b>Pagado:</b> <%= alquileres[i].pagado || "-" %></p>
+            </div>
+            <div class="btn-box">
+              <a href="/alquileres/<%= alquileres[i].id %>">
+                <button class="btn-edit" type="button">
+                  <p>Detalle</p>
+                </button>
+              </a>
+            </div>
+          </article>
+          <% } %>
+        </div>
+        <% } else { %>
+        <p>No hay alquileres</p>
+        <% } %>
+      </div>
+    </main>
+    <%- include('./partials/footer2') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
