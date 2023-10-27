@@ -14,10 +14,9 @@ cloudinary.config({
 
 const controlador = {
   register: function (req, res) {
-    db.sucursal.findAll()
-      .then(function(sucursales){
-        return res.render("registro" , {sucursales})
-      })
+    db.sucursal.findAll().then(function (sucursales) {
+      return res.render("registro", { sucursales });
+    });
   },
 
   processRegister: async function (req, res) {
@@ -25,8 +24,8 @@ const controlador = {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("registro", {
-       // errors: resultValidation.mapped(),
-       // oldData: req.body,
+        // errors: resultValidation.mapped(),
+        // oldData: req.body,
       });
     }
     //---------------------------Validacion de usuario repetido-------------------------------//
@@ -50,7 +49,9 @@ const controlador = {
     //---------------------------Carga en Cloudinary----------------------------------------//
 
     const imageBuffer = req.file.buffer;
-    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname,)}`;
+    const customFilename = `user-${Date.now()}${path.extname(
+      req.file.originalname,
+    )}`;
 
     const uploadPromise = new Promise((resolve, reject) => {
       let stream = cloudinary.uploader.upload_stream(
@@ -84,11 +85,10 @@ const controlador = {
       fecha_creacion: moment().format(),
       fecha_eliminacion: "",
       imagen: customFilename,
-      sucursal_id: null,
+      sucursal_id: req.body.sucursal,
     });
 
     res.redirect("/usuarios");
-  
   },
 
   login: function (req, res) {
@@ -178,57 +178,62 @@ const controlador = {
   },
 
   editarUsuario: async function (req, res) {
-
-  //---------------------------Validaciones de express--------------------------------------//
+    //---------------------------Validaciones de express--------------------------------------//
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.redirect(req.params.id);
     }
 
-  //---------------------------Carga en Cloudinary----------------------------------------// 
-  if(req.file){
+    //---------------------------Carga en Cloudinary----------------------------------------//
+    if (req.file) {
+      const imageBuffer = req.file.buffer;
+      const customFilename = `user-${Date.now()}${path.extname(
+        req.file.originalname,
+      )}`;
 
-    const imageBuffer = req.file.buffer;
-    const customFilename = `user-${Date.now()}${path.extname(req.file.originalname)}`;
+      const uploadPromise = new Promise((resolve, reject) => {
+        let stream = cloudinary.uploader.upload_stream(
+          { resource_type: "image", public_id: customFilename },
+          (error, result) => {
+            if (error) {
+              console.error("Error during upload:", error);
+              reject(error);
+            } else {
+              console.log("Upload successful:", result);
+              resolve(result);
+            }
+          },
+        );
 
-    const uploadPromise = new Promise((resolve, reject) => {
-      let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
-        if (error) {
-          console.error('Error during upload:', error);
-          reject(error);
-        } else {
-          console.log('Upload successful:', result);
-          resolve(result);
-        }
+        streamifier.createReadStream(imageBuffer).pipe(stream);
       });
 
-    streamifier.createReadStream(imageBuffer).pipe(stream);
-    });
+      const uploadedImage = await uploadPromise;
 
-    const uploadedImage = await uploadPromise;
- 
-  db.usuario
-    .findOne({ where: { id: req.params.id } })
-    .then((usuarioAEditar) => {
-      usuarioAEditar.update({ ...req.body, sucursal_id: req.body.sucursal, imagen:customFilename });
-      return usuarioAEditar;
-    })
-    .then((data) => res.redirect("/usuarios"));
-   
-  } else {
-
-    db.usuario
-      .findOne({ where: { id: req.params.id } })
-      .then((usuarioAEditar) => {
-        usuarioAEditar.update({ ...req.body, sucursal_id: req.body.sucursal});
-        return usuarioAEditar;
-      })
-      .then((data) => res.redirect("/usuarios"));
-
-   }    
-    
+      db.usuario
+        .findOne({ where: { id: req.params.id } })
+        .then((usuarioAEditar) => {
+          usuarioAEditar.update({
+            ...req.body,
+            sucursal_id: req.body.sucursal,
+            imagen: customFilename,
+          });
+          return usuarioAEditar;
+        })
+        .then((data) => res.redirect("/usuarios"));
+    } else {
+      db.usuario
+        .findOne({ where: { id: req.params.id } })
+        .then((usuarioAEditar) => {
+          usuarioAEditar.update({
+            ...req.body,
+            sucursal_id: req.body.sucursal,
+          });
+          return usuarioAEditar;
+        })
+        .then((data) => res.redirect("/usuarios"));
+    }
   },
-
 
   vistaEditarUsuario: async function (req, res) {
     await Promise.all([

@@ -2,7 +2,7 @@
 let botonBorrarCarrito = document.getElementById("borrar-Carrito");
 let botonComprarCarrito = document.getElementById("comprar-boton");
 let iconoCarrito = document.getElementById("iconoCarrito");
-// let botonBorrarItem = document.getElementById("borrar-Item");
+// let borrarItem = document.getElementById("borrar-Item");
 let precioTotalCarrito = document.getElementById("precio-total");
 let carritoArrayInicial = JSON.parse(sessionStorage.getItem("carrito"));
 let sumatoriaTotal = 0;
