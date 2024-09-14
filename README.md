@@ -2,6 +2,12 @@
 
 Trabajo Integrador de Digital House
 
+https://rodando2-0.onrender.com/
+
+Usuario para probar el supeusuario y tener acceso a todas las opciones
+Usuario: jerosola@gmail.com
+Contraseña:jerodh
+
 ## Rodando
 
 Bienvenido a Rodando, la empresa de alquiler de bicicletas y monopatines que te ofrece una forma divertida, sostenible y saludable de moverte por la ciudad. Por el momento contamos con el servicio en toda la ciudad autonoma de Buenos Aires y proximanente nos empezaremos a expandir hacia otras provincias, persiguiendo asi el sueño de llegar a distintos paises de Latinoamerica. En Rodando, estamos comprometidos con la movilidad urbana sostenible y creemos que andar en bicicleta o monopatín es una excelente manera de disfrutar de la ciudad mientras cuidamos el medio ambiente. Nuestra empresa esta orientada a que vivas una experiencia divertida, segura y con multiples beneficios para tu salud y el medio ambiente. Contamos con amplia experiencia en el rubro y tenemos personal capacitado que te puede asesorar en cada situación particular que ud desee utilizar nuestro servicio.
